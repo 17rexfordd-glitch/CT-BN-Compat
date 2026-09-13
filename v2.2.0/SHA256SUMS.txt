@@ -1,0 +1,3 @@
+c3f733587ebc3d22d6529b5bcf081a969d746895cfb9b4b66418ae286c2ad2f9  CT-BN-Compat-1.21.1-v2.2.0-source.zip
+b0451eb08ee9e8182ff4239153caf999e723fe9838db88ecbe0e1aadc1f25a5c  CT-BN-Compat-1.21.1-v2.2.0.jar
+510c260fa0345d0b904f9e55b5c61d2c7de9d4289cb63a42c961bfcbd8dc9fbb  README.md
