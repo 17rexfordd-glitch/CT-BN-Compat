@@ -4,6 +4,16 @@ This file tracks CT-BN-Compat builds produced during the ChatGPT-assisted Minecr
 
 ## Current baseline
 
+### v2.2.7
+
+- Built artifact: `CT-BN-Compat-1.21.1-v2.2.7.jar`
+- Source snapshot: `CT-BN-Compat-1.21.1-v2.2.7-source.zip`
+- SHA-256: `b6d1b58503a2c92aaf21a123553f12a1deaba29f829f6016b89cd604a7058a33`
+- Purpose: read-only diagnostic regression fix for the bad Minecraft 1.21.1 `EnchantmentTags.CURSE` descriptor that broke JEI tooltip generation in v2.2.6.
+- Key verification: final packaged `EnchantmentTrace.class` uses `EnchantmentTags.CURSE:Lnet/minecraft/tags/TagKey;` and `Holder.is:(Lnet/minecraft/tags/TagKey;)Z`; no `EnchantmentTags.CURSE:Ljava/lang/Object;` reference remains.
+- Preserved: focused JEI hover tracing, ItemStack/enchantment assembly diagnostics, ImmersiveUI RenderUtils tracing, descriptor fixes, dedupe fixes, and no behavioral tooltip modification.
+- Notes: Gradle could not run in the sandbox because the wrapper distribution could not be downloaded offline; the final packaged JAR/classfiles were directly inspected.
+
 ### v2.2.6
 
 - Built artifact: `CT-BN-Compat-1.21.1-v2.2.6.jar`
