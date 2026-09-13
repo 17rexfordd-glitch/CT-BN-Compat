@@ -4,6 +4,16 @@ This file tracks CT-BN-Compat builds produced during the ChatGPT-assisted Minecr
 
 ## Current baseline
 
+### v2.1.0
+
+- Built artifact: `CT-BN-Compat-1.21.1-v2.1.0.jar`
+- Source snapshot: `CT-BN-Compat-1.21.1-v2.1.0-source.zip`
+- SHA-256: `27e6c3b4cbcea8c7c40fee154d2dab3da99a3647525e3c9eb6b85ba3956f477d`
+- Purpose: diagnostic-only senior audit and cleanup baseline before continuing runtime testing.
+- Key verification: all 13 configured Mixins have CLASS-retention `@Mixin` in `RuntimeInvisibleAnnotations`; all packaged classes are Java 21/classfile major 65; known bad descriptors are absent; no reflection, stubs, duplicate ZIP entries, or normal runtime references into the Mixin package are present.
+- Preserved: JEI IngredientGrid/JeiTooltip/RenderHelper diagnostic path, corrected NeoForge `@Mod.dist` metadata, external bridge architecture, and no behavioral tooltip modification.
+- Notes: `DIAGNOSTIC-NOTES.txt` is rewritten as a concise v2.1.0 design/regression baseline.
+
 ### v2.0.25
 
 - Built artifact: `CT-BN-Compat-1.21.1-v2.0.25.jar`
