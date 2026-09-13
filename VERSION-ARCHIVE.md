@@ -4,6 +4,16 @@ This file tracks CT-BN-Compat builds produced during the ChatGPT-assisted Minecr
 
 ## Current baseline
 
+### v2.3.1
+
+- Built artifact: `CT-BN-Compat-1.21.1-v2.3.1.jar`
+- Source snapshot: `CT-BN-Compat-1.21.1-v2.3.1-source.zip`
+- SHA-256: `4a087d485a4f5290422683b4c0afadf1df25b6a3c2cd09c04fd3754d2867ba4f`
+- Purpose: packaging/annotation-retention correction for v2.3.0; compatibility behavior unchanged.
+- Key verification: `@Inject` is runtime-visible, NeoForge `@Mod` is runtime-visible, and `@Mixin` remains runtime-invisible in the final packaged classfiles; version is `2.3.1`; `behavioral-fixes=true`.
+- Preserved: v2.3.0 BetterNether compatibility hook, target enchantment scope, no tooltip-list replacement, no tooltip-render cancellation, no animator reset redirect, no same-item redirect, and no v2.2.x diagnostic flood classes.
+- Notes: Gradle could not run in the sandbox because the wrapper distribution could not be downloaded offline; the final packaged JAR/classfiles were directly inspected.
+
 ### v2.3.0
 
 - Built artifact: `CT-BN-Compat-1.21.1-v2.3.0.jar`
