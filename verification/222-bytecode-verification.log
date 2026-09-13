@@ -1,0 +1,1834 @@
+PASS 47 configured Mixins: 14 preserved, 3 upstream boundaries, 30 optional verified handlers
+PASS Java 21 project-only class dev/devun/ctbncompat/ClientRuntimeDiagnostics$MousePos
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/ClientRuntimeDiagnostics$MousePos
+PASS No stale version marker dev/devun/ctbncompat/ClientRuntimeDiagnostics$MousePos
+PASS Runtime does not reference mixin package dev/devun/ctbncompat/ClientRuntimeDiagnostics$MousePos
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics$MousePos.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics$MousePos.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics$MousePos.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics$MousePos.x
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics$MousePos.y
+PASS Java 21 project-only class dev/devun/ctbncompat/ClientRuntimeDiagnostics
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/ClientRuntimeDiagnostics
+PASS No stale version marker dev/devun/ctbncompat/ClientRuntimeDiagnostics
+PASS Runtime does not reference mixin package dev/devun/ctbncompat/ClientRuntimeDiagnostics
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.onClientTick
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.inspectContainer
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.mouse
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.mouse
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.mouse
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.mouse
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.mouse
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.mouse
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.mouse
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.mouse
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.mouse
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.mouse
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.mouse
+PASS No callback behavior override dev/devun/ctbncompat/ClientRuntimeDiagnostics.mouse
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ClientRuntimeDiagnostics.<clinit>
+PASS Java 21 project-only class dev/devun/ctbncompat/ColorTooltipsBetterNetherCompat
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/ColorTooltipsBetterNetherCompat
+PASS No stale version marker dev/devun/ctbncompat/ColorTooltipsBetterNetherCompat
+PASS Runtime does not reference mixin package dev/devun/ctbncompat/ColorTooltipsBetterNetherCompat
+PASS @Mod.dist CLIENT array
+PASS No callback behavior override dev/devun/ctbncompat/ColorTooltipsBetterNetherCompat.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/ColorTooltipsBetterNetherCompat.<init>
+PASS No callback behavior override dev/devun/ctbncompat/ColorTooltipsBetterNetherCompat.<init>
+PASS No callback behavior override dev/devun/ctbncompat/ColorTooltipsBetterNetherCompat.<init>
+PASS No callback behavior override dev/devun/ctbncompat/ColorTooltipsBetterNetherCompat.<init>
+PASS No callback behavior override dev/devun/ctbncompat/ColorTooltipsBetterNetherCompat.<init>
+PASS No callback behavior override dev/devun/ctbncompat/ColorTooltipsBetterNetherCompat.<init>
+PASS No callback behavior override dev/devun/ctbncompat/ColorTooltipsBetterNetherCompat.<init>
+PASS Java 21 project-only class dev/devun/ctbncompat/DiagnosticLog
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/DiagnosticLog
+PASS No stale version marker dev/devun/ctbncompat/DiagnosticLog
+PASS Runtime does not reference mixin package dev/devun/ctbncompat/DiagnosticLog
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.log
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.log
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.log
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.log
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.applied
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.applied
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.applied
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.applied
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.verifiedPrimaryHooks
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.verifiedPrimaryHooks
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.verifiedPrimaryHooks
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.verifiedPrimaryHooks
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.verifiedPrimaryHooks
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.verifiedPrimaryHooks
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.verifiedPrimaryHooks
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.verifiedPrimaryHooks
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.verifiedPrimaryHooks
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.verifiedPrimaryHooks
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.hookExecuted
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.once
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.once
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.once
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.beginFrame
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.beginFrame
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.beginFrame
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.beginFrame
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.beginFrame
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.screenHoveredProbe
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.screenHoveredProbe
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.liveContainerFrame
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.liveContainerFrame
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.liveTooltipCall
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.liveTooltipCall
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.liveTooltipCall
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.liveTooltipCall
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.liveTooltipCall
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.liveTooltipCall
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.logSlot
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.logSlot
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.logSlot
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.logSlot
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.logSlot
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.logSlot
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.hoveredSlot
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.hoveredSlot
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.hoveredSlot
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.tooltipBegin
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.tooltipBegin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.tooltipBegin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.tooltipBegin
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.tooltipBegin
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.tooltipInternal
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.tooltipInternal
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.tooltipInternal
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.tooltipInternal
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.ctObserved
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.ctObserved
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.ctObserved
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.ctObserved
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.ctObserved
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.ctObserved
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.ctObserved
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.ctObserved
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.captureColorTooltipsState
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.captureColorTooltipsState
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.captureColorTooltipsState
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.captureColorTooltipsState
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.captureColorTooltipsState
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.captureColorTooltipsState
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.ctState
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.ctState
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.ctState
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.ctState
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.ctState
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.ctState
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.ctNoLiveItemState
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.ctNoLiveItemState
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.ctNoLiveItemState
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.ctNoLiveItemState
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.ctNoLiveItemState
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.ctNoLiveItemState
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.ctNoLiveItemState
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.ctNoLiveItemState
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.ctNoLiveItemState
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.ctNoLiveItemState
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.ctNoLiveItemState
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.ctNoLiveItemState
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.ctNoLiveItemState
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.ctNoLiveItemState
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.lifecycle
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.lifecycle
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.lifecycle
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.animator
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.animator
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.animator
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.jeiGridDrawTooltips
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.jeiGridDrawTooltips
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.jeiIngredientHover
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.jeiIngredientHover
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.jeiIngredientHover
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.jeiIngredientHover
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.jeiIngredientHover
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.jeiTooltipPrepare
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.jeiTooltipPrepare
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.jeiTooltipDraw
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.jeiTooltipDraw
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.jeiTooltipDraw
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.jeiRenderHandoff
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.jeiRenderHandoff
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.jeiRenderHandoff
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.owner
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.owner
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.owner
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.owner
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.owner
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.owner
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.owner
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.logJeiPath
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.logJeiPath
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.logJeiFollowup
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.logJeiFollowup
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.recentJeiHover
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.rememberJeiStack
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.rememberJeiStack
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.rememberJeiStack
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.rememberJeiStack
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.callerMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.callerMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.callerMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.callerMods
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.callerMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.callerMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.callerMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.callerMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.callerMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.callerMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.callerMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.callerMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.callerMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.callerMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.callerMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.callerMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.callerMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.callerMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.callerMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.callerMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.callerMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.callerMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.callerMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.callerMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.callerMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.callerMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.callerMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.callerMods
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.stack
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.stack
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.isBetterNetherId
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.isBetterNetherId
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.isBetterNetherId
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.isBetterNetherId
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.itemId
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.itemId
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.itemId
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.itemId
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.componentHash
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.componentHash
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.listSize
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.className
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.className
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.hex
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.reportTooltipModsDeferred
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.reportTooltipModsDeferred
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.reportTooltipModsDeferred
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.reportTooltipModsDeferred
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipModsDeferred
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.reportTooltipModsDeferred
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipModsDeferred
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.reportTooltipModsDeferred
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipModsDeferred
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipModsDeferred
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.reportTooltipModsDeferred
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.reportTooltipModsDeferred
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticLog.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticLog.<clinit>
+PASS Java 21 project-only class dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceCheck
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceCheck
+PASS No stale version marker dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceCheck
+PASS Runtime does not reference mixin package dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceCheck
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceCheck.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceCheck.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceCheck.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceCheck.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceCheck.status
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceCheck.loader
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceCheck.error
+PASS Java 21 project-only class dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceStatus
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceStatus
+PASS No stale version marker dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceStatus
+PASS Runtime does not reference mixin package dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceStatus
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceStatus.values
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceStatus.values
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceStatus.valueOf
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceStatus.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceStatus.$values
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceStatus.$values
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceStatus.$values
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceStatus.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceStatus.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceStatus.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceStatus.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceStatus.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceStatus.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceStatus.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceStatus.<clinit>
+PASS Java 21 project-only class dev/devun/ctbncompat/DiagnosticMixinPlugin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/DiagnosticMixinPlugin
+PASS No stale version marker dev/devun/ctbncompat/DiagnosticMixinPlugin
+PASS Runtime does not reference mixin package dev/devun/ctbncompat/DiagnosticMixinPlugin
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin.appliedSnapshot
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.appliedSnapshot
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin.optionalTargetsSnapshot
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.optionalTargetsSnapshot
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin.optionalOwnersSnapshot
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.optionalOwnersSnapshot
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin.optionalModIdsSnapshot
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.optionalModIdsSnapshot
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin.bootstrapCheck
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.bootstrapCheck
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.onLoad
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.shouldApplyMixin
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.shouldApplyMixin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin.shouldApplyMixin
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.shouldApplyMixin
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.shouldApplyMixin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin.shouldApplyMixin
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.shouldApplyMixin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin.shouldApplyMixin
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.shouldApplyMixin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin.shouldApplyMixin
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.shouldApplyMixin
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.shouldApplyMixin
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.shouldApplyMixin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin.shouldApplyMixin
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.shouldApplyMixin
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.shouldApplyMixin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin.shouldApplyMixin
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.shouldApplyMixin
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.shouldApplyMixin
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.shouldApplyMixin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin.shouldApplyMixin
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.shouldApplyMixin
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.shouldApplyMixin
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.shouldApplyMixin
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.shouldApplyMixin
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.shouldApplyMixin
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.checkClassResource
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.checkClassResource
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin.checkClassResource
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.checkClassResource
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.checkClassResource
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.checkClassResource
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.checkClassResource
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin.checkClassResource
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.checkClassResource
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin.checkClassResource
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.checkClassResource
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin.checkClassResource
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.checkClassResource
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.errorType
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.errorType
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin.bootLog
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.bootLog
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin.postApply
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.postApply
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.postApply
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.verifiedCandidate
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.verifiedCandidate
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.verifiedCandidate
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.verifiedCandidate
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.verifiedCandidate
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.verifiedCandidate
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.verifiedCandidate
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.verifiedCandidate
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin.verifiedCandidate
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.verifiedCandidate
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.verifiedCandidate
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.verifiedCandidate
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.verifiedCandidate
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.verifiedCandidate
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.verifiedCandidate
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.verifiedCandidate
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin.lambda$verifiedCandidate$0
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.lambda$verifiedCandidate$0
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin.lambda$verifiedCandidate$0
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.lambda$verifiedCandidate$0
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin.lambda$verifiedCandidate$0
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.lambda$verifiedCandidate$0
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/DiagnosticMixinPlugin.<clinit>
+PASS Java 21 project-only class dev/devun/ctbncompat/RuntimeMetadataGuard
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/RuntimeMetadataGuard
+PASS No stale version marker dev/devun/ctbncompat/RuntimeMetadataGuard
+PASS Runtime does not reference mixin package dev/devun/ctbncompat/RuntimeMetadataGuard
+PASS No callback behavior override dev/devun/ctbncompat/RuntimeMetadataGuard.<init>
+PASS No callback behavior override dev/devun/ctbncompat/RuntimeMetadataGuard.reportTooltipModsDeferred
+PASS No callback behavior override dev/devun/ctbncompat/RuntimeMetadataGuard.reportTooltipModsDeferred
+PASS No callback behavior override dev/devun/ctbncompat/RuntimeMetadataGuard.reportTooltipModsDeferred
+PASS No callback behavior override dev/devun/ctbncompat/RuntimeMetadataGuard.reportTooltipModsDeferred
+PASS No callback behavior override dev/devun/ctbncompat/RuntimeMetadataGuard.reportTooltipModsDeferred
+PASS No callback behavior override dev/devun/ctbncompat/RuntimeMetadataGuard.reportTooltipModsDeferred
+PASS No callback behavior override dev/devun/ctbncompat/RuntimeMetadataGuard.reportTooltipModsDeferred
+PASS Java 21 project-only class dev/devun/ctbncompat/TooltipTrace$Pending
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/TooltipTrace$Pending
+PASS No stale version marker dev/devun/ctbncompat/TooltipTrace$Pending
+PASS Runtime does not reference mixin package dev/devun/ctbncompat/TooltipTrace$Pending
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace$Pending.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace$Pending.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace$Pending.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace$Pending.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace$Pending.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace$Pending.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace$Pending.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace$Pending.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace$Pending.owner
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace$Pending.event
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace$Pending.token
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace$Pending.frame
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace$Pending.logical
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace$Pending.before
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace$Pending.evidence
+PASS Java 21 project-only class dev/devun/ctbncompat/TooltipTrace
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/TooltipTrace
+PASS No stale version marker dev/devun/ctbncompat/TooltipTrace
+PASS Runtime does not reference mixin package dev/devun/ctbncompat/TooltipTrace
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.<init>
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.beginFrame
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.beginFrame
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.beginFrame
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.beginFrame
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.beginFrame
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.beginFrame
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.beginFrame
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.beginFrame
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.beginFrame
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.beginFrame
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.beginFrame
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.beginFrame
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.beginFrame
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.beginFrame
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.beginFrame
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.beginFrame
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.signature
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.signature
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.signature
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.sameItem
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.sameItem
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.sameItem
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.recent
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.recent
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.recent
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.matchesHover
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.matchesHover
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.matchesHover
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.hover
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.hover
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.hover
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.hover
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.hover
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.hover
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.hover
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.hover
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.hover
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.hover
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.hover
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.hover
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.hover
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.hover
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.hover
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.hover
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.hover
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.hover
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.hover
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.hover
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.hover
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.hover
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.hover
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.hover
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.hover
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.hover
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.hover
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.identity
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.identity
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.normal
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.normal
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.normal
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.normal
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.normal
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.normal
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.normal
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.normal
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.normal
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.normal
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.normal
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.normal
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.normal
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.normal
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.normal
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.point
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.point
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.point
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.point
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.point
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.point
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.point
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.point
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.point
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.point
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.point
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.point
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.point
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.point
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.point
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.point
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.point
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.point
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.point
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.point
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.point
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.point
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.before
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.before
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.before
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.before
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.before
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.before
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.before
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.before
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.before
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.before
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.before
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.before
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.before
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.before
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.before
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.before
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.before
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.before
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.before
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.before
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.before
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.before
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.after
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.after
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.after
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.after
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.after
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.after
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.after
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.after
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.after
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.after
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.after
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.after
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.after
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.after
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.after
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.after
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.after
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.after
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.after
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.after
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.after
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.after
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.after
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.after
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.after
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.after
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.after
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.after
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.after
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.after
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.after
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.after
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.after
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.after
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.snapshot
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.snapshot
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.snapshot
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.snapshot
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.snapshot
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.snapshot
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.snapshot
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.snapshot
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.snapshot
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.element
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.element
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.element
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.element
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.element
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.element
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.element
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.readElement
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.canonical
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.canonical
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.canonical
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.canonical
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.canonical
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.canonical
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.canonical
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.canonical
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.canonical
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.canonical
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.canonical
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.canonical
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.canonical
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.canonical
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.canonical
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.canonical
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.canonical
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.canonical
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.append
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.append
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.append
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.append
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.append
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.append
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.append
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.append
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.append
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.append
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.append
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.append
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.append
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.append
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.append
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.append
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.append
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.append
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.append
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.append
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.append
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.append
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.append
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.lambda$canonical$6
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.lambda$canonical$6
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.lambda$canonical$6
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.lambda$canonical$6
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.lambda$canonical$6
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.lambda$readElement$5
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.lambda$readElement$4
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.lambda$readElement$3
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.lambda$readElement$3
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.lambda$readElement$3
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.lambda$readElement$2
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/TooltipTrace.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/TooltipTrace.<clinit>
+PASS Java 21 project-only class dev/devun/ctbncompat/UpstreamTrace$Dispatch
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/UpstreamTrace$Dispatch
+PASS No stale version marker dev/devun/ctbncompat/UpstreamTrace$Dispatch
+PASS Runtime does not reference mixin package dev/devun/ctbncompat/UpstreamTrace$Dispatch
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace$Dispatch.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace$Dispatch.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace$Dispatch.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace$Dispatch.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace$Dispatch.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace$Dispatch.<init>
+PASS Java 21 project-only class dev/devun/ctbncompat/UpstreamTrace
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/UpstreamTrace
+PASS No stale version marker dev/devun/ctbncompat/UpstreamTrace
+PASS Runtime does not reference mixin package dev/devun/ctbncompat/UpstreamTrace
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.beginFrame
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.beginFrame
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.beginFrame
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.beginFrame
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.beginFrame
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.beginFrame
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.itemEntry
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.itemEntry
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.itemEntry
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.itemEntry
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.itemEntry
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.itemReturn
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.itemReturn
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.itemReturn
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.itemReturn
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.itemReturn
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.itemReturn
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.generated
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.generated
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.generated
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.generated
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.generated
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.generated
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.generated
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.generated
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.generated
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.generated
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.generated
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.generated
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.created
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.created
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.created
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.created
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.created
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.created
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.created
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.created
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.created
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.created
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.created
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.created
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.prePost
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.prePost
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.prePost
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.prePost
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.prePost
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.postPost
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.postPost
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.postPost
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.postPost
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.postPost
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.returned
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.returned
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.returned
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.returned
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.matching
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.matching
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.matching
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.matching
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.matching
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.handlerEvidence
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.handlerEvidence
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.handlerEvidence
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.handlerEvidence
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.handlerEvidence
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.handlerEvidence
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.handlerEvidence
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.handlerEvidence
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.dispatched
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.dispatched
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.dispatched
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.dispatched
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.dispatched
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.before
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.before
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.after
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.after
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.<clinit>
+PASS No callback behavior override dev/devun/ctbncompat/UpstreamTrace.<clinit>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/UpstreamTrace.<clinit>
+PASS Java 21 project-only class dev/devun/ctbncompat/bridge/AbstractContainerScreenBridge
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/bridge/AbstractContainerScreenBridge
+PASS No stale version marker dev/devun/ctbncompat/bridge/AbstractContainerScreenBridge
+PASS Runtime does not reference mixin package dev/devun/ctbncompat/bridge/AbstractContainerScreenBridge
+PASS Java 21 project-only class dev/devun/ctbncompat/bridge/ClientTextTooltipBridge
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/bridge/ClientTextTooltipBridge
+PASS No stale version marker dev/devun/ctbncompat/bridge/ClientTextTooltipBridge
+PASS Runtime does not reference mixin package dev/devun/ctbncompat/bridge/ClientTextTooltipBridge
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/AbstractContainerScreenMixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/AbstractContainerScreenMixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/AbstractContainerScreenMixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/AbstractContainerScreenMixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/AbstractContainerScreenMixin
+PASS All previous injection selectors retained dev/devun/ctbncompat/mixin/AbstractContainerScreenMixin
+PASS Target classes unchanged dev/devun/ctbncompat/mixin/AbstractContainerScreenMixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/AbstractContainerScreenMixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/AbstractContainerScreenMixin.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/mixin/AbstractContainerScreenMixin.ctbn$getHoveredSlot
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/mixin/AbstractContainerScreenMixin.ctbn$liveContainerFrame
+PASS No callback behavior override dev/devun/ctbncompat/mixin/AbstractContainerScreenMixin.ctbn$liveContainerFrame
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/mixin/AbstractContainerScreenMixin.ctbn$tooltipBefore
+PASS No callback behavior override dev/devun/ctbncompat/mixin/AbstractContainerScreenMixin.ctbn$tooltipBefore
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/mixin/AbstractContainerScreenMixin.ctbn$tooltipAfter
+PASS No callback behavior override dev/devun/ctbncompat/mixin/AbstractContainerScreenMixin.ctbn$tooltipAfter
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/BetterAdvancedTooltipsMixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/BetterAdvancedTooltipsMixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/BetterAdvancedTooltipsMixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/BetterAdvancedTooltipsMixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/BetterAdvancedTooltipsMixin
+PASS All previous injection selectors retained dev/devun/ctbncompat/mixin/BetterAdvancedTooltipsMixin
+PASS Target classes unchanged dev/devun/ctbncompat/mixin/BetterAdvancedTooltipsMixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/BetterAdvancedTooltipsMixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/BetterAdvancedTooltipsMixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/BetterAdvancedTooltipsMixin.ctbn$bat
+PASS No callback behavior override dev/devun/ctbncompat/mixin/BetterAdvancedTooltipsMixin.ctbn$bat
+PASS No callback behavior override dev/devun/ctbncompat/mixin/BetterAdvancedTooltipsMixin.ctbn$bat
+PASS No callback behavior override dev/devun/ctbncompat/mixin/BetterAdvancedTooltipsMixin.ctbn$batAfter
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/ClientTextTooltipMixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/ClientTextTooltipMixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/ClientTextTooltipMixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/ClientTextTooltipMixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/ClientTextTooltipMixin
+PASS All previous injection selectors retained dev/devun/ctbncompat/mixin/ClientTextTooltipMixin
+PASS Target classes unchanged dev/devun/ctbncompat/mixin/ClientTextTooltipMixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/ClientTextTooltipMixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ClientTextTooltipMixin.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/mixin/ClientTextTooltipMixin.ctbn$getText
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin
+PASS All previous injection selectors retained dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin
+PASS Target classes unchanged dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin.ctbn$capture
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin.ctbn$capture
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin.ctbn$capture
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin.ctbn$capture
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin.ctbn$capture
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin.ctbn$capture
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin.ctbn$capture
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin.ctbn$capture
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin.ctbn$capture
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin.ctbn$live
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin.ctbn$live
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin.ctbn$resetReq
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin.ctbn$resetReq
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin.ctbn$reset
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin.ctbn$reset
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin.ctbn$lost
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin.ctbn$lost
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin.ctbn$update
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin.ctbn$update
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/ColorTooltipsAnimatorMixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/ColorTooltipsAnimatorMixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/ColorTooltipsAnimatorMixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/ColorTooltipsAnimatorMixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/ColorTooltipsAnimatorMixin
+PASS All previous injection selectors retained dev/devun/ctbncompat/mixin/ColorTooltipsAnimatorMixin
+PASS Target classes unchanged dev/devun/ctbncompat/mixin/ColorTooltipsAnimatorMixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/ColorTooltipsAnimatorMixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ColorTooltipsAnimatorMixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ColorTooltipsAnimatorMixin.ctbn$reset
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ColorTooltipsAnimatorMixin.ctbn$restart
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ColorTooltipsAnimatorMixin.ctbn$alpha
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ColorTooltipsAnimatorMixin.ctbn$alpha0
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ColorTooltipsAnimatorMixin.ctbn$force
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/ColorTooltipsLifecycleMixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/ColorTooltipsLifecycleMixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/ColorTooltipsLifecycleMixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/ColorTooltipsLifecycleMixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/ColorTooltipsLifecycleMixin
+PASS All previous injection selectors retained dev/devun/ctbncompat/mixin/ColorTooltipsLifecycleMixin
+PASS Target classes unchanged dev/devun/ctbncompat/mixin/ColorTooltipsLifecycleMixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/ColorTooltipsLifecycleMixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ColorTooltipsLifecycleMixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ColorTooltipsLifecycleMixin.ctbn$publish
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/EventHooksTooltipMixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/EventHooksTooltipMixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/EventHooksTooltipMixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/EventHooksTooltipMixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/EventHooksTooltipMixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/EventHooksTooltipMixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/EventHooksTooltipMixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/EventHooksTooltipMixin.ctbn$generated
+PASS No callback behavior override dev/devun/ctbncompat/mixin/EventHooksTooltipMixin.ctbn$prePost
+PASS No callback behavior override dev/devun/ctbncompat/mixin/EventHooksTooltipMixin.ctbn$postPost
+PASS No callback behavior override dev/devun/ctbncompat/mixin/EventHooksTooltipMixin.ctbn$returned
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/GuiGraphicsTooltipMixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/GuiGraphicsTooltipMixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/GuiGraphicsTooltipMixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/GuiGraphicsTooltipMixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/GuiGraphicsTooltipMixin
+PASS All previous injection selectors retained dev/devun/ctbncompat/mixin/GuiGraphicsTooltipMixin
+PASS Target classes unchanged dev/devun/ctbncompat/mixin/GuiGraphicsTooltipMixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/GuiGraphicsTooltipMixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/GuiGraphicsTooltipMixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/GuiGraphicsTooltipMixin.ctbn$item
+PASS No callback behavior override dev/devun/ctbncompat/mixin/GuiGraphicsTooltipMixin.ctbn$internal
+PASS No callback behavior override dev/devun/ctbncompat/mixin/GuiGraphicsTooltipMixin.ctbn$components
+PASS No callback behavior override dev/devun/ctbncompat/mixin/GuiGraphicsTooltipMixin.ctbn$component
+PASS No callback behavior override dev/devun/ctbncompat/mixin/GuiGraphicsTooltipMixin.ctbn$ordered
+PASS No callback behavior override dev/devun/ctbncompat/mixin/GuiGraphicsTooltipMixin.ctbn$positioned
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/IconLeadingTooltipMixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/IconLeadingTooltipMixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/IconLeadingTooltipMixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/IconLeadingTooltipMixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/IconLeadingTooltipMixin
+PASS All previous injection selectors retained dev/devun/ctbncompat/mixin/IconLeadingTooltipMixin
+PASS Target classes unchanged dev/devun/ctbncompat/mixin/IconLeadingTooltipMixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/IconLeadingTooltipMixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/IconLeadingTooltipMixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/IconLeadingTooltipMixin.ctbn$iconTooltip
+PASS No callback behavior override dev/devun/ctbncompat/mixin/IconLeadingTooltipMixin.ctbn$iconTooltip
+PASS No callback behavior override dev/devun/ctbncompat/mixin/IconLeadingTooltipMixin.ctbn$iconTooltip
+PASS No callback behavior override dev/devun/ctbncompat/mixin/IconLeadingTooltipMixin.ctbn$iconTooltipAfter
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/ImmersiveUiRenderMixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/ImmersiveUiRenderMixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/ImmersiveUiRenderMixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/ImmersiveUiRenderMixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/ImmersiveUiRenderMixin
+PASS All previous injection selectors retained dev/devun/ctbncompat/mixin/ImmersiveUiRenderMixin
+PASS Target classes unchanged dev/devun/ctbncompat/mixin/ImmersiveUiRenderMixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/ImmersiveUiRenderMixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ImmersiveUiRenderMixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ImmersiveUiRenderMixin.ctbn$immersive
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ImmersiveUiRenderMixin.ctbn$immersive
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/ItemStackTooltipMixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/ItemStackTooltipMixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/ItemStackTooltipMixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/ItemStackTooltipMixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/ItemStackTooltipMixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/ItemStackTooltipMixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ItemStackTooltipMixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ItemStackTooltipMixin.ctbn$entry
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ItemStackTooltipMixin.ctbn$return
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/ItemTooltipEventMixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/ItemTooltipEventMixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/ItemTooltipEventMixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/ItemTooltipEventMixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/ItemTooltipEventMixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/ItemTooltipEventMixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ItemTooltipEventMixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ItemTooltipEventMixin.ctbn$created
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/JeiIngredientGridMixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/JeiIngredientGridMixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/JeiIngredientGridMixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/JeiIngredientGridMixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/JeiIngredientGridMixin
+PASS All previous injection selectors retained dev/devun/ctbncompat/mixin/JeiIngredientGridMixin
+PASS Target classes unchanged dev/devun/ctbncompat/mixin/JeiIngredientGridMixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/JeiIngredientGridMixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiIngredientGridMixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiIngredientGridMixin.ctbn$jeiGridDrawTooltips
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiIngredientGridMixin.ctbn$jeiGridDrawTooltip
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiIngredientGridMixin.ctbn$jeiGridDrawTooltip
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiIngredientGridMixin.ctbn$jeiGridDrawTooltip
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiIngredientGridMixin.ctbn$jeiGridDrawTooltip
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiIngredientGridMixin.ctbn$jeiGridDrawTooltip
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiIngredientGridMixin.ctbn$extractItemStack
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiIngredientGridMixin.ctbn$extractItemStack
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiIngredientGridMixin.ctbn$extractItemStack
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiIngredientGridMixin.ctbn$extractItemStack
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiIngredientGridMixin.ctbn$extractItemStack
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/JeiRenderHelperMixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/JeiRenderHelperMixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/JeiRenderHelperMixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/JeiRenderHelperMixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/JeiRenderHelperMixin
+PASS All previous injection selectors retained dev/devun/ctbncompat/mixin/JeiRenderHelperMixin
+PASS Target classes unchanged dev/devun/ctbncompat/mixin/JeiRenderHelperMixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/JeiRenderHelperMixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiRenderHelperMixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiRenderHelperMixin.ctbn$jeiRenderTooltipHandoff
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/JeiTooltipMixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/JeiTooltipMixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/JeiTooltipMixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/JeiTooltipMixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/JeiTooltipMixin
+PASS All previous injection selectors retained dev/devun/ctbncompat/mixin/JeiTooltipMixin
+PASS Target classes unchanged dev/devun/ctbncompat/mixin/JeiTooltipMixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/JeiTooltipMixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiTooltipMixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiTooltipMixin.ctbn$jeiDrawLegacy
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiTooltipMixin.ctbn$jeiDrawLegacy
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiTooltipMixin.ctbn$jeiPrepareForIngredientTooltip
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiTooltipMixin.ctbn$jeiPrepareForIngredientTooltip
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiTooltipMixin.ctbn$jeiPrepareForIngredientTooltip
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiTooltipMixin.ctbn$jeiPrepareForIngredientTooltip
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiTooltipMixin.ctbn$jeiPrepareForIngredientTooltip
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiTooltipMixin.ctbn$jeiPrepareForIngredientTooltip
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiTooltipMixin.ctbn$jeiDrawIngredient
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiTooltipMixin.ctbn$jeiDrawIngredient
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiTooltipMixin.ctbn$jeiDrawIngredient
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiTooltipMixin.ctbn$jeiDrawIngredient
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiTooltipMixin.ctbn$jeiDrawIngredient
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiTooltipMixin.ctbn$extractItemStack
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiTooltipMixin.ctbn$extractItemStack
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiTooltipMixin.ctbn$extractItemStack
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiTooltipMixin.ctbn$extractItemStack
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiTooltipMixin.ctbn$extractItemStack
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiTooltipMixin.ctbn$jeiPrepareAfter
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiTooltipMixin.ctbn$jeiPrepareAfter
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiTooltipMixin.ctbn$jeiPrepareAfter
+PASS No callback behavior override dev/devun/ctbncompat/mixin/JeiTooltipMixin.ctbn$jeiPrepareAfter
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/ScreenRenderMixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/ScreenRenderMixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/ScreenRenderMixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/ScreenRenderMixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/ScreenRenderMixin
+PASS All previous injection selectors retained dev/devun/ctbncompat/mixin/ScreenRenderMixin
+PASS Target classes unchanged dev/devun/ctbncompat/mixin/ScreenRenderMixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/ScreenRenderMixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ScreenRenderMixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ScreenRenderMixin.ctbn$frame
+PASS No callback behavior override dev/devun/ctbncompat/mixin/ScreenRenderMixin.ctbn$frame
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/SimplyTooltipsRendererMixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/SimplyTooltipsRendererMixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/SimplyTooltipsRendererMixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/SimplyTooltipsRendererMixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/SimplyTooltipsRendererMixin
+PASS All previous injection selectors retained dev/devun/ctbncompat/mixin/SimplyTooltipsRendererMixin
+PASS Target classes unchanged dev/devun/ctbncompat/mixin/SimplyTooltipsRendererMixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/SimplyTooltipsRendererMixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/SimplyTooltipsRendererMixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/SimplyTooltipsRendererMixin.ctbn$simplyRenderPrimary
+PASS No callback behavior override dev/devun/ctbncompat/mixin/SimplyTooltipsRendererMixin.ctbn$simplyRenderPrimary
+PASS No callback behavior override dev/devun/ctbncompat/mixin/SimplyTooltipsRendererMixin.ctbn$simplyRenderNativeComponents
+PASS No callback behavior override dev/devun/ctbncompat/mixin/SimplyTooltipsRendererMixin.ctbn$simplyRenderNativeComponents
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber01Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber01Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber01Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber01Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber01Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber01Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber01Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber01Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber01Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber02Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber02Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber02Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber02Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber02Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber02Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber02Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber02Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber02Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber03Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber03Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber03Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber03Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber03Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber03Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber03Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber03Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber03Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber04Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber04Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber04Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber04Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber04Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber04Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber04Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber04Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber04Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber05Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber05Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber05Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber05Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber05Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber05Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber05Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber05Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber05Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber06Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber06Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber06Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber06Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber06Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber06Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber06Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber06Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber06Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber07Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber07Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber07Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber07Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber07Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber07Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber07Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber07Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber07Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber08Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber08Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber08Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber08Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber08Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber08Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber08Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber08Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber08Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber09Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber09Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber09Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber09Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber09Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber09Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber09Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber09Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber09Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber10Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber10Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber10Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber10Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber10Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber10Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber10Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber10Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber10Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber11Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber11Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber11Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber11Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber11Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber11Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber11Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber11Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber11Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber12Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber12Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber12Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber12Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber12Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber12Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber12Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber12Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber12Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber13Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber13Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber13Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber13Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber13Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber13Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber13Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber13Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber13Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber14Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber14Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber14Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber14Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber14Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber14Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber14Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber14Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber14Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber15Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber15Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber15Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber15Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber15Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber15Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber15Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber15Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber15Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber16Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber16Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber16Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber16Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber16Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber16Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber16Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber16Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber16Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber17Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber17Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber17Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber17Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber17Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber17Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber17Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber17Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber17Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber18Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber18Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber18Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber18Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber18Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber18Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber18Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber18Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber18Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber19Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber19Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber19Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber19Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber19Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber19Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber19Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber19Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber19Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber20Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber20Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber20Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber20Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber20Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber20Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber20Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber20Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber20Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber21Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber21Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber21Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber21Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber21Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber21Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber21Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber21Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber21Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber22Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber22Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber22Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber22Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber22Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber22Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber22Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber22Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber22Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber23Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber23Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber23Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber23Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber23Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber23Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber23Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber23Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber23Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber24Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber24Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber24Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber24Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber24Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber24Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber24Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber24Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber24Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber25Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber25Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber25Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber25Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber25Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber25Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber25Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber25Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber25Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber26Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber26Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber26Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber26Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber26Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber26Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber26Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber26Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber26Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber27Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber27Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber27Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber27Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber27Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber27Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber27Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber27Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber27Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber28Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber28Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber28Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber28Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber28Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber28Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber28Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber28Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber28Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber29Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber29Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber29Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber29Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber29Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber29Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber29Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber29Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber29Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/mixin/UpstreamSubscriber30Mixin
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/mixin/UpstreamSubscriber30Mixin
+PASS No stale version marker dev/devun/ctbncompat/mixin/UpstreamSubscriber30Mixin
+PASS Mixin configured dev/devun/ctbncompat/mixin/UpstreamSubscriber30Mixin
+PASS CLASS retention @Mixin dev/devun/ctbncompat/mixin/UpstreamSubscriber30Mixin
+PASS No behavior-changing injection dev/devun/ctbncompat/mixin/UpstreamSubscriber30Mixin
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber30Mixin.<init>
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber30Mixin.ctbn$before
+PASS No callback behavior override dev/devun/ctbncompat/mixin/UpstreamSubscriber30Mixin.ctbn$after
+PASS Java 21 project-only class dev/devun/ctbncompat/trace/TraceModel$Element
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/trace/TraceModel$Element
+PASS No stale version marker dev/devun/ctbncompat/trace/TraceModel$Element
+PASS Runtime does not reference mixin package dev/devun/ctbncompat/trace/TraceModel$Element
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Element.<init>
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Element.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Element.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Element.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Element.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Element.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Element.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Element.describe
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Element.describe
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Element.describe
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Element.describe
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Element.describe
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Element.describe
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Element.describe
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Element.type
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Element.text
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Element.hash
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Element.coverage
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Element.representation
+PASS Java 21 project-only class dev/devun/ctbncompat/trace/TraceModel$Recorder
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/trace/TraceModel$Recorder
+PASS No stale version marker dev/devun/ctbncompat/trace/TraceModel$Recorder
+PASS Runtime does not reference mixin package dev/devun/ctbncompat/trace/TraceModel$Recorder
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.<init>
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.<init>
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.<init>
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.<init>
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.<init>
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.<init>
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.<init>
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.<init>
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.begin
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.context
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.context
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.context
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.inheritedFingerprint
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.chain
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.chain
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.chain
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.chain
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.chain
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.chain
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.chain
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.chain
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.chain
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.chain
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.mutationOwner
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.mutationOwner
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.mutationOwner
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.mutationOwner
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.mutationOwner
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.mutationOwner
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.emit
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.emit
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.emit
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.emit
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.emit
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.emit
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.emit
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.emit
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.emit
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.emit
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.emit
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.emit
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.emit
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.emit
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.emit
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.emit
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.stage
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.pair
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.pair
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.pair
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.pair
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.pair
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.pair
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.pair
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.pair
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.pair
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.pair
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.pair
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.pair
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Recorder.pair
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.pair
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.pair
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.pair
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.pair
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.pair
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.lambda$stage$2
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.lambda$stage$2
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Recorder.lambda$stage$2
+PASS Java 21 project-only class dev/devun/ctbncompat/trace/TraceModel$Snapshot
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/trace/TraceModel$Snapshot
+PASS No stale version marker dev/devun/ctbncompat/trace/TraceModel$Snapshot
+PASS Runtime does not reference mixin package dev/devun/ctbncompat/trace/TraceModel$Snapshot
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Snapshot.<init>
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Snapshot.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Snapshot.<init>
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Snapshot.<init>
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Snapshot.of
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Snapshot.of
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Snapshot.of
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Snapshot.of
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Snapshot.of
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Snapshot.of
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Snapshot.of
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Snapshot.of
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Snapshot.of
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Snapshot.of
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Snapshot.of
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Snapshot.of
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Snapshot.of
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Snapshot.of
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Snapshot.of
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Snapshot.of
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Snapshot.of
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Snapshot.summary
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Snapshot.summary
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Snapshot.summary
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Snapshot.describe
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Snapshot.describe
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Snapshot.describe
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Snapshot.describe
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Snapshot.describe
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Snapshot.describe
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Snapshot.describe
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Snapshot.describe
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Snapshot.describe
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Snapshot.describe
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Snapshot.describe
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel$Snapshot.describe
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Snapshot.elements
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel$Snapshot.hash
+PASS Java 21 project-only class dev/devun/ctbncompat/trace/TraceModel
+PASS No reflection, auto subscriber, or fake bus dev/devun/ctbncompat/trace/TraceModel
+PASS No stale version marker dev/devun/ctbncompat/trace/TraceModel
+PASS Runtime does not reference mixin package dev/devun/ctbncompat/trace/TraceModel
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.<init>
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.hash
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.hash
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel.hash
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.hash
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.hash
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.hash
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.hash
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.brief
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.brief
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.brief
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.brief
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.brief
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.brief
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.brief
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel.same
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel.same
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.same
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel.same
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel.same
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.same
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel.diff
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.diff
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.flush
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.limited
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.limited
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.limited
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.limited
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.limited
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel.modification
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel.modification
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.modification
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel.modification
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.modification
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel.modification
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.modification
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.modification
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel.modification
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.modification
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel.modification
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.modification
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.modification
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel.modification
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel.modification
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.modification
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.modification
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.modification
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.modification
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel.modification
+PASS Field writes confined to diagnostics dev/devun/ctbncompat/trace/TraceModel.modification
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.modification
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.modification
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.modification
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.modification
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.modification
+PASS No callback behavior override dev/devun/ctbncompat/trace/TraceModel.modification
+PASS EVENT_BUS descriptor preserved
+PASS slots descriptor preserved
+PASS Prior bad descriptors absent
+PASS Main version, diagnostic-only flag, and runtime anchor
+PASS Bootstrap marker and deferred ModList
+PASS Paired handler snapshots BetterAdvancedTooltipsMixin
+PASS Same typed event passed to both handler hooks BetterAdvancedTooltipsMixin
+PASS Paired handler snapshots IconLeadingTooltipMixin
+PASS Same typed event passed to both handler hooks IconLeadingTooltipMixin
+PASS Packaged metadata 2.2.2
+VERIFIED 65 final packaged classes; no duplicate JAR entries; retained hooks and read-only mutations audit passed.

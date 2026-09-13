@@ -1,0 +1,222 @@
+Continue from v2.2.1.
+
+Build:
+
+`CT-BN-Compat-1.21.1-v2.2.2.jar`
+
+v2.2.1 successfully answered the BAT/Icon question.
+
+Runtime evidence:
+
+- real JEI ingredient hover occurs
+- `ACTIVE-CONTAINER` succeeds
+- `recentJeiHover=true`
+- stable logical item:
+  `betternether:flaming_ruby_pickaxe/count=1/componentHash=-490715972`
+
+Across the full run:
+
+- Better Advanced Tooltips mutation checks: 427
+- BAT `changed=true`: 0
+- Icon Leading Tooltip mutation checks: 427
+- Icon `changed=true`: 0
+
+Both handlers receive already-changing tooltip contents and leave the list unchanged.
+
+v2.2.1 repeatedly reports:
+
+`firstMutationOwner=upstream-of-BETTER_ADVANCED_TOOLTIPS.BEFORE`
+
+Therefore do NOT patch BAT, Icon Leading Tooltip, JEI rendering, or ColorTooltips behavior.
+
+The next diagnostic target is the tooltip construction path BEFORE BAT receives `ItemTooltipEvent`.
+
+## Trace the upstream tooltip-generation boundary
+
+Instrument the exact Minecraft 1.21.1 / NeoForge 21.1.248 path that constructs the tooltip list and posts `ItemTooltipEvent`.
+
+Determine and verify the exact final compiled methods before adding Mixins/hooks.
+
+At minimum, capture these logical stages where available:
+
+1. ItemStack tooltip generation entry
+2. raw/generated tooltip list immediately before NeoForge tooltip event dispatch
+3. `ItemTooltipEvent` creation
+4. immediately before posting the event bus
+5. immediately after event bus posting
+6. first traced subscriber entry
+
+The purpose is to answer:
+
+`Where does the first frame-to-frame divergence exist?`
+
+Add stage names such as:
+
+`ITEMSTACK-TOOLTIP-GENERATED`
+`ITEMTOOLTIPEVENT-PRE-POST`
+`ITEMTOOLTIPEVENT-POST-POST`
+
+Only use names corresponding to real verified runtime hooks.
+
+## Identify earlier event subscribers
+
+BAT is not necessarily the first subscriber on the NeoForge event bus.
+
+Determine whether another `ItemTooltipEvent` listener runs before BAT.
+
+If technically possible without altering event order, instrument the event lifecycle so we can distinguish:
+
+- tooltip list already unstable when event is constructed
+- list changes during event-bus dispatch before BAT
+- BAT receives unchanged output from an earlier subscriber
+
+Do not assume BAT is the first listener merely because it is the first listener CT-BN currently traces.
+
+If another listener is identified before BAT, log its concrete owning class/mod only when supported by runtime evidence.
+
+Do not invent subscriber ownership.
+
+## Preserve the specific changing components
+
+For the stable flaming ruby pickaxe, continue tracking changes involving lines such as:
+
+`Obsidian Breaker III`
+
+`Increases the breaking speed of Obsidian`
+
+`Rubys' Fire`
+
+`Auto-Smelts ores (Pickaxe) / Extra Knockback / Burns, hurts and repels attackers...`
+
+Also preserve styled-component fingerprints.
+
+Visible text alone is insufficient because v2.2.1 proves styled hashes can change while text remains identical.
+
+Fingerprint should include:
+- component runtime class
+- plain text
+- full styled/component serialization or equivalent stable representation where safely available
+- stable SHA-256
+
+Do not use object identity as the logical comparison.
+
+## Correlation
+
+For the same stable logical item and hover session, correlate:
+
+`ItemStack/raw tooltip generation`
+→ `ItemTooltipEvent`
+→ earliest event-bus mutation
+→ BAT BEFORE
+→ Icon BEFORE
+→ JEI
+→ GuiGraphics
+→ ColorTooltips
+
+The next test should produce a single conclusion like:
+
+`firstMutationOwner=ITEMSTACK_TOOLTIP_GENERATION`
+
+or:
+
+`firstMutationOwner=<verified earlier ItemTooltipEvent subscriber>`
+
+or another concrete verified stage.
+
+Do not stop at:
+
+`upstream-of-BETTER_ADVANCED_TOOLTIPS.BEFORE`
+
+v2.2.2 must narrow that upstream region.
+
+## Reduce diagnostic volume again
+
+v2.2.1 still emitted approximately:
+
+- 6,168 CT-BN records
+- 3,843 `TOOLTIP-TRACE`
+- 854 `TOOLTIP-MUTATION`
+- 854 `JEI-SUBSEQUENT-INVOKE`
+- 422 `TOOLTIP-FIRST-DIVERGENCE`
+
+The old `TOOLTIP-OWNER` flood is fixed; preserve that improvement.
+
+Do not print the full downstream chain on every changing frame.
+
+For a stable hover:
+
+- log the first complete chain
+- thereafter log only the earliest divergence stage plus compact component diff
+- suppress downstream stages when they merely inherit the same already-known changed fingerprint
+- log a full chain again only if the earliest mutation stage changes, logical item changes, or after an optional ~5 second heartbeat
+
+`TOOLTIP-MUTATION changed=false` should normally be suppressed after first proof for that owner/session.
+
+BAT and Icon have now been proven non-mutating in this scenario, so do not emit hundreds of identical `changed=false` records.
+
+Preserve enough evidence to detect if they start mutating in a different session/item, but dedupe repeated unchanged outcomes.
+
+## Mandatory regression preservation
+
+Do not reintroduce:
+
+- ColorTooltips animator-reset redirect/no-op
+- `ItemStack.isSameItemSameComponents` redirect
+- tooltip cancellation
+- return-value overrides
+- automatic `@EventBusSubscriber`
+- vanilla `hoveredSlot` as primary JEI path
+- `NeoForge$EventBus`
+- `AbstractContainerMenu.slots:Ljava/util/List;`
+- old per-frame `onFrameWithoutLiveItem()` flood
+- old `TOOLTIP-OWNER` flood
+
+Preserve:
+
+`NeoForge.EVENT_BUS:Lnet/neoforged/bus/api/IEventBus;`
+
+`AbstractContainerMenu.slots:Lnet/minecraft/core/NonNullList;`
+
+`behavioral-fixes=false`
+
+and all currently working JEI/runtime diagnostics.
+
+## Build verification
+
+Perform clean build:
+
+`gradlew --stop`
+
+Delete:
+- `build/`
+- staging/output directories
+- old v2.2.2 artifacts
+
+Then:
+
+`gradlew clean`
+`gradlew build --no-build-cache --rerun-tasks`
+
+Inspect the exact final JAR.
+
+Verify the exact target method descriptors used for any new ItemStack/NeoForge tooltip-generation hooks against Minecraft 1.21.1 / NeoForge 21.1.248 compiled classes.
+
+Do not use simplified local stubs that can recreate the previous descriptor failures.
+
+## v2.2.2 acceptance
+
+Before delivery:
+
+- no previous descriptor regressions
+- no Mixin metadata regressions
+- `behavioral-fixes=false`
+- BAT/Icon tracing remains available but heavily deduped
+- upstream tooltip construction/event dispatch is instrumented
+- stable styled fingerprints can be compared across frames
+- full downstream chain is not repeated thousands of times
+
+The next runtime test must answer:
+
+**Is the changing tooltip created unstable by ItemStack/item tooltip generation itself, or does an earlier ItemTooltipEvent subscriber mutate it before BAT receives it?**
+
+Do not implement the flicker fix until that is proven.

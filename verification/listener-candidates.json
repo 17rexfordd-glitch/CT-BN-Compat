@@ -1,0 +1,302 @@
+[
+  {
+    "mixin": "UpstreamSubscriber01Mixin",
+    "ownerClass": "com.github.alexthe666.alexsmobs.event.ServerEvents",
+    "method": "onTooltip",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": true,
+    "auditedJar": "alexsmobs-1.22.17.jar",
+    "sha256": "6e502855f79e4c9f2a11d560a9b88a3ab295aa378c44b0f0a0dd95f95d0301a6",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  },
+  {
+    "mixin": "UpstreamSubscriber02Mixin",
+    "ownerClass": "net.mehvahdjukaar.amendments.platform.ClientEvents",
+    "method": "tooltipEvent",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": true,
+    "auditedJar": "amendments-neoforge-1.21-2.1.7.jar",
+    "sha256": "f2ab59fedfbfa09b67c55271599c9e31a2b44cdcbcf60cc2ee70b69c2fe0cf84",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  },
+  {
+    "mixin": "UpstreamSubscriber03Mixin",
+    "ownerClass": "dev.shadowsoffire.apotheosis.client.AdventureModuleClient",
+    "method": "affixTooltips",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": true,
+    "auditedJar": "Apotheosis-1.21.1-8.7.0.jar",
+    "sha256": "7309165a2096f441a5b042836616b98ec260e2d8631e85774279dbad3b1982b7",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  },
+  {
+    "mixin": "UpstreamSubscriber04Mixin",
+    "ownerClass": "dev.shadowsoffire.apotheosis.client.AdventureModuleClient",
+    "method": "showBlacklistedPotions",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": true,
+    "auditedJar": "Apotheosis-1.21.1-8.7.0.jar",
+    "sha256": "7309165a2096f441a5b042836616b98ec260e2d8631e85774279dbad3b1982b7",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  },
+  {
+    "mixin": "UpstreamSubscriber05Mixin",
+    "ownerClass": "dev.shadowsoffire.apothic_attributes.client.AttributesLibClient",
+    "method": "potionTooltips",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": false,
+    "auditedJar": "ApothicAttributes-1.21.1-2.10.1.jar",
+    "sha256": "484d52a58ba351d8e41775b351dad80f39a5bb4ed415bca67537a7f27de901ba",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  },
+  {
+    "mixin": "UpstreamSubscriber06Mixin",
+    "ownerClass": "dev.muon.apothiccombat.TooltipHandler",
+    "method": "onTooltip",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": true,
+    "auditedJar": "apothiccombat-1.2.1.jar",
+    "sha256": "6b3e34193896b6fea997110c08023f23684ae782ad44e2a7928c274e57b4fff1",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  },
+  {
+    "mixin": "UpstreamSubscriber07Mixin",
+    "ownerClass": "dev.shadowsoffire.apothic_enchanting.ApothEnchClient$ForgeBusEvents",
+    "method": "tooltips",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": false,
+    "auditedJar": "ApothicEnchanting-1.21.1-1.6.1.jar",
+    "sha256": "1f2063e07b8391e50f0ebaeb95b2624d09720ade89023d62868110171e3258b1",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  },
+  {
+    "mixin": "UpstreamSubscriber08Mixin",
+    "ownerClass": "dev.shadowsoffire.apothic_spawners.ASEvents",
+    "method": "handleTooltips",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": false,
+    "auditedJar": "ApothicSpawners-1.21.1-1.4.0.jar",
+    "sha256": "f0cbc52ad606997789c36fac94ae651ab7e2e21c841e26a952c64041cad9cdbe",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  },
+  {
+    "mixin": "UpstreamSubscriber09Mixin",
+    "ownerClass": "dev.architectury.event.forge.EventHandlerImplClient",
+    "method": "event",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": true,
+    "auditedJar": "architectury-13.0.11-neoforge.jar",
+    "sha256": "9cc92f2c09533fc5482c60f993bd891c655a0e32b637037cdcb7c2b23adedeeb",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  },
+  {
+    "mixin": "UpstreamSubscriber10Mixin",
+    "ownerClass": "net.bettercombat.neoforge.client.NeoForgeClientEvents",
+    "method": "onTooltip",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": true,
+    "auditedJar": "bettercombat-neoforge-2.4.0+1.21.1.jar",
+    "sha256": "0446e9faa98b764ba010ac31e337d14ac96bbb2fbfeff9b599e1efd510dfde5a",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  },
+  {
+    "mixin": "UpstreamSubscriber11Mixin",
+    "ownerClass": "com.arxyt.colonypathingedition.core.event.ItemTooltipEvent",
+    "method": "onItemTooltipEvent",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": true,
+    "auditedJar": "colonypathingedition-1.21.1-1.0.5-ALPHA-12-fix-1.jar",
+    "sha256": "07705f4605a8c9ea9cd1dbfe4d36fdd531a6840ccfd92225913d3445acc578a8",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  },
+  {
+    "mixin": "UpstreamSubscriber12Mixin",
+    "ownerClass": "com.simibubi.create.foundation.events.ClientEvents",
+    "method": "addToItemTooltip",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": true,
+    "auditedJar": "create-1.21.1-6.0.10.jar",
+    "sha256": "ef87fe5709f1ba1f5b8bb20a2925b5afb4669e178fd6d8bf10c167759eefe37a",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  },
+  {
+    "mixin": "UpstreamSubscriber13Mixin",
+    "ownerClass": "net.mcreator.createstuffadditions.procedures.DisableEnchantementTooltipProcedure",
+    "method": "onItemTooltip",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": true,
+    "auditedJar": "create-stuff-additions1.21.1_v2.1.4b.jar",
+    "sha256": "4aee9a1af2754609ab31bfebf13dc0d7d648e61e440232dbf9bb3459941e23d5",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  },
+  {
+    "mixin": "UpstreamSubscriber14Mixin",
+    "ownerClass": "dev.averageanime.neoforge.item.TooltipEvents",
+    "method": "onItemTooltip",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": true,
+    "auditedJar": "createfood-neoforge-1.21.1-2.7.1.jar",
+    "sha256": "f156291f5e16caf918acd5e77d052a82b8789a6be7a365d2d8e637efeaf3eb93",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  },
+  {
+    "mixin": "UpstreamSubscriber15Mixin",
+    "ownerClass": "top.theillusivec4.curios.client.ClientEventHandler",
+    "method": "onTooltip",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": false,
+    "auditedJar": "curios-neoforge-9.5.1+1.21.1.jar",
+    "sha256": "a45df2125c26219974aba7507ffc9afe7b83acc941a386af3faacb1cc0056fde",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  },
+  {
+    "mixin": "UpstreamSubscriber16Mixin",
+    "ownerClass": "com.dtteam.dynamictrees.event.handler.ClientGameEventHandler",
+    "method": "onItemTooltipAdded",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": true,
+    "auditedJar": "dynamictrees-neoforge-1.21.1-1.7.2.jar",
+    "sha256": "ef94737b99e68a0b489b56f901fcc71a3ac8e7a16e3a22ac8413c5f66df566f0",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  },
+  {
+    "mixin": "UpstreamSubscriber17Mixin",
+    "ownerClass": "vectorwing.farmersdelight.client.event.TooltipEvents",
+    "method": "addTooltipToVanillaSoups",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": true,
+    "auditedJar": "FarmersDelight-1.21.1-1.3.3.jar",
+    "sha256": "5dfe78ec57cfc793952611c77cb92d0d66765da5bd1ac326ba85faa4c236b78d",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  },
+  {
+    "mixin": "UpstreamSubscriber18Mixin",
+    "ownerClass": "com.anthonyhilyard.iceberg.neoforge.client.IcebergNeoForgeClient$NeoForgeEvents",
+    "method": "itemTooltipEvent",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": true,
+    "auditedJar": "Iceberg-1.21.1-neoforge-1.3.2.jar",
+    "sha256": "0d620c975619b04110b94a73d5b42d252563ff59c1eae9d21ab2ee7e38460a3c",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  },
+  {
+    "mixin": "UpstreamSubscriber19Mixin",
+    "ownerClass": "immersive_aircraft.neoforge.NeoForgeBusEvents",
+    "method": "onItemTooltips",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": true,
+    "auditedJar": "immersive_aircraft-1.4.6+1.21.1-neoforge.jar",
+    "sha256": "953222fefb9439b74760583d46dbf620ed85cc614f5ab629aec05ab6ce40ebe7",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  },
+  {
+    "mixin": "UpstreamSubscriber20Mixin",
+    "ownerClass": "dev.latvian.mods.kubejs.client.KubeJSClientEventHandler",
+    "method": "onItemTooltip",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": true,
+    "auditedJar": "kubejs-neoforge-2101.7.2-build.374.jar",
+    "sha256": "4cd1a21cdda2d0b147995a59aa2cd3b3b21b5603d5aae4fda4995e2d4c19a101",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  },
+  {
+    "mixin": "UpstreamSubscriber21Mixin",
+    "ownerClass": "com.minecolonies.core.event.ClientEventHandler",
+    "method": "onItemTooltipEvent",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": true,
+    "auditedJar": "minecolonies-1.1.1345-1.21.1-snapshot.jar",
+    "sha256": "2eff73f5267a7aa093b32cd798f02163bd85eb76b450045b8a5fb8e7997bcde1",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  },
+  {
+    "mixin": "UpstreamSubscriber22Mixin",
+    "ownerClass": "org.yanbwe.raritycore.client.RarityTooltipHandler",
+    "method": "onItemTooltip",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": true,
+    "auditedJar": "raritycore-1211.14.5.jar",
+    "sha256": "ed1e72e5a91f6a1959964c0e87bb61998640f15ccabc148d9ffbf17afeefbb9d",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  },
+  {
+    "mixin": "UpstreamSubscriber23Mixin",
+    "ownerClass": "it.hurts.sskirillss.relics.client.handlers.DescriptionHandler",
+    "method": "onItemTooltip",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": true,
+    "auditedJar": "relics-1.21.1-0.12.8.jar",
+    "sha256": "db6f436053fe717413389e55390a5f98103ccd91cca5fe469e090bdfaef70717",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  },
+  {
+    "mixin": "UpstreamSubscriber24Mixin",
+    "ownerClass": "it.hurts.shatterbyte.reliquified_artifacts.handlers.TooltipHandler",
+    "method": "onTooltip",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": true,
+    "auditedJar": "reliquified_artifacts-1.21.1-1.0.8.jar",
+    "sha256": "360fd701d575b5421675bfdc50c6ed8a22614410eb92dd782424f9b5fb5c0006",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  },
+  {
+    "mixin": "UpstreamSubscriber25Mixin",
+    "ownerClass": "cy.jdkdigital.sgearmetalworks.event.EventHandler",
+    "method": "itemTooltip",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": true,
+    "auditedJar": "sgearmetalworks-1.21.1-1.5.0.jar",
+    "sha256": "a8d3512f94cf4df1c2f5881dd59401b754f30d352e96b3c49772cebd527a2615",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  },
+  {
+    "mixin": "UpstreamSubscriber26Mixin",
+    "ownerClass": "net.silentchaos512.gear.client.event.TooltipHandler",
+    "method": "onTooltip",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": false,
+    "auditedJar": "silent-gear-1.21.1-neoforge-4.2.1.1.jar",
+    "sha256": "d24d5f4794b069941845c1bde30475f8ea6066635ddb1139d706f6a627b4c0f3",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  },
+  {
+    "mixin": "UpstreamSubscriber27Mixin",
+    "ownerClass": "net.silentchaos512.gear.setup.SgDataComponents$TooltipHandler",
+    "method": "onTooltip",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": true,
+    "auditedJar": "silent-gear-1.21.1-neoforge-4.2.1.1.jar",
+    "sha256": "d24d5f4794b069941845c1bde30475f8ea6066635ddb1139d706f6a627b4c0f3",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  },
+  {
+    "mixin": "UpstreamSubscriber28Mixin",
+    "ownerClass": "com.cazsius.solcarrot.client.TooltipHandler",
+    "method": "onItemTooltip",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": true,
+    "auditedJar": "solcarrot-1.21.1-1.16.6.jar",
+    "sha256": "ae3e73a08c8373fbee639b2feaf21c2e08caf9e4a44f8dfa610f44a5143f2fd1",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  },
+  {
+    "mixin": "UpstreamSubscriber29Mixin",
+    "ownerClass": "net.mehvahdjukaar.supplementaries.common.events.platform.ClientEventsForge",
+    "method": "onItemTooltip",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": true,
+    "auditedJar": "supplementaries-1.21.1-3.9.1-neoforge.jar",
+    "sha256": "cdbbeb6eca83a1d6005acd5edfca360102ea798129ce7a0941e34e59e15b5c7b",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  },
+  {
+    "mixin": "UpstreamSubscriber30Mixin",
+    "ownerClass": "ovh.corail.tombstone.event.ClientEventHandler",
+    "method": "handleTooltip",
+    "descriptor": "(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",
+    "static": true,
+    "auditedJar": "tombstone-neoforge-1.21.1-9.5.5.jar",
+    "sha256": "450affdf6348d8bbf89fb4e59484b7db6cf5dd19d5815553a4047d7d6d58feca",
+    "runtimeOrder": "UNPROVEN until observed during captured dispatch"
+  }
+]

@@ -1,0 +1,54 @@
+CT-BN-Compat v2.0.17 recovered-source audit
+Reference JAR SHA-256: d9fcc82c01e979d63997a9e2b17fdddba2f75451817d6a8242bb43aec612b55c
+
+Reference JAR class inventory:
+dev/devun/ctbncompat/ClientRuntimeDiagnostics$MousePos.class
+dev/devun/ctbncompat/ClientRuntimeDiagnostics.class
+dev/devun/ctbncompat/ColorTooltipsBetterNetherCompat.class
+dev/devun/ctbncompat/DiagnosticLog.class
+dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceCheck.class
+dev/devun/ctbncompat/DiagnosticMixinPlugin$ResourceStatus.class
+dev/devun/ctbncompat/DiagnosticMixinPlugin.class
+dev/devun/ctbncompat/RuntimeMetadataGuard.class
+dev/devun/ctbncompat/bridge/AbstractContainerScreenBridge.class
+dev/devun/ctbncompat/mixin/AbstractContainerScreenMixin.class
+dev/devun/ctbncompat/mixin/BetterAdvancedTooltipsMixin.class
+dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin.class
+dev/devun/ctbncompat/mixin/ColorTooltipsAnimatorMixin.class
+dev/devun/ctbncompat/mixin/ColorTooltipsLifecycleMixin.class
+dev/devun/ctbncompat/mixin/GuiGraphicsTooltipMixin.class
+dev/devun/ctbncompat/mixin/IconLeadingTooltipMixin.class
+dev/devun/ctbncompat/mixin/ImmersiveUiRenderMixin.class
+dev/devun/ctbncompat/mixin/JeiTooltipMixin.class
+dev/devun/ctbncompat/mixin/ScreenRenderMixin.class
+dev/devun/ctbncompat/mixin/SimplyTooltipsRendererMixin.class
+
+Recovered Java source inventory:
+dev/devun/ctbncompat/ClientRuntimeDiagnostics.java
+dev/devun/ctbncompat/ColorTooltipsBetterNetherCompat.java
+dev/devun/ctbncompat/DiagnosticLog.java
+dev/devun/ctbncompat/DiagnosticMixinPlugin.java
+dev/devun/ctbncompat/RuntimeMetadataGuard.java
+dev/devun/ctbncompat/bridge/AbstractContainerScreenBridge.java
+dev/devun/ctbncompat/mixin/AbstractContainerScreenMixin.java
+dev/devun/ctbncompat/mixin/BetterAdvancedTooltipsMixin.java
+dev/devun/ctbncompat/mixin/ColorTooltipsAnimationMixin.java
+dev/devun/ctbncompat/mixin/ColorTooltipsAnimatorMixin.java
+dev/devun/ctbncompat/mixin/ColorTooltipsLifecycleMixin.java
+dev/devun/ctbncompat/mixin/GuiGraphicsTooltipMixin.java
+dev/devun/ctbncompat/mixin/IconLeadingTooltipMixin.java
+dev/devun/ctbncompat/mixin/ImmersiveUiRenderMixin.java
+dev/devun/ctbncompat/mixin/JeiTooltipMixin.java
+dev/devun/ctbncompat/mixin/ScreenRenderMixin.java
+dev/devun/ctbncompat/mixin/SimplyTooltipsRendererMixin.java
+
+Static acceptance checks:
+top-level Java sources=17
+@Mixin classes=11
+behavioral injector annotations=0
+normal typed refs to defined mixin package=0
+
+Resource SHA-256:
+6120a390cd357a05bd9e895529197f349d376d42ea49d57dfa7271991d8b282d  /mnt/data/CT-BN-Compat-1.21.1-v2.0.17-source/src/main/resources/META-INF/neoforge.mods.toml
+aa64548b1e51234d15754085468a1baf7fb007c7551a3293d604aa61871d3078  /mnt/data/CT-BN-Compat-1.21.1-v2.0.17-source/src/main/resources/ct_bn_v2.mixins.json
+89321c5aab61429fb5ad01e7643a6c68058ebdccf0d7595a508a7aeae336d289  /mnt/data/CT-BN-Compat-1.21.1-v2.0.17-source/src/main/resources/DIAGNOSTIC-NOTES.txt

@@ -36,10 +36,10 @@ This file tracks CT-BN-Compat builds produced during the ChatGPT-assisted Minecr
 - Built artifact: `CT-BN-Compat-1.21.1-v2.1.0.jar`
 - Source snapshot: `CT-BN-Compat-1.21.1-v2.1.0-source.zip`
 - SHA-256: `27e6c3b4cbcea8c7c40fee154d2dab3da99a3647525e3c9eb6b85ba3956f477d`
-- Purpose: diagnostic-only senior audit and cleanup baseline before continuing runtime testing.
-- Key verification: all 13 configured Mixins have CLASS-retention `@Mixin` in `RuntimeInvisibleAnnotations`; all packaged classes are Java 21/classfile major 65; known bad descriptors are absent; no reflection, stubs, duplicate ZIP entries, or normal runtime references into the Mixin package are present.
-- Preserved: JEI IngredientGrid/JeiTooltip/RenderHelper diagnostic path, corrected NeoForge `@Mod.dist` metadata, external bridge architecture, and no behavioral tooltip modification.
-- Notes: `DIAGNOSTIC-NOTES.txt` is rewritten as a concise v2.1.0 design/regression baseline.
+- Purpose: diagnostic-only senior audit and cleanup baseline; verifies packaged Mixin metadata, known descriptors, bootstrap/runtime architecture, and JEI ingredient-hover instrumentation before further runtime testing.
+- Key verification: all configured Mixins use CLASS-retention `@Mixin`, all classes are Java 21, no known bad descriptors/reflection/runtime references into the Mixin package/stubs/duplicate ZIP entries are present, and `DIAGNOSTIC-NOTES.txt` is rewritten as a concise v2.1.0 design document.
+- Preserved: JEI IngredientGrid/JeiTooltip/RenderHelper diagnostics, corrected NeoForge `@Mod.dist` metadata, external bridge architecture, and no behavioral tooltip modification.
+
 
 ### v2.0.25
 
@@ -47,32 +47,13 @@ This file tracks CT-BN-Compat builds produced during the ChatGPT-assisted Minecr
 - Source snapshot: `CT-BN-Compat-1.21.1-v2.0.25-source.zip`
 - SHA-256: `939f52c0c64b07fdb7e2c3b903bd8dd3a7fddb9aa4258fc1369864ed2e0d18f2`
 - Purpose: diagnostic-only stale marker correction; updates packaged Mixin bootstrap and ACTIVE runtime markers to 2.0.25.
-- Key verification: mod metadata, main ACTIVE marker, and Mixin bootstrap marker all report 2.0.25; no stale executable 2.0.23 or 2.0.24 marker remains in the final packaged JAR.
-- Preserved: v2.0.24 corrected NeoForge `@Mod(dist=[Dist.CLIENT])` array metadata, v2.0.23 Mixin CLASS-retention annotations, JEI ingredient-hover diagnostics, JEI RenderHelper handoff marker, external bridge architecture, NeoForge/Minecraft descriptor fixes, and no behavioral tooltip modification.
+- Preserved: v2.0.24 corrected NeoForge `@Mod(dist=[Dist.CLIENT])` array metadata, Sponge Mixin CLASS-retention annotations, JEI ingredient-hover diagnostics, and no behavioral tooltip modification.
 
-### v2.0.24
-
-- Built artifact: `CT-BN-Compat-1.21.1-v2.0.24.jar`
-- Source snapshot: `CT-BN-Compat-1.21.1-v2.0.24-source.zip`
-- SHA-256: `35380b5bababf83cebd15b620d6962104f16be83ada72b946024b098fce12638`
-- Purpose: diagnostic-only startup fix correcting malformed NeoForge annotation metadata that could trip automatic subscriber/mod annotation scanning before the runtime anchor registered.
-- Key verification: packaged `@Mod(dist=...)` now stores `dist` as a one-element `Dist[]` array value; no packaged automatic event-subscriber annotation metadata is present.
-- Preserved: v2.0.23 Mixin CLASS-retention annotations, JEI ingredient-hover diagnostics, JEI RenderHelper handoff marker, external bridge architecture, NeoForge/Minecraft descriptor fixes, and no behavioral tooltip modification.
 
 ### v2.0.23
 
 - Built artifact: `CT-BN-Compat-1.21.1-v2.0.23.jar`
 - Source snapshot: `CT-BN-Compat-1.21.1-v2.0.23-source.zip`
-- SHA-256: `1fcff03c89b9c6dc54b812b0869f2521daf5f8e6c90edd35337f0eee80e94c5a`
-- Purpose: diagnostic-only startup fix correcting final packaged Sponge Mixin annotation retention.
-- Key verification: every class listed in `ct_bn_v2.mixins.json` stores class-level `org.spongepowered.asm.mixin.Mixin` under `RuntimeInvisibleAnnotations`, not `RuntimeVisibleAnnotations`.
-- Preserved: JEI ingredient-hover diagnostics, JEI RenderHelper handoff marker, external bridge architecture, NeoForge/Minecraft descriptor fixes, and no behavioral tooltip modification.
-- Notes: source tree was recovered from compiled artifacts and conversation-retained files, not from an original historical Git checkout.
-
-### v2.0.22
-
-- Built artifact: `CT-BN-Compat-1.21.1-v2.0.22.jar`
-- Source snapshot: `CT-BN-Compat-1.21.1-v2.0.22-source.zip`
 - SHA-256: `7a3ab5e7d9fd9e85ab3eca7daa5704aa7ccfbe0bbbbbea876c466c82696c93e0`
 - Purpose: diagnostic-only build preserving JEI ingredient-hover instrumentation and fixing the packaged `ScreenRenderMixin` Mixin annotation issue.
 - Notes: source tree was recovered from compiled artifacts and conversation-retained files, not from an original historical Git checkout.
@@ -86,3 +67,29 @@ Every new version built after this repository was created should add:
 3. the SHA-256 hash,
 4. a short change summary,
 5. whether the build is diagnostic-only or includes a behavioral fix.
+
+
+### v2.0.23
+
+- Built artifact: `releases/v2.0.23/CT-BN-Compat-1.21.1-v2.0.23.jar`
+- Source snapshot: `releases/v2.0.23/CT-BN-Compat-1.21.1-v2.0.23-source.zip`
+- JAR SHA-256: `1fcff03c89b9c6dc54b812b0869f2521daf5f8e6c90edd35337f0eee80e94c5a`
+- Source SHA-256: `96a7dbc1b90408cabfcd394fdc4445add46bf37118dcd6069156464806704bab`
+- Purpose: diagnostic-only correction for Sponge Mixin annotation retention in the final packaged JAR.
+- Verification: all 13 configured Mixins store class-level `@Mixin` under `RuntimeInvisibleAnnotations`; no bundled `org/spongepowered/...` stubs; JEI diagnostics preserved.
+
+# CT-BN-Compat v2.2.0
+
+Diagnostic-only update from the hash-verified v2.1.3 baseline. Unchanged BetterNether RUNTIME-HOVER records now use a five-second heartbeat; changed hover state is immediate. Version markers are synchronized. Clean compilation with real dependencies corrects the old registry lookup invocation and emits correct Inject.at arrays.
+
+All prior descriptor fixes, 13 Mixins, JEI hooks, runtime anchor, and existing dedupe are preserved. No tooltip/animation behavior fix. Clean build and packaged-bytecode validation passed; no in-game launch was performed.
+
+JAR SHA-256: b0451eb08ee9e8182ff4239153caf999e723fe9838db88ecbe0e1aadc1f25a5c
+
+See ../../verification/VERIFICATION.md and ../../README.md for evidence and reproduction instructions.
+
+## v2.2.1
+Diagnostic-only mutation tracing and logical-state dedupe; real clean source build. All supplied release history and references retained. See releases/v2.2.1 and verification/.
+
+## v2.2.2
+Upstream construction/event dispatch diagnostic boundaries, 30 optional exact-method handler observations, canonical component JSON fingerprints, and reduced downstream logging. No behavior fix. Clean build and static verification evidence in verification/. Historical releases and original reference dependencies retained.

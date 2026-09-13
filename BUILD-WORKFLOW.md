@@ -35,3 +35,24 @@ Repository rule:
 
 - The repository is the durable reference going forward.
 - Each new build should update source, version archive, and artifact metadata.
+
+
+## v2.1.1 verification addendum
+
+Before delivery, inspect the final packaged main class and confirm `GETSTATIC net/neoforged/neoforge/common/NeoForge.EVENT_BUS:Lnet/neoforged/bus/api/IEventBus;`. Reject any build containing `NeoForge$EventBus`.
+
+
+## v2.1.2 verification addendum
+
+Before delivery, inspect the final packaged diagnostics classes and confirm any `GETFIELD net/minecraft/world/inventory/AbstractContainerMenu.slots` uses descriptor `Lnet/minecraft/core/NonNullList;`. Reject any build containing `AbstractContainerMenu.slots:Ljava/util/List;` in executable bytecode.
+
+
+## v2.1.3 verification addendum — onFrameWithoutLiveItem dedupe
+
+Before delivery, inspect the final packaged `DiagnosticLog.class` and confirm `COLORTOOLTIPS onFrameWithoutLiveItem()` diagnostic emission is deduplicated by entry/state-change with a heartbeat no faster than about five seconds. Confirm `behavioral-fixes=false` and no animation/state behavior modification.
+
+## v2.2.1
+Run stop, remove build, clean, then build --no-build-cache --rerun-tasks. The diagnosticTest task is part of check. Verify all prior injection selectors remain plus the new paired RETURN hooks and read-only text bridge. Test logical-state dedupe and distinguish first observed divergence from proven handler mutation. No behavior fix without gameplay evidence.
+
+## v2.2.2
+Upstream construction/event dispatch diagnostic boundaries, 30 optional exact-method handler observations, canonical component JSON fingerprints, and reduced downstream logging. No behavior fix. Clean build and static verification evidence in verification/. Historical releases and original reference dependencies retained.

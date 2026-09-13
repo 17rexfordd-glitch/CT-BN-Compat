@@ -1,0 +1,1493 @@
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/ColorTooltipsBetterNetherCompat.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/ColorTooltipsBetterNetherCompat.java
+@@ -10,7 +10,7 @@
+ 
+     public ColorTooltipsBetterNetherCompat() {
+         NeoForge.EVENT_BUS.addListener(ClientRuntimeDiagnostics::onClientTick);
+-        DiagnosticLog.log("v2.2.1 diagnostics ACTIVE clean-baseline=true neoforge-event-bus-descriptor=IEventBus minecraft-slots-descriptor=NonNullList tooltip-owner-dedupe=true colortooltips-no-live-item-dedupe=true runtime-hover-dedupe=true tooltip-mutation-tracing=true logical-state-dedupe=true behavioral-fixes=false");
++        DiagnosticLog.log("v2.2.2 diagnostics ACTIVE clean-baseline=true neoforge-event-bus-descriptor=IEventBus minecraft-slots-descriptor=NonNullList tooltip-owner-dedupe=true colortooltips-no-live-item-dedupe=true runtime-hover-dedupe=true tooltip-mutation-tracing=true logical-state-dedupe=true behavioral-fixes=false");
+         DiagnosticLog.log("CLIENT-RUNTIME-ANCHOR REGISTERED event=net.neoforged.neoforge.client.event.ClientTickEvent.Post bus=NeoForge.EVENT_BUS descriptor=Lnet/neoforged/bus/api/IEventBus;");
+         DiagnosticLog.applied(DiagnosticMixinPlugin.appliedSnapshot());
+         DiagnosticLog.verifiedPrimaryHooks();
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/DiagnosticMixinPlugin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/DiagnosticMixinPlugin.java
+@@ -11,6 +11,39 @@
+ import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
+ 
+ public final class DiagnosticMixinPlugin implements IMixinConfigPlugin {
++    private static final Map<String,String[]> UPSTREAM_CANDIDATES = Map.ofEntries(
++            Map.entry("UpstreamSubscriber01Mixin", new String[]{"com/github/alexthe666/alexsmobs/event/ServerEvents","onTooltip","alexsmobs-1.22.17.jar","8"}),
++            Map.entry("UpstreamSubscriber02Mixin", new String[]{"net/mehvahdjukaar/amendments/platform/ClientEvents","tooltipEvent","amendments-neoforge-1.21-2.1.7.jar","8"}),
++            Map.entry("UpstreamSubscriber03Mixin", new String[]{"dev/shadowsoffire/apotheosis/client/AdventureModuleClient","affixTooltips","Apotheosis-1.21.1-8.7.0.jar","8"}),
++            Map.entry("UpstreamSubscriber04Mixin", new String[]{"dev/shadowsoffire/apotheosis/client/AdventureModuleClient","showBlacklistedPotions","Apotheosis-1.21.1-8.7.0.jar","8"}),
++            Map.entry("UpstreamSubscriber05Mixin", new String[]{"dev/shadowsoffire/apothic_attributes/client/AttributesLibClient","potionTooltips","ApothicAttributes-1.21.1-2.10.1.jar","0"}),
++            Map.entry("UpstreamSubscriber06Mixin", new String[]{"dev/muon/apothiccombat/TooltipHandler","onTooltip","apothiccombat-1.2.1.jar","8"}),
++            Map.entry("UpstreamSubscriber07Mixin", new String[]{"dev/shadowsoffire/apothic_enchanting/ApothEnchClient$ForgeBusEvents","tooltips","ApothicEnchanting-1.21.1-1.6.1.jar","0"}),
++            Map.entry("UpstreamSubscriber08Mixin", new String[]{"dev/shadowsoffire/apothic_spawners/ASEvents","handleTooltips","ApothicSpawners-1.21.1-1.4.0.jar","0"}),
++            Map.entry("UpstreamSubscriber09Mixin", new String[]{"dev/architectury/event/forge/EventHandlerImplClient","event","architectury-13.0.11-neoforge.jar","8"}),
++            Map.entry("UpstreamSubscriber10Mixin", new String[]{"net/bettercombat/neoforge/client/NeoForgeClientEvents","onTooltip","bettercombat-neoforge-2.4.0+1.21.1.jar","8"}),
++            Map.entry("UpstreamSubscriber11Mixin", new String[]{"com/arxyt/colonypathingedition/core/event/ItemTooltipEvent","onItemTooltipEvent","colonypathingedition-1.21.1-1.0.5-ALPHA-12-fix-1.jar","8"}),
++            Map.entry("UpstreamSubscriber12Mixin", new String[]{"com/simibubi/create/foundation/events/ClientEvents","addToItemTooltip","create-1.21.1-6.0.10.jar","8"}),
++            Map.entry("UpstreamSubscriber13Mixin", new String[]{"net/mcreator/createstuffadditions/procedures/DisableEnchantementTooltipProcedure","onItemTooltip","create-stuff-additions1.21.1_v2.1.4b.jar","8"}),
++            Map.entry("UpstreamSubscriber14Mixin", new String[]{"dev/averageanime/neoforge/item/TooltipEvents","onItemTooltip","createfood-neoforge-1.21.1-2.7.1.jar","8"}),
++            Map.entry("UpstreamSubscriber15Mixin", new String[]{"top/theillusivec4/curios/client/ClientEventHandler","onTooltip","curios-neoforge-9.5.1+1.21.1.jar","0"}),
++            Map.entry("UpstreamSubscriber16Mixin", new String[]{"com/dtteam/dynamictrees/event/handler/ClientGameEventHandler","onItemTooltipAdded","dynamictrees-neoforge-1.21.1-1.7.2.jar","8"}),
++            Map.entry("UpstreamSubscriber17Mixin", new String[]{"vectorwing/farmersdelight/client/event/TooltipEvents","addTooltipToVanillaSoups","FarmersDelight-1.21.1-1.3.3.jar","8"}),
++            Map.entry("UpstreamSubscriber18Mixin", new String[]{"com/anthonyhilyard/iceberg/neoforge/client/IcebergNeoForgeClient$NeoForgeEvents","itemTooltipEvent","Iceberg-1.21.1-neoforge-1.3.2.jar","8"}),
++            Map.entry("UpstreamSubscriber19Mixin", new String[]{"immersive_aircraft/neoforge/NeoForgeBusEvents","onItemTooltips","immersive_aircraft-1.4.6+1.21.1-neoforge.jar","8"}),
++            Map.entry("UpstreamSubscriber20Mixin", new String[]{"dev/latvian/mods/kubejs/client/KubeJSClientEventHandler","onItemTooltip","kubejs-neoforge-2101.7.2-build.374.jar","8"}),
++            Map.entry("UpstreamSubscriber21Mixin", new String[]{"com/minecolonies/core/event/ClientEventHandler","onItemTooltipEvent","minecolonies-1.1.1345-1.21.1-snapshot.jar","8"}),
++            Map.entry("UpstreamSubscriber22Mixin", new String[]{"org/yanbwe/raritycore/client/RarityTooltipHandler","onItemTooltip","raritycore-1211.14.5.jar","8"}),
++            Map.entry("UpstreamSubscriber23Mixin", new String[]{"it/hurts/sskirillss/relics/client/handlers/DescriptionHandler","onItemTooltip","relics-1.21.1-0.12.8.jar","8"}),
++            Map.entry("UpstreamSubscriber24Mixin", new String[]{"it/hurts/shatterbyte/reliquified_artifacts/handlers/TooltipHandler","onTooltip","reliquified_artifacts-1.21.1-1.0.8.jar","8"}),
++            Map.entry("UpstreamSubscriber25Mixin", new String[]{"cy/jdkdigital/sgearmetalworks/event/EventHandler","itemTooltip","sgearmetalworks-1.21.1-1.5.0.jar","8"}),
++            Map.entry("UpstreamSubscriber26Mixin", new String[]{"net/silentchaos512/gear/client/event/TooltipHandler","onTooltip","silent-gear-1.21.1-neoforge-4.2.1.1.jar","0"}),
++            Map.entry("UpstreamSubscriber27Mixin", new String[]{"net/silentchaos512/gear/setup/SgDataComponents$TooltipHandler","onTooltip","silent-gear-1.21.1-neoforge-4.2.1.1.jar","8"}),
++            Map.entry("UpstreamSubscriber28Mixin", new String[]{"com/cazsius/solcarrot/client/TooltipHandler","onItemTooltip","solcarrot-1.21.1-1.16.6.jar","8"}),
++            Map.entry("UpstreamSubscriber29Mixin", new String[]{"net/mehvahdjukaar/supplementaries/common/events/platform/ClientEventsForge","onItemTooltip","supplementaries-1.21.1-3.9.1-neoforge.jar","8"}),
++            Map.entry("UpstreamSubscriber30Mixin", new String[]{"ovh/corail/tombstone/event/ClientEventHandler","handleTooltip","tombstone-neoforge-1.21.1-9.5.5.jar","8"})
++    );
++
+     private static final ConcurrentLinkedQueue<String> APPLIED = new ConcurrentLinkedQueue<>();
+ 
+     private static final Map<String, String> OPTIONAL_TARGETS = Map.of(
+@@ -75,7 +108,7 @@
+ 
+     @Override
+     public void onLoad(String mixinPackage) {
+-        bootLog("MIXIN-PLUGIN-BOOTSTRAP-SAFE version=2.2.1 strategy=class-resource-only no-fml-runtime-state=true");
++        bootLog("MIXIN-PLUGIN-BOOTSTRAP-SAFE version=2.2.2 strategy=class-resource-only no-fml-runtime-state=true");
+     }
+ 
+     @Override
+@@ -86,6 +119,8 @@
+     @Override
+     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
+         String simpleName = mixinClassName.substring(mixinClassName.lastIndexOf('.') + 1);
++        String[] candidate = UPSTREAM_CANDIDATES.get(simpleName);
++        if (candidate != null) return verifiedCandidate(candidate);
+         String target = OPTIONAL_TARGETS.get(simpleName);
+         if (target == null) {
+             return true;
+@@ -179,4 +214,23 @@
+         APPLIED.add(entry);
+         bootLog("MIXIN-APPLIED " + entry);
+     }
++    private static boolean verifiedCandidate(String[] c) {
++        String resource = c[0]+".class";
++        for (ClassLoader loader : new ClassLoader[]{DiagnosticMixinPlugin.class.getClassLoader(),Thread.currentThread().getContextClassLoader()}) {
++            if(loader==null)continue;
++            try (java.io.InputStream input=loader.getResourceAsStream(resource)) {
++                if(input==null)continue;
++                ClassNode node=new ClassNode();
++                new org.objectweb.asm.ClassReader(input).accept(node,org.objectweb.asm.ClassReader.SKIP_CODE|org.objectweb.asm.ClassReader.SKIP_DEBUG);
++                boolean found=node.methods.stream().anyMatch(method->method.name.equals(c[1])
++                        &&method.desc.equals("(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V")
++                        &&(method.access&8)==Integer.parseInt(c[3]));
++                bootLog("UPSTREAM-CANDIDATE "+(found?"ENABLED":"SKIPPED")+" class="+c[0]+" method="+c[1]+" auditedJar="+c[2]+" runtimeOrder=UNPROVEN");
++                return found;
++            } catch (Exception failure) {
++                bootLog("UPSTREAM-CANDIDATE SKIPPED class="+c[0]+" reason=resource-check-failed");return false;
++            }
++        }
++        return false;
++    }
+ }
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/EventHooksTooltipMixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/EventHooksTooltipMixin.java
+@@ -0,0 +1,26 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="net.neoforged.neoforge.event.EventHooks", remap=false)
++public abstract class EventHooksTooltipMixin {
++    @Inject(method="onItemTooltip(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;Ljava/util/List;Lnet/minecraft/world/item/TooltipFlag;Lnet/minecraft/world/item/Item$TooltipContext;)Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;", at=@At("HEAD"), require=1, remap=false)
++    private static void ctbn$generated(ItemStack stack, Player player, List<Component> list, TooltipFlag flag, Item.TooltipContext context, CallbackInfoReturnable<ItemTooltipEvent> cir) { UpstreamTrace.generated(stack,list); }
++    @Inject(method="onItemTooltip(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;Ljava/util/List;Lnet/minecraft/world/item/TooltipFlag;Lnet/minecraft/world/item/Item$TooltipContext;)Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;", at=@At(value="INVOKE",target="Lnet/neoforged/bus/api/IEventBus;post(Lnet/neoforged/bus/api/Event;)Lnet/neoforged/bus/api/Event;",shift=At.Shift.BEFORE), require=1, remap=false)
++    private static void ctbn$prePost(ItemStack stack, Player player, List<Component> list, TooltipFlag flag, Item.TooltipContext context, CallbackInfoReturnable<ItemTooltipEvent> cir) { UpstreamTrace.prePost(stack,list); }
++    @Inject(method="onItemTooltip(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;Ljava/util/List;Lnet/minecraft/world/item/TooltipFlag;Lnet/minecraft/world/item/Item$TooltipContext;)Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;", at=@At(value="INVOKE",target="Lnet/neoforged/bus/api/IEventBus;post(Lnet/neoforged/bus/api/Event;)Lnet/neoforged/bus/api/Event;",shift=At.Shift.AFTER), require=1, remap=false)
++    private static void ctbn$postPost(ItemStack stack, Player player, List<Component> list, TooltipFlag flag, Item.TooltipContext context, CallbackInfoReturnable<ItemTooltipEvent> cir) { UpstreamTrace.postPost(stack,list); }
++    @Inject(method="onItemTooltip(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;Ljava/util/List;Lnet/minecraft/world/item/TooltipFlag;Lnet/minecraft/world/item/Item$TooltipContext;)Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;", at=@At("RETURN"), require=1, remap=false)
++    private static void ctbn$returned(ItemStack stack, Player player, List<Component> list, TooltipFlag flag, Item.TooltipContext context, CallbackInfoReturnable<ItemTooltipEvent> cir) { UpstreamTrace.returned(stack,list); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/ItemStackTooltipMixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/ItemStackTooltipMixin.java
+@@ -0,0 +1,26 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(ItemStack.class)
++public abstract class ItemStackTooltipMixin {
++    @Inject(method="getTooltipLines(Lnet/minecraft/world/item/Item$TooltipContext;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/TooltipFlag;)Ljava/util/List;", at=@At("HEAD"), require=1)
++    private void ctbn$entry(Item.TooltipContext context,Player player,TooltipFlag flag,CallbackInfoReturnable<List<Component>> cir) {
++        UpstreamTrace.itemEntry((ItemStack)(Object)this);
++    }
++    @Inject(method="getTooltipLines(Lnet/minecraft/world/item/Item$TooltipContext;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/TooltipFlag;)Ljava/util/List;", at=@At("RETURN"), require=1)
++    private void ctbn$return(Item.TooltipContext context,Player player,TooltipFlag flag,CallbackInfoReturnable<List<Component>> cir) {
++        UpstreamTrace.itemReturn((ItemStack)(Object)this);
++    }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/ItemTooltipEventMixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/ItemTooltipEventMixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(ItemTooltipEvent.class)
++public abstract class ItemTooltipEventMixin {
++    @Inject(method="<init>(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;Ljava/util/List;Lnet/minecraft/world/item/TooltipFlag;Lnet/minecraft/world/item/Item$TooltipContext;)V",at=@At("RETURN"),require=1,remap=false)
++    private void ctbn$created(ItemStack stack,Player player,List<Component> list,TooltipFlag flag,Item.TooltipContext context,CallbackInfo ci) {
++        UpstreamTrace.created((ItemTooltipEvent)(Object)this);
++    }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber01Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber01Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="com.github.alexthe666.alexsmobs.event.ServerEvents",remap=false)
++public abstract class UpstreamSubscriber01Mixin {
++    @Inject(method="onTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private static void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("com.github.alexthe666.alexsmobs.event.ServerEvents.onTooltip",event); }
++    @Inject(method="onTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private static void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("com.github.alexthe666.alexsmobs.event.ServerEvents.onTooltip",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber02Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber02Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="net.mehvahdjukaar.amendments.platform.ClientEvents",remap=false)
++public abstract class UpstreamSubscriber02Mixin {
++    @Inject(method="tooltipEvent(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private static void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("net.mehvahdjukaar.amendments.platform.ClientEvents.tooltipEvent",event); }
++    @Inject(method="tooltipEvent(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private static void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("net.mehvahdjukaar.amendments.platform.ClientEvents.tooltipEvent",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber03Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber03Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="dev.shadowsoffire.apotheosis.client.AdventureModuleClient",remap=false)
++public abstract class UpstreamSubscriber03Mixin {
++    @Inject(method="affixTooltips(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private static void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("dev.shadowsoffire.apotheosis.client.AdventureModuleClient.affixTooltips",event); }
++    @Inject(method="affixTooltips(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private static void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("dev.shadowsoffire.apotheosis.client.AdventureModuleClient.affixTooltips",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber04Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber04Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="dev.shadowsoffire.apotheosis.client.AdventureModuleClient",remap=false)
++public abstract class UpstreamSubscriber04Mixin {
++    @Inject(method="showBlacklistedPotions(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private static void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("dev.shadowsoffire.apotheosis.client.AdventureModuleClient.showBlacklistedPotions",event); }
++    @Inject(method="showBlacklistedPotions(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private static void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("dev.shadowsoffire.apotheosis.client.AdventureModuleClient.showBlacklistedPotions",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber05Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber05Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="dev.shadowsoffire.apothic_attributes.client.AttributesLibClient",remap=false)
++public abstract class UpstreamSubscriber05Mixin {
++    @Inject(method="potionTooltips(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("dev.shadowsoffire.apothic_attributes.client.AttributesLibClient.potionTooltips",event); }
++    @Inject(method="potionTooltips(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("dev.shadowsoffire.apothic_attributes.client.AttributesLibClient.potionTooltips",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber06Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber06Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="dev.muon.apothiccombat.TooltipHandler",remap=false)
++public abstract class UpstreamSubscriber06Mixin {
++    @Inject(method="onTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private static void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("dev.muon.apothiccombat.TooltipHandler.onTooltip",event); }
++    @Inject(method="onTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private static void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("dev.muon.apothiccombat.TooltipHandler.onTooltip",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber07Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber07Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="dev.shadowsoffire.apothic_enchanting.ApothEnchClient$ForgeBusEvents",remap=false)
++public abstract class UpstreamSubscriber07Mixin {
++    @Inject(method="tooltips(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("dev.shadowsoffire.apothic_enchanting.ApothEnchClient$ForgeBusEvents.tooltips",event); }
++    @Inject(method="tooltips(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("dev.shadowsoffire.apothic_enchanting.ApothEnchClient$ForgeBusEvents.tooltips",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber08Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber08Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="dev.shadowsoffire.apothic_spawners.ASEvents",remap=false)
++public abstract class UpstreamSubscriber08Mixin {
++    @Inject(method="handleTooltips(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("dev.shadowsoffire.apothic_spawners.ASEvents.handleTooltips",event); }
++    @Inject(method="handleTooltips(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("dev.shadowsoffire.apothic_spawners.ASEvents.handleTooltips",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber09Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber09Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="dev.architectury.event.forge.EventHandlerImplClient",remap=false)
++public abstract class UpstreamSubscriber09Mixin {
++    @Inject(method="event(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private static void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("dev.architectury.event.forge.EventHandlerImplClient.event",event); }
++    @Inject(method="event(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private static void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("dev.architectury.event.forge.EventHandlerImplClient.event",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber10Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber10Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="net.bettercombat.neoforge.client.NeoForgeClientEvents",remap=false)
++public abstract class UpstreamSubscriber10Mixin {
++    @Inject(method="onTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private static void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("net.bettercombat.neoforge.client.NeoForgeClientEvents.onTooltip",event); }
++    @Inject(method="onTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private static void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("net.bettercombat.neoforge.client.NeoForgeClientEvents.onTooltip",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber11Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber11Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="com.arxyt.colonypathingedition.core.event.ItemTooltipEvent",remap=false)
++public abstract class UpstreamSubscriber11Mixin {
++    @Inject(method="onItemTooltipEvent(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private static void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("com.arxyt.colonypathingedition.core.event.ItemTooltipEvent.onItemTooltipEvent",event); }
++    @Inject(method="onItemTooltipEvent(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private static void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("com.arxyt.colonypathingedition.core.event.ItemTooltipEvent.onItemTooltipEvent",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber12Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber12Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="com.simibubi.create.foundation.events.ClientEvents",remap=false)
++public abstract class UpstreamSubscriber12Mixin {
++    @Inject(method="addToItemTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private static void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("com.simibubi.create.foundation.events.ClientEvents.addToItemTooltip",event); }
++    @Inject(method="addToItemTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private static void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("com.simibubi.create.foundation.events.ClientEvents.addToItemTooltip",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber13Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber13Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="net.mcreator.createstuffadditions.procedures.DisableEnchantementTooltipProcedure",remap=false)
++public abstract class UpstreamSubscriber13Mixin {
++    @Inject(method="onItemTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private static void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("net.mcreator.createstuffadditions.procedures.DisableEnchantementTooltipProcedure.onItemTooltip",event); }
++    @Inject(method="onItemTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private static void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("net.mcreator.createstuffadditions.procedures.DisableEnchantementTooltipProcedure.onItemTooltip",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber14Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber14Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="dev.averageanime.neoforge.item.TooltipEvents",remap=false)
++public abstract class UpstreamSubscriber14Mixin {
++    @Inject(method="onItemTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private static void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("dev.averageanime.neoforge.item.TooltipEvents.onItemTooltip",event); }
++    @Inject(method="onItemTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private static void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("dev.averageanime.neoforge.item.TooltipEvents.onItemTooltip",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber15Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber15Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="top.theillusivec4.curios.client.ClientEventHandler",remap=false)
++public abstract class UpstreamSubscriber15Mixin {
++    @Inject(method="onTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("top.theillusivec4.curios.client.ClientEventHandler.onTooltip",event); }
++    @Inject(method="onTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("top.theillusivec4.curios.client.ClientEventHandler.onTooltip",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber16Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber16Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="com.dtteam.dynamictrees.event.handler.ClientGameEventHandler",remap=false)
++public abstract class UpstreamSubscriber16Mixin {
++    @Inject(method="onItemTooltipAdded(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private static void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("com.dtteam.dynamictrees.event.handler.ClientGameEventHandler.onItemTooltipAdded",event); }
++    @Inject(method="onItemTooltipAdded(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private static void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("com.dtteam.dynamictrees.event.handler.ClientGameEventHandler.onItemTooltipAdded",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber17Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber17Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="vectorwing.farmersdelight.client.event.TooltipEvents",remap=false)
++public abstract class UpstreamSubscriber17Mixin {
++    @Inject(method="addTooltipToVanillaSoups(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private static void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("vectorwing.farmersdelight.client.event.TooltipEvents.addTooltipToVanillaSoups",event); }
++    @Inject(method="addTooltipToVanillaSoups(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private static void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("vectorwing.farmersdelight.client.event.TooltipEvents.addTooltipToVanillaSoups",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber18Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber18Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="com.anthonyhilyard.iceberg.neoforge.client.IcebergNeoForgeClient$NeoForgeEvents",remap=false)
++public abstract class UpstreamSubscriber18Mixin {
++    @Inject(method="itemTooltipEvent(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private static void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("com.anthonyhilyard.iceberg.neoforge.client.IcebergNeoForgeClient$NeoForgeEvents.itemTooltipEvent",event); }
++    @Inject(method="itemTooltipEvent(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private static void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("com.anthonyhilyard.iceberg.neoforge.client.IcebergNeoForgeClient$NeoForgeEvents.itemTooltipEvent",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber19Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber19Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="immersive_aircraft.neoforge.NeoForgeBusEvents",remap=false)
++public abstract class UpstreamSubscriber19Mixin {
++    @Inject(method="onItemTooltips(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private static void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("immersive_aircraft.neoforge.NeoForgeBusEvents.onItemTooltips",event); }
++    @Inject(method="onItemTooltips(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private static void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("immersive_aircraft.neoforge.NeoForgeBusEvents.onItemTooltips",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber20Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber20Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="dev.latvian.mods.kubejs.client.KubeJSClientEventHandler",remap=false)
++public abstract class UpstreamSubscriber20Mixin {
++    @Inject(method="onItemTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private static void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("dev.latvian.mods.kubejs.client.KubeJSClientEventHandler.onItemTooltip",event); }
++    @Inject(method="onItemTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private static void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("dev.latvian.mods.kubejs.client.KubeJSClientEventHandler.onItemTooltip",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber21Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber21Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="com.minecolonies.core.event.ClientEventHandler",remap=false)
++public abstract class UpstreamSubscriber21Mixin {
++    @Inject(method="onItemTooltipEvent(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private static void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("com.minecolonies.core.event.ClientEventHandler.onItemTooltipEvent",event); }
++    @Inject(method="onItemTooltipEvent(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private static void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("com.minecolonies.core.event.ClientEventHandler.onItemTooltipEvent",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber22Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber22Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="org.yanbwe.raritycore.client.RarityTooltipHandler",remap=false)
++public abstract class UpstreamSubscriber22Mixin {
++    @Inject(method="onItemTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private static void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("org.yanbwe.raritycore.client.RarityTooltipHandler.onItemTooltip",event); }
++    @Inject(method="onItemTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private static void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("org.yanbwe.raritycore.client.RarityTooltipHandler.onItemTooltip",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber23Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber23Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="it.hurts.sskirillss.relics.client.handlers.DescriptionHandler",remap=false)
++public abstract class UpstreamSubscriber23Mixin {
++    @Inject(method="onItemTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private static void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("it.hurts.sskirillss.relics.client.handlers.DescriptionHandler.onItemTooltip",event); }
++    @Inject(method="onItemTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private static void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("it.hurts.sskirillss.relics.client.handlers.DescriptionHandler.onItemTooltip",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber24Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber24Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="it.hurts.shatterbyte.reliquified_artifacts.handlers.TooltipHandler",remap=false)
++public abstract class UpstreamSubscriber24Mixin {
++    @Inject(method="onTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private static void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("it.hurts.shatterbyte.reliquified_artifacts.handlers.TooltipHandler.onTooltip",event); }
++    @Inject(method="onTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private static void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("it.hurts.shatterbyte.reliquified_artifacts.handlers.TooltipHandler.onTooltip",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber25Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber25Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="cy.jdkdigital.sgearmetalworks.event.EventHandler",remap=false)
++public abstract class UpstreamSubscriber25Mixin {
++    @Inject(method="itemTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private static void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("cy.jdkdigital.sgearmetalworks.event.EventHandler.itemTooltip",event); }
++    @Inject(method="itemTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private static void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("cy.jdkdigital.sgearmetalworks.event.EventHandler.itemTooltip",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber26Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber26Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="net.silentchaos512.gear.client.event.TooltipHandler",remap=false)
++public abstract class UpstreamSubscriber26Mixin {
++    @Inject(method="onTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("net.silentchaos512.gear.client.event.TooltipHandler.onTooltip",event); }
++    @Inject(method="onTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("net.silentchaos512.gear.client.event.TooltipHandler.onTooltip",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber27Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber27Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="net.silentchaos512.gear.setup.SgDataComponents$TooltipHandler",remap=false)
++public abstract class UpstreamSubscriber27Mixin {
++    @Inject(method="onTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private static void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("net.silentchaos512.gear.setup.SgDataComponents$TooltipHandler.onTooltip",event); }
++    @Inject(method="onTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private static void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("net.silentchaos512.gear.setup.SgDataComponents$TooltipHandler.onTooltip",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber28Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber28Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="com.cazsius.solcarrot.client.TooltipHandler",remap=false)
++public abstract class UpstreamSubscriber28Mixin {
++    @Inject(method="onItemTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private static void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("com.cazsius.solcarrot.client.TooltipHandler.onItemTooltip",event); }
++    @Inject(method="onItemTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private static void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("com.cazsius.solcarrot.client.TooltipHandler.onItemTooltip",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber29Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber29Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="net.mehvahdjukaar.supplementaries.common.events.platform.ClientEventsForge",remap=false)
++public abstract class UpstreamSubscriber29Mixin {
++    @Inject(method="onItemTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private static void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("net.mehvahdjukaar.supplementaries.common.events.platform.ClientEventsForge.onItemTooltip",event); }
++    @Inject(method="onItemTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private static void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("net.mehvahdjukaar.supplementaries.common.events.platform.ClientEventsForge.onItemTooltip",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber30Mixin.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/mixin/UpstreamSubscriber30Mixin.java
+@@ -0,0 +1,22 @@
++package dev.devun.ctbncompat.mixin;
++import dev.devun.ctbncompat.TooltipTrace;
++import dev.devun.ctbncompat.UpstreamTrace;
++import java.util.List;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
++import net.minecraft.world.item.TooltipFlag;
++import net.minecraft.world.entity.player.Player;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++@Mixin(targets="ovh.corail.tombstone.event.ClientEventHandler",remap=false)
++public abstract class UpstreamSubscriber30Mixin {
++    @Inject(method="handleTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("HEAD"),require=1,remap=false)
++    private static void ctbn$before(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.before("ovh.corail.tombstone.event.ClientEventHandler.handleTooltip",event); }
++    @Inject(method="handleTooltip(Lnet/neoforged/neoforge/event/entity/player/ItemTooltipEvent;)V",at=@At("RETURN"),require=1,remap=false)
++    private static void ctbn$after(ItemTooltipEvent event,CallbackInfo ci) { UpstreamTrace.after("ovh.corail.tombstone.event.ClientEventHandler.handleTooltip",event); }
++}
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/TooltipTrace.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/TooltipTrace.java
+@@ -8,6 +8,10 @@
+ import net.minecraft.client.Minecraft;
+ import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
+ import net.minecraft.network.chat.FormattedText;
++import net.minecraft.network.chat.Component;
++import net.minecraft.core.HolderLookup;
++import net.minecraft.core.RegistryAccess;
++import com.google.gson.*;
+ import net.minecraft.network.chat.Style;
+ import net.minecraft.util.FormattedCharSequence;
+ import net.minecraft.world.item.ItemStack;
+@@ -23,10 +27,17 @@
+     private static String logical="none";
+     private static long frame, hoverFrame=-100, epoch, eventSequence;
+     private static Object screen;
+-    private record Pending(String owner,ItemTooltipEvent event,long token,long frame,String logical,Snapshot before) {}
++    private static HolderLookup.Provider serializationContext=RegistryAccess.EMPTY;
++    private record Pending(String owner,ItemTooltipEvent event,long token,long frame,String logical,Snapshot before,String evidence) {}
+     private TooltipTrace() {}
+     public static void beginFrame(long next,Object currentScreen) {
++        Minecraft client=Minecraft.getInstance();
++        beginFrame(next,currentScreen,client.level==null?RegistryAccess.EMPTY:client.level.registryAccess());
++    }
++    static void beginFrame(long next,Object currentScreen,HolderLookup.Provider registries) {
+         frame=next;
++        UpstreamTrace.beginFrame();
++        serializationContext=registries;
+         if(currentScreen!=screen) { logicalCopy=null;hoverFrame=-100;screen=currentScreen; }
+         // HEAD without RETURN (e.g. a throwing handler) must not retain an event indefinitely.
+         PENDING.get().clear();
+@@ -38,6 +49,7 @@
+         return a!=null&&b!=null&&a.getCount()==b.getCount()&&ItemStack.isSameItemSameComponents(a,b);
+     }
+     public static boolean recent() { return logicalCopy!=null&&frame==hoverFrame; }
++    public static boolean matchesHover(ItemStack stack) { return recent()&&sameItem(stack,logicalCopy); }
+     public static void hover(ItemStack stack,int x,int y) {
+         if(stack==null||stack.isEmpty()){logicalCopy=null;hoverFrame=-100;return;}
+         if(!sameItem(stack,logicalCopy)) {
+@@ -47,7 +59,7 @@
+         if(frame-hoverFrame>1) { NORMAL_STATES.clear();NORMAL_TIMES.clear(); }
+         hoverFrame=frame;
+         TRACE.begin(frame,logical);
+-        TRACE.emit("grid",logical,System.nanoTime(),"JEI-INGREDIENT-HOVER path=IngredientGrid.drawTooltip recentJeiHover=true contents=not-yet-created mouse="+x+","+y+" ITEM-IDENTITY="+identity(stack));
++        TRACE.chain("JEI-INGREDIENT-HOVER path=IngredientGrid.drawTooltip recentJeiHover=true contents=not-yet-created mouse="+x+","+y+" ITEM-IDENTITY="+identity(stack));
+     }
+     private static String identity(Object o) { return o==null?"null":Integer.toHexString(System.identityHashCode(o)); }
+     public static void normal(String key,String state,String message) {
+@@ -66,9 +78,9 @@
+             normal("mismatch:"+path,signature(stack),"JEI-CHAIN-MISMATCH path="+path+" observed="+signature(stack)+" expected="+logical+" ITEM-IDENTITY="+identity(stack));return;
+         }
+         if(tooltip==null) {
+-            TRACE.emit(path,logical+TRACE.inheritedFingerprint(),System.nanoTime(),"JEI-SUBSEQUENT-INVOKE path="+path+" recentJeiHover=true contents=not-exposed inheritedTooltipSHA256="+TRACE.inheritedFingerprint()+" ITEM-IDENTITY="+identity(stack)+" "+evidence);return;
++            TRACE.chain("JEI-SUBSEQUENT-INVOKE path="+path+" recentJeiHover=true contents=not-exposed inheritedTooltipSHA256="+TRACE.inheritedFingerprint()+" ITEM-IDENTITY="+identity(stack)+" "+evidence);return;
+         }
+-        TRACE.stage(path,snapshot(tooltip),System.nanoTime(),"recentJeiHover=true ITEM-IDENTITY="+identity(stack));
++        TRACE.stage(path,snapshot(tooltip),System.nanoTime(),"recentJeiHover=true ITEM-IDENTITY="+identity(stack)+" "+evidence);
+     }
+     public static void before(String owner,ItemTooltipEvent event) {
+         if(!recent()||!sameItem(event.getItemStack(),logicalCopy))return;
+@@ -76,8 +88,9 @@
+         Deque<Pending> pending=PENDING.get();
+         if(pending.size()>=64) { normal("depth-limit","limit","TRACE-INCOMPLETE reason=handler-depth-limit");return; }
+         long token=++eventSequence;
+-        pending.push(new Pending(owner,event,token,frame,logical,before));
+-        TRACE.stage(owner+".BEFORE",before,System.nanoTime(),"event="+token+" ITEM-IDENTITY="+identity(event.getItemStack()));
++        String evidence=UpstreamTrace.handlerEvidence(owner,event);
++        pending.push(new Pending(owner,event,token,frame,logical,before,evidence));
++        TRACE.stage(owner+".BEFORE",before,System.nanoTime(),"event="+token+" ITEM-IDENTITY="+identity(event.getItemStack())+" "+evidence);
+     }
+     public static void after(String owner,ItemTooltipEvent event) {
+         Deque<Pending> pending=PENDING.get();
+@@ -87,8 +100,8 @@
+         }
+         if(match==null||match.frame!=frame||!match.logical.equals(logical))return;
+         Snapshot after=snapshot(event.getToolTip());
+-        TRACE.stage(owner+".AFTER",after,System.nanoTime(),"event="+match.token+" ITEM-IDENTITY="+identity(event.getItemStack()));
+-        TRACE.pair(owner,match.token,match.before,after,System.nanoTime(),"item="+signature(event.getItemStack())+" logicalItemChanged="+!sameItem(event.getItemStack(),logicalCopy));
++        TRACE.stage(owner+".AFTER",after,System.nanoTime(),"event="+match.token+" ITEM-IDENTITY="+identity(event.getItemStack())+" "+match.evidence);
++        TRACE.pair(owner,match.token,match.before,after,System.nanoTime(),"item="+signature(event.getItemStack())+" logicalItemChanged="+!sameItem(event.getItemStack(),logicalCopy)+" "+match.evidence);
+     }
+     public static Snapshot snapshot(Object tooltip) {
+         List<Element> elements=new ArrayList<>();
+@@ -123,7 +136,29 @@
+             styled.append("width=").append(visual.getWidth(Minecraft.getInstance().font)).append(";height=").append(visual.getHeight());
+             text.append(styled);
+         } else { coverage="opaque-type-only";styled.append(type); }
+-        return new Element(type,text.toString(),TraceModel.hash(styled.toString()),coverage);
++        String representation=styled.toString();
++        if(value instanceof Component component) {
++            try {
++                String json=Component.Serializer.toJson(component,serializationContext);
++                representation=canonical(JsonParser.parseString(json));
++                styled.append(";component-json=").append(representation);
++                coverage="full-component-json-and-styled-text";
++            } catch (RuntimeException unsupported) {
++                coverage="styled-text-partial-serialization-unavailable";
++            }
++        }
++        return new Element(type,text.toString(),TraceModel.hash(styled.toString()),coverage,representation);
++    }
++    private static String canonical(JsonElement json) {
++        if(json.isJsonObject()) {
++            JsonObject sorted=new JsonObject();
++            new TreeSet<>(json.getAsJsonObject().keySet()).forEach(k->sorted.add(k,JsonParser.parseString(canonical(json.getAsJsonObject().get(k)))));
++            return sorted.toString();
++        }
++        if(json.isJsonArray()) {
++            JsonArray array=new JsonArray();for(JsonElement e:json.getAsJsonArray())array.add(JsonParser.parseString(canonical(e)));return array.toString();
++        }
++        return json.toString();
+     }
+     private static void append(StringBuilder text,StringBuilder styled,Style s,int cp) {
+         text.appendCodePoint(cp);
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/trace/TraceModel.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/trace/TraceModel.java
+@@ -18,8 +18,9 @@
+         String escaped = value.replace("\\", "\\\\").replace("\n", "\\n").replace("\r", "\\r").replace("\t", "\\t").replace("\"", "\\\"");
+         return escaped.length() <= 120 ? escaped : escaped.substring(0, 120) + "...";
+     }
+-    public record Element(String type, String text, String hash, String coverage) {
+-        public String describe(int index) { return "{index="+index+",type="+type+",text=\""+brief(text)+"\",sha256="+hash+",coverage="+coverage+"}"; }
++    public record Element(String type, String text, String hash, String coverage,String representation) {
++        public Element(String type,String text,String hash,String coverage) { this(type,text,hash,coverage,""); }
++        public String describe(int index) { return "{index="+index+",type="+type+",text=\""+brief(text)+"\",sha256="+hash+",coverage="+coverage+",representation=\""+brief(representation)+"\"}"; }
+     }
+     public record Snapshot(List<Element> elements, String hash) {
+         public Snapshot { elements = List.copyOf(elements); }
+@@ -58,7 +59,7 @@
+             for(int i=0;i<Math.max(a.size(),b.size());i++) {
+                 if(i>=a.size())added.add(b.get(i).describe(i));
+                 else if(i>=b.size())removed.add(a.get(i).describe(i));
+-                else if(!same(a.get(i),b.get(i)))modified.add(a.get(i).describe(i)+"->"+b.get(i).describe(i));
++                else if(!same(a.get(i),b.get(i)))modified.add(modification(a.get(i),i,b.get(i),i));
+             }
+         }
+         return "added="+limited(added)+" removed="+limited(removed)+" modified="+limited(modified)
+@@ -66,12 +67,23 @@
+     }
+     private static void flush(List<Element>a,List<Element>b,List<Integer>x,List<Integer>y,List<String>added,List<String>removed,List<String>modified) {
+         int paired=Math.min(x.size(),y.size());
+-        for(int k=0;k<paired;k++)modified.add(a.get(x.get(k)).describe(x.get(k))+"->"+b.get(y.get(k)).describe(y.get(k)));
++        for(int k=0;k<paired;k++)modified.add(modification(a.get(x.get(k)),x.get(k),b.get(y.get(k)),y.get(k)));
+         for(int k=paired;k<x.size();k++)removed.add(a.get(x.get(k)).describe(x.get(k)));
+         for(int k=paired;k<y.size();k++)added.add(b.get(y.get(k)).describe(y.get(k)));
+         x.clear();y.clear();
+     }
+     private static String limited(List<String> xs) { return xs.subList(0,Math.min(8,xs.size()))+"(total="+xs.size()+")"; }
++    private static String modification(Element a,int oldIndex,Element b,int newIndex) {
++        String extra="";
++        if(!a.representation.equals(b.representation)) {
++            int offset=0,common=Math.min(a.representation.length(),b.representation.length());
++            while(offset<common&&a.representation.charAt(offset)==b.representation.charAt(offset))offset++;
++            int start=Math.max(0,offset-30);
++            extra=" representationFirstDifference="+offset+" before=\""+brief(a.representation.substring(start,Math.min(a.representation.length(),offset+70)))
++                    +"\" after=\""+brief(b.representation.substring(start,Math.min(b.representation.length(),offset+70)))+"\"";
++        }
++        return a.describe(oldIndex)+"->"+b.describe(newIndex)+extra;
++    }
+ 
+     public static final class Recorder {
+         private final Consumer<String> sink;
+@@ -82,17 +94,40 @@
+         private long frame=-1,session;
+         private String logical="",firstMutation="";
+         private String inherited="not-yet-sampled";
++        private boolean fullFrame;
++        private long lastFullNs;
++        private String lastMutationOwner="";
++        private final List<Supplier<String>> buffered=new ArrayList<>();
++        private final Map<String,Boolean> outcomes=new HashMap<>();
+         public Recorder(Consumer<String> sink) { this.sink=sink; }
+         public void begin(long frame,String logical) {
++            begin(frame,logical,System.nanoTime());
++        }
++        public void begin(long frame,String logical,long now) {
+             boolean fresh=!this.logical.equals(logical)||frame>this.frame+1;
+-            if(fresh) { previous.clear();current.clear();last.clear();times.clear();session++; }
++            if(fresh) { previous.clear();current.clear();last.clear();times.clear();outcomes.clear();lastMutationOwner="";session++; }
+             if(this.frame!=frame||fresh) {
+                 previous=current;current=new HashMap<>();occurrences.clear();firstMutation="";inherited="not-yet-sampled";
++                buffered.clear();fullFrame=fresh||now-lastFullNs>=5_000_000_000L;
++                if(fullFrame)lastFullNs=now;
+             }
+             this.frame=frame;this.logical=logical;
+         }
+         public String context() { return " session="+session+" frame="+frame+" logicalItem="+logical; }
+         public String inheritedFingerprint() { return inherited; }
++        public void chain(String message) { chain(()->message); }
++        private void chain(Supplier<String> message) {
++            if(fullFrame)sink.accept(message.get()+context());
++            else if(buffered.size()<256)buffered.add(message);
++        }
++        private static String mutationOwner(String path,String evidence) {
++            if(path.equals("ITEMSTACK-TOOLTIP-GENERATED"))return "ITEMSTACK_TOOLTIP_GENERATION";
++            if(path.equals("ITEMTOOLTIPEVENT-CREATED"))return "ITEMTOOLTIPEVENT_CONSTRUCTION";
++            if(path.equals("ITEMTOOLTIPEVENT-PRE-POST"))return "ITEMTOOLTIPEVENT_PRE_DISPATCH";
++            if(path.equals("ITEMTOOLTIPEVENT-POST-POST"))return "EVENTBUS_DISPATCH_UNTRACED_INTERVAL";
++            if(path.endsWith(".BEFORE"))return (evidence.contains("verifiedDispatch=true")?"EVENTBUS_DISPATCH_BEFORE:":"UNOBSERVED_INTERVAL_BEFORE:")+path;
++            return path;
++        }
+         public boolean emit(String key,String state,long now,String message) {
+             return emit(key,state,now,()->message);
+         }
+@@ -113,17 +148,26 @@
+             Snapshot old=previous.get(key);
+             boolean changed=old!=null&&!old.hash.equals(snapshot.hash);
+             if(changed&&firstMutation.isEmpty()) {
+-                firstMutation=path.endsWith(".BEFORE")?"upstream-of-"+path:path;
+-                sink.accept("TOOLTIP-FIRST-DIVERGENCE firstMutationOwner="+firstMutation+" attribution=first-observed-point previousFrame="+(frame-1)+" occurrence="+occurrence+" "+diff(old,snapshot)+context());
++                firstMutation=mutationOwner(path,evidence);
++                if(!firstMutation.equals(lastMutationOwner)) {
++                    fullFrame=true;lastFullNs=now;
++                    for(var message:buffered)sink.accept(message.get()+context());
++                    buffered.clear();lastMutationOwner=firstMutation;
++                }
++                sink.accept("TOOLTIP-FIRST-DIVERGENCE firstMutationOwner="+firstMutation+" attribution=first-observed-point previousFrame="+(frame-1)+" occurrence="+occurrence+" "+evidence+" "+diff(old,snapshot)+context());
+             }
+-            emit("stage:"+key,snapshot.hash,now,()->"TOOLTIP-TRACE path="+path+" occurrence="+occurrence+" "+snapshot.summary()+" changedFromPreviousFrame="+changed+" "+evidence
++            chain(()->"TOOLTIP-TRACE path="+path+" occurrence="+occurrence+" "+snapshot.summary()+" changedFromPreviousFrame="+changed+" "+evidence
+                     +(changed?" "+diff(old,snapshot):" elements="+snapshot.describe()));
+         }
+         public void pair(String owner,long event,Snapshot before,Snapshot after,long now,String evidence) {
+             boolean changed=!before.hash.equals(after.hash);
+             int occurrence=occurrences.merge("pair:"+owner,1,Integer::sum);
+             if(occurrence>64)return;
+-            emit("pair:"+owner+"#"+occurrence,before.hash+after.hash,now,()->"TOOLTIP-MUTATION owner="+owner+" event="+event+" occurrence="+occurrence+" changed="+changed+" BEFORE["+before.summary()+"] AFTER["+after.summary()+"] "+diff(before,after)+" "+evidence);
++            String key=owner+"#"+occurrence;
++            Boolean previousOutcome=outcomes.put(key,changed);
++            // Repeated changed=false is proof about the handler, independent of unstable incoming content.
++            if(previousOutcome==null||previousOutcome!=changed||(changed&&fullFrame))
++                sink.accept("TOOLTIP-MUTATION owner="+owner+" event="+event+" occurrence="+occurrence+" changed="+changed+" BEFORE["+before.summary()+"] AFTER["+after.summary()+"] "+diff(before,after)+" "+evidence+context());
+         }
+     }
+ }
+--- v2.2.1/src/main/java/dev/devun/ctbncompat/UpstreamTrace.java
++++ v2.2.2/src/main/java/dev/devun/ctbncompat/UpstreamTrace.java
+@@ -0,0 +1,75 @@
++package dev.devun.ctbncompat;
++
++import java.util.*;
++import net.minecraft.network.chat.Component;
++import net.minecraft.world.item.ItemStack;
++import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
++
++/** Correlates actual constructor/post boundaries without replacing dispatch or registering listeners. */
++public final class UpstreamTrace {
++    private static final ThreadLocal<Deque<Dispatch>> CALLS=ThreadLocal.withInitial(ArrayDeque::new);
++    private static final ThreadLocal<Deque<ItemStack>> GENERATION=ThreadLocal.withInitial(ArrayDeque::new);
++    private static long eventSequence;
++    private static final class Dispatch {
++        final ItemStack stack; final List<Component> list; final long token;
++        ItemTooltipEvent event; boolean posting;
++        int subscriberOrder;
++        Dispatch(ItemStack stack,List<Component> list) { this.stack=stack;this.list=list;token=++eventSequence; }
++    }
++    private UpstreamTrace() {}
++    public static void beginFrame() { CALLS.get().clear();GENERATION.get().clear(); }
++    public static void itemEntry(ItemStack stack) {
++        if(TooltipTrace.matchesHover(stack)) {
++            GENERATION.get().push(stack);
++            TooltipTrace.point("ITEMSTACK-TOOLTIP-ENTRY",stack,null);
++        }
++    }
++    public static void itemReturn(ItemStack stack) {
++        if(GENERATION.get().peek()==stack)GENERATION.get().pop();
++    }
++    public static void generated(ItemStack stack,List<Component> list) {
++        if(!TooltipTrace.matchesHover(stack))return;
++        Deque<Dispatch> calls=CALLS.get();
++        if(calls.size()>=32){TooltipTrace.normal("dispatch-depth","limit","TRACE-INCOMPLETE reason=dispatch-depth-limit");return;}
++        Dispatch d=new Dispatch(stack,list);calls.push(d);
++        boolean fromGeneration=GENERATION.get().peek()==stack;
++        TooltipTrace.point(fromGeneration?"ITEMSTACK-TOOLTIP-GENERATED":"EVENTHOOKS-TOOLTIP-INPUT",stack,list,"dispatch="+d.token+" boundary=EventHooks.onItemTooltip.HEAD verifiedItemStackGeneration="+fromGeneration);
++    }
++    public static void created(ItemTooltipEvent event) {
++        Dispatch d=CALLS.get().peek();
++        if(d==null||event.getToolTip()!=d.list||event.getItemStack()!=d.stack)return;
++        d.event=event;
++        TooltipTrace.point("ITEMTOOLTIPEVENT-CREATED",d.stack,d.list,"dispatch="+d.token+" boundary=constructor.RETURN");
++    }
++    public static void prePost(ItemStack stack,List<Component> list) {
++        Dispatch d=matching(stack,list);if(d==null)return;
++        d.posting=true;
++        TooltipTrace.point("ITEMTOOLTIPEVENT-PRE-POST",stack,list,"dispatch="+d.token+" eventCaptured="+(d.event!=null));
++    }
++    public static void postPost(ItemStack stack,List<Component> list) {
++        Dispatch d=matching(stack,list);if(d==null)return;
++        d.posting=false;
++        TooltipTrace.point("ITEMTOOLTIPEVENT-POST-POST",stack,list,"dispatch="+d.token+" tracedHandlerInvocations="+d.subscriberOrder);
++    }
++    public static void returned(ItemStack stack,List<Component> list) {
++        if(matching(stack,list)!=null)CALLS.get().pop();
++    }
++    private static Dispatch matching(ItemStack stack,List<Component> list) {
++        Dispatch d=CALLS.get().peek();return d!=null&&d.stack==stack&&d.list==list?d:null;
++    }
++    public static String handlerEvidence(String owner,ItemTooltipEvent event) {
++        Dispatch d=CALLS.get().peek();
++        if(d==null||!d.posting||d.event!=event)return "verifiedDispatch=false";
++        return "verifiedDispatch=true dispatch="+d.token+" tracedHandlerOrder="+(++d.subscriberOrder)+" concreteHandler="+owner
++                +" orderScope=instrumented-handler-invocations-not-complete-listener-roster";
++    }
++    public static boolean dispatched(ItemTooltipEvent event) {
++        Dispatch d=CALLS.get().peek();return d!=null&&d.posting&&d.event==event;
++    }
++    public static void before(String owner,ItemTooltipEvent event) {
++        if(dispatched(event))TooltipTrace.before(owner,event);
++    }
++    public static void after(String owner,ItemTooltipEvent event) {
++        if(dispatched(event))TooltipTrace.after(owner,event);
++    }
++}
+--- v2.2.1/src/main/resources/ct_bn_v2.mixins.json
++++ v2.2.2/src/main/resources/ct_bn_v2.mixins.json
+@@ -18,7 +18,40 @@
+     "BetterAdvancedTooltipsMixin",
+     "ImmersiveUiRenderMixin",
+     "IconLeadingTooltipMixin",
+-    "ClientTextTooltipMixin"
++    "ClientTextTooltipMixin",
++    "ItemStackTooltipMixin",
++    "EventHooksTooltipMixin",
++    "ItemTooltipEventMixin",
++    "UpstreamSubscriber01Mixin",
++    "UpstreamSubscriber02Mixin",
++    "UpstreamSubscriber03Mixin",
++    "UpstreamSubscriber04Mixin",
++    "UpstreamSubscriber05Mixin",
++    "UpstreamSubscriber06Mixin",
++    "UpstreamSubscriber07Mixin",
++    "UpstreamSubscriber08Mixin",
++    "UpstreamSubscriber09Mixin",
++    "UpstreamSubscriber10Mixin",
++    "UpstreamSubscriber11Mixin",
++    "UpstreamSubscriber12Mixin",
++    "UpstreamSubscriber13Mixin",
++    "UpstreamSubscriber14Mixin",
++    "UpstreamSubscriber15Mixin",
++    "UpstreamSubscriber16Mixin",
++    "UpstreamSubscriber17Mixin",
++    "UpstreamSubscriber18Mixin",
++    "UpstreamSubscriber19Mixin",
++    "UpstreamSubscriber20Mixin",
++    "UpstreamSubscriber21Mixin",
++    "UpstreamSubscriber22Mixin",
++    "UpstreamSubscriber23Mixin",
++    "UpstreamSubscriber24Mixin",
++    "UpstreamSubscriber25Mixin",
++    "UpstreamSubscriber26Mixin",
++    "UpstreamSubscriber27Mixin",
++    "UpstreamSubscriber28Mixin",
++    "UpstreamSubscriber29Mixin",
++    "UpstreamSubscriber30Mixin"
+   ],
+   "injectors": {
+     "defaultRequire": 1
+--- v2.2.1/src/main/resources/DIAGNOSTIC-NOTES.txt
++++ v2.2.2/src/main/resources/DIAGNOSTIC-NOTES.txt
+@@ -1,49 +1,58 @@
+-CT-BN-Compat v2.2.1 — tooltip mutation tracing, diagnostic-only
++CT-BN-Compat v2.2.2 — upstream tooltip generation and dispatch tracing
+ 
+-behavioral-fixes=false. No tooltip cancellation, return override, animator reset no-op,
+-or item comparison redirect. This release observes the working v2.2.0 JEI path.
++behavioral-fixes=false. No tooltip cancellation, return override, comparison redirect,
++animation/reset no-op, listener registration, bus replacement, or listener reordering.
+ 
+-BEFORE/AFTER tracing:
+-- BAT and Icon Leading Tooltip receive the same typed ItemTooltipEvent at HEAD and RETURN.
+-- Immutable snapshots record ordered SHA-256 fingerprints and individual line class,
+-  text preview, styled-content SHA-256, and coverage. Full text is hashed; previews are bounded.
+-- LCS alignment reports original and new indexes for added, removed, and modified lines.
+-- Pair records include owner, frame, session, event correlation token, logical item,
+-  before/after count and fingerprints, and changed=true/false.
+-- Repeated normal additions with identical before/after contents are deduped across frames.
++New verified runtime boundaries:
++ItemStack.getTooltipLines(Item.TooltipContext,Player,TooltipFlag):List HEAD/RETURN
++EventHooks.onItemTooltip(ItemStack,Player,List,TooltipFlag,Item.TooltipContext):ItemTooltipEvent
++  HEAD: raw list input. It is labelled ITEMSTACK-TOOLTIP-GENERATED only inside a witnessed
++  matching ItemStack.getTooltipLines call; direct EventHooks callers are labelled separately.
++ItemTooltipEvent(ItemStack,Player,List,TooltipFlag,Item.TooltipContext) constructor RETURN
++EventHooks.onItemTooltip immediately BEFORE and AFTER its IEventBus.post(Event):Event invocation
++EventHooks.onItemTooltip RETURN: diagnostic scope cleanup
+ 
+-Correlation:
+-IngredientGrid.drawTooltip establishes a real same-frame JEI hover and logical item.
+-BAT BEFORE/AFTER -> Icon BEFORE/AFTER -> JeiTooltip.draw ->
+-prepareForIngredientTooltip BEFORE/AFTER -> RenderHelper.renderTooltip ->
+-GuiGraphics.renderTooltipInternal -> ColorTooltips.onLiveItemObserved/update.
+-Repeated calls to the same stage are compared by occurrence within the frame.
+-TOOLTIP-FIRST-DIVERGENCE firstMutationOwner names the earliest observed changed stage
+-for consecutive frames of the same logical item. A changed BEFORE snapshot is labelled
+-upstream-of-<stage>, not blamed on that handler. Paired deltas establish a handler's direct mutation.
+-Grid and ColorTooltips stages expose no tooltip list; their records explicitly mark this.
+-ColorTooltips inherits the latest sampled tooltip fingerprint for correlation, not as a new sample.
++Stage names: ITEMSTACK-TOOLTIP-ENTRY, ITEMSTACK-TOOLTIP-GENERATED,
++ITEMTOOLTIPEVENT-CREATED, ITEMTOOLTIPEVENT-PRE-POST, ITEMTOOLTIPEVENT-POST-POST.
++Exact event/list/call identity is used only for boundary pairing, not logical comparison.
++Scopes are per thread and reset per frame; no stale event retained after a throwing handler.
+ 
+-Logical identity and noise:
+-The JEI baseline is a copy of the item stack, compared by count and actual item/components.
+-Stack object identity is supporting evidence only, never a hover/dedupe key.
+-Logical item changes, screen changes, and a gap in hovered frames reset comparison.
+-Normal path/ownership emissions are per logical state and path, with a >=5-second heartbeat.
+-Changing tooltip contents emit concise mutation evidence immediately.
+-The no-live-item diagnostic remains entry/state-change/5-second-heartbeat based.
++Earlier handlers:
++Thirty additional annotated ItemTooltipEvent methods were verified in the installed mod
++classfiles. Optional Mixins observe each exact method at HEAD/RETURN. Resource-only bootstrap
++gating checks class presence, method descriptor, and staticness without loading the target.
++Their execution is logged only on the exact captured event inside the real post interval.
++Concrete class/method and tracedHandlerOrder are runtime evidence. They are not an exhaustive
++event-bus listener roster; dynamic/relay/uninstrumented listeners can remain unobserved.
++Source-JAR filenames in bootstrap logs identify audit provenance, not runtime ordering.
++BAT and Icon diagnostics remain; neither is assumed to be the first subscriber.
+ 
+-Read-only rendered text bridge:
+-The 13 prior Mixins remain. A 14th Mixin reads ClientTextTooltip.text through a separate
+-runtime bridge interface to fingerprint rendered glyphs and visual styles. It writes nothing.
+-Unknown visual components report class and dimensions when available, otherwise class only.
+-coverage=opaque-* means internal visual contents are NOT fingerprinted. Snapshot failures are
+-marked snapshot-error-partial. Do not infer an unseen visual is stable from a partial fingerprint.
+-At most eight element deltas per category are printed; total counts and full-list hashes remain.
+-For unusually large lists, positional alignment bounds memory and is explicitly labelled.
++First divergence attribution:
++ITEMSTACK_TOOLTIP_GENERATION means the generated list already differs before event creation.
++<concrete class.method>.AFTER identifies the first observed changed handler-output boundary.
++EVENTBUS_DISPATCH_BEFORE:<handler>.BEFORE identifies an unobserved interval inside dispatch.
++EVENTBUS_DISPATCH_UNTRACED_INTERVAL covers a change first observed when post returns.
++These labels describe measured boundaries, not an invented ultimate source mod; relay handlers
++may delegate internally. Item-generation attribution includes item code/mixins inside generation.
+ 
+-Preserved: IEventBus, NonNullList, ArtifactVersion, DefaultedRegistry, DataComponentMap,
+-correct registry getKey invocation, explicit runtime anchor, bootstrap-safe plugin,
+-CLASS-retention Mixin metadata, CLIENT Dist[] metadata, and all established JEI hooks.
++Fingerprints:
++Complete Component JSON is encoded with the live registry context and canonical object-key
++ordering, then included in SHA-256 alongside styled glyphs. Runtime type, visible text, full
++styled/serialized fingerprints, and bounded representation excerpts are retained. Changed
++elements include exact indexes and first differing representation excerpt, including style-only
++differences with identical visible text. Unknown visuals/serialization failures remain explicitly
++partial. No stack object identity or List.hashCode-only logical comparison.
+ 
+-Target: Minecraft 1.21.1 / NeoForge 21.1.248 / Java 21 / JEI 19.44.0.403 /
+-ColorTooltips 1211.3.4. In-game v2.2.1 validation remains required.
++Volume:
++First complete chain per hover/session, then earliest divergence plus compact component diff.
++Full chains resume if earliest owner/path changes, logical item/session changes, or at a >=5s
++heartbeat. Earlier suppressed stages are buffered within the current frame so a changed owner
++can emit a complete chain. Repeated changed=false handler outcomes are suppressed independently
++of changing incoming list hashes. A false-to-true outcome is still reported immediately.
++
++Preserved: previous 14 Mixins and all injection selectors; JEI path/runtime anchor, BAT/Icon,
++GuiGraphics, ColorTooltips, IEventBus, NonNullList, ArtifactVersion, DefaultedRegistry,
++DataComponentMap and getKey descriptors; CLASS-retention Mixins, CLIENT Dist[] metadata;
++owner and no-live-item dedupe. Total 47 Mixins includes 3 new boundaries and 30 optional handlers.
++
++Target: Minecraft 1.21.1 / NeoForge 21.1.248 / Java 21. v2.2.2 gameplay remains untested.
+--- v2.2.1/src/main/resources/META-INF/neoforge.mods.toml
++++ v2.2.2/src/main/resources/META-INF/neoforge.mods.toml
+@@ -4,7 +4,7 @@
+ 
+ [[mods]]
+ modId="colortooltips_immersiverpg_compat"
+-version="2.2.1"
++version="2.2.2"
+ displayName="ColorTooltips BetterNether Multi-Mod Ownership Diagnostics"
+ authors="Devun / clean compatibility diagnostic branch"
+ description='''Pure client-side diagnostic baseline for ColorTooltips 1211.3.4 and BetterNether 21.0.26 on Minecraft 1.21.1. Does not alter tooltip or animation behavior.'''
+--- v2.2.1/src/test/java/dev/devun/ctbncompat/TraceTests.java
++++ v2.2.2/src/test/java/dev/devun/ctbncompat/TraceTests.java
+@@ -16,6 +16,9 @@
+     private static Element line(String s) { return new Element("text",s,TraceModel.hash(s),"plain-text"); }
+     private static Snapshot lines(String...s) { return Snapshot.of(Arrays.stream(s).map(TraceTests::line).toList()); }
+     public static void main(String[] args) {
++        net.minecraft.SharedConstants.tryDetectVersion();
++        net.neoforged.fml.loading.LoadingModList.of(List.of(),List.of(),List.of(),List.of(),Map.of());
++        net.minecraft.server.Bootstrap.bootStrap();
+         check(!lines("FB").hash().equals(lines("Ea").hash()),"Java hash collision must not hide a text change");
+         check(!lines("a","b").hash().equals(lines("b","a").hash()),"Ordered fingerprint");
+         String added=TraceModel.diff(lines("a","c"),lines("a","b","c"));
+@@ -46,7 +49,7 @@
+             r.stage("BAT.BEFORE",lines(frame==1?"one":"two"),frame,"");
+             r.stage("BAT.AFTER",lines(frame==1?"one":"two"),frame,"");
+         }
+-        check(log.stream().anyMatch(s->s.contains("firstMutationOwner=upstream-of-BAT.BEFORE")),"Changed handler input must not blame BAT");
++        check(log.stream().anyMatch(s->s.contains("firstMutationOwner=UNOBSERVED_INTERVAL_BEFORE:BAT.BEFORE")),"Changed handler input must not blame BAT");
+         check(log.stream().filter(s->s.contains("FIRST-DIVERGENCE")).count()==1,"One first observed mutation per frame");
+         log.clear();r.begin(8,"same-item");r.stage("BAT.BEFORE",lines("two"),8,"");
+         check(!log.isEmpty()&&log.stream().noneMatch(s->s.contains("FIRST-DIVERGENCE")),"Hover reentry emits fresh snapshot without stale comparison");
+@@ -66,9 +69,69 @@
+         check(!plain.hash().equals(styled.hash()),"Style-only mutation detected");
+         check(TooltipTrace.element(Either.left(Component.literal("Pickaxe"))).hash().equals(plain.hash()),"JEI Either unwrapped");
+         class ClientText implements ClientTextTooltipBridge { public FormattedCharSequence ctbn$getText(){return FormattedCharSequence.forward("Pickaxe",Style.EMPTY);} }
+-        check(TooltipTrace.element(new ClientText()).hash().equals(plain.hash()),"Rendered text uses readable styled contents");
++        check(TooltipTrace.element(new ClientText()).text().equals(plain.text()),"Rendered text uses readable styled contents");
+         check(TooltipTrace.element(new Object()).coverage().equals("opaque-type-only"),"Unknown visual content is explicitly partial, never object identity");
+         check(TooltipTrace.element(new Object()).hash().equals(TooltipTrace.element(new Object()).hash()),"Opaque object allocation cannot create false content changes");
+-        System.out.println("PASS "+checks+" diagnostic checks; 1000-frame stable-hover, mutation attribution, diff, logical sessions, occurrence, and real text adapter tests.");
++        check(plain.coverage().equals("full-component-json-and-styled-text"),"Full component serialization is available for text");
++        check(!TooltipTrace.element(Component.literal("Pickaxe").withStyle(Style.EMPTY.withInsertion("different"))).hash().equals(plain.hash()),"Non-visible style insertion changes full component fingerprint");
++        log.clear();r=new Recorder(log::add);
++        for(int f=1;f<=500;f++) {
++            long now=f*16_000_000L;r.begin(f,"stable-pickaxe",now);
++            Snapshot unstable=lines("Obsidian Breaker III", "styled-change-"+f);
++            r.chain("grid");r.stage("ITEMSTACK-TOOLTIP-GENERATED",unstable,now,"");
++            r.stage("ITEMTOOLTIPEVENT-PRE-POST",unstable,now,"");
++            r.stage("BAT.BEFORE",unstable,now,"verifiedDispatch=true");r.stage("BAT.AFTER",unstable,now,"verifiedDispatch=true");r.pair("BAT",f,unstable,unstable,now,"");
++            r.stage("ICON.BEFORE",unstable,now,"verifiedDispatch=true");r.stage("ICON.AFTER",unstable,now,"verifiedDispatch=true");r.pair("ICON",f,unstable,unstable,now,"");
++            r.stage("JEI",unstable,now,"");r.stage("GuiGraphics",unstable,now,"");r.chain("ColorTooltips inherited");
++        }
++        check(log.size()<600,"500 unstable frames should emit mostly earliest divergence, got "+log.size());
++        check(log.stream().filter(s->s.contains("changed=false BEFORE[")).count()==2,"Non-mutating handlers proved once despite changing inputs");
++        check(log.stream().filter(s->s.contains("TOOLTIP-FIRST-DIVERGENCE")).allMatch(s->s.contains("firstMutationOwner=ITEMSTACK_TOOLTIP_GENERATION")),"Raw-generation divergence narrows pre-BAT region");
++        int marker=log.size();long now=501*16_000_000L;r.begin(501,"stable-pickaxe",now);
++        Snapshot raw=lines("Obsidian Breaker III","styled-change-500"),mutated=lines("Obsidian Breaker III","earlier-listener-change");
++        r.stage("ITEMSTACK-TOOLTIP-GENERATED",raw,now,"");r.stage("ITEMTOOLTIPEVENT-PRE-POST",raw,now,"");
++        r.stage("real.Handler.BEFORE",raw,now,"verifiedDispatch=true");
++        // First occurrence of a new handler establishes a baseline, then its next-frame change attributes it.
++        r.stage("real.Handler.AFTER",raw,now,"verifiedDispatch=true");
++        now=502*16_000_000L;r.begin(502,"stable-pickaxe",now);
++        r.stage("ITEMSTACK-TOOLTIP-GENERATED",raw,now,"");r.stage("ITEMTOOLTIPEVENT-PRE-POST",raw,now,"");
++        r.stage("real.Handler.BEFORE",raw,now,"verifiedDispatch=true");r.stage("real.Handler.AFTER",mutated,now,"verifiedDispatch=true");
++        check(log.subList(marker,log.size()).stream().anyMatch(s->s.contains("firstMutationOwner=real.Handler.AFTER")),"Verified handler after point narrows dispatch mutation");
++        check(log.subList(marker,log.size()).stream().anyMatch(s->s.contains("TOOLTIP-TRACE path=ITEMSTACK-TOOLTIP-GENERATED")),"Changed earliest owner flushes earlier buffered chain");
++        marker=log.size();r.pair("BAT",502,raw,mutated,now,"verifiedDispatch=true");
++        check(log.subList(marker,log.size()).stream().anyMatch(s->s.contains("owner=BAT")&&s.contains("changed=true")),"Previously non-mutating BAT remains monitored");
++        log.clear();r=new Recorder(log::add);
++        for(int f=1;f<=2;f++) {
++            r.begin(f,"stable",f);
++            r.stage("ITEMSTACK-TOOLTIP-GENERATED",lines("raw"),f,"");r.stage("ITEMTOOLTIPEVENT-PRE-POST",lines("raw"),f,"");
++            r.stage("BAT.BEFORE",lines(f==1?"old":"new"),f,"verifiedDispatch=true");
++        }
++        check(log.stream().anyMatch(s->s.contains("firstMutationOwner=EVENTBUS_DISPATCH_BEFORE:BAT.BEFORE")),"Untraced earlier listener is an honest dispatch interval, not invented owner");
++        var serializedDiff=TraceModel.diff(Snapshot.of(List.of(plain)),Snapshot.of(List.of(styled)));
++        check(serializedDiff.contains("representationFirstDifference="),"Style serialization difference includes a concrete excerpt");
++        TooltipTrace.beginFrame(1,new Object(),net.minecraft.core.RegistryAccess.EMPTY);
++        var item=new net.minecraft.world.item.ItemStack(net.minecraft.world.item.Items.DIAMOND_PICKAXE);
++        TooltipTrace.hover(item,10,10);
++        check(TooltipTrace.matchesHover(item.copy()),"Copied ItemStack remains the same logical hover");
++        var differentCount=item.copyWithCount(2);
++        check(!TooltipTrace.matchesHover(differentCount),"Count affects logical hover");
++        var differentComponents=item.copy();differentComponents.setDamageValue(4);
++        check(!TooltipTrace.matchesHover(differentComponents),"Actual component changes affect logical hover");
++        var eventLines=new ArrayList<Component>(List.of(Component.literal("Obsidian Breaker III")));
++        UpstreamTrace.itemEntry(item);UpstreamTrace.generated(item,eventLines);
++        var event=new net.neoforged.neoforge.event.entity.player.ItemTooltipEvent(item,null,eventLines,net.minecraft.world.item.TooltipFlag.NORMAL,net.minecraft.world.item.Item.TooltipContext.EMPTY);
++        UpstreamTrace.created(event);
++        check(!UpstreamTrace.dispatched(event),"Construction alone is not bus dispatch");
++        UpstreamTrace.prePost(item,eventLines);
++        check(UpstreamTrace.dispatched(event),"Exact captured event recognized inside post boundary");
++        var unrelated=new net.neoforged.neoforge.event.entity.player.ItemTooltipEvent(item,null,eventLines,net.minecraft.world.item.TooltipFlag.NORMAL,net.minecraft.world.item.Item.TooltipContext.EMPTY);
++        check(!UpstreamTrace.dispatched(unrelated),"Different event cannot be attributed to captured dispatch");
++        check(UpstreamTrace.handlerEvidence("real.FirstHandler",event).contains("tracedHandlerOrder=1"),"Actual traced invocation order");
++        check(UpstreamTrace.handlerEvidence("BAT",event).contains("tracedHandlerOrder=2"),"BAT is not assumed first");
++        UpstreamTrace.postPost(item,eventLines);
++        check(!UpstreamTrace.dispatched(event),"Post-return ends dispatch interval");
++        UpstreamTrace.returned(item,eventLines);UpstreamTrace.itemReturn(item);
++        check(eventLines.size()==1&&eventLines.getFirst().getString().equals("Obsidian Breaker III"),"Boundary observers leave actual tooltip list untouched");
++        System.out.println("PASS "+checks+" diagnostic checks; stable/unstable frame-volume, upstream attribution, full serialization, real ItemStack equality, and exact event-scope tests.");
+     }
+ }

@@ -4,7 +4,7 @@ license="All Rights Reserved"
 
 [[mods]]
 modId="colortooltips_immersiverpg_compat"
-version="2.0.22"
+version="2.2.2"
 displayName="ColorTooltips BetterNether Multi-Mod Ownership Diagnostics"
 authors="Devun / clean compatibility diagnostic branch"
 description='''Pure client-side diagnostic baseline for ColorTooltips 1211.3.4 and BetterNether 21.0.26 on Minecraft 1.21.1. Does not alter tooltip or animation behavior.'''

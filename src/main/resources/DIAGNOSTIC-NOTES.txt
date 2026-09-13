@@ -1,0 +1,58 @@
+CT-BN-Compat v2.2.2 — upstream tooltip generation and dispatch tracing
+
+behavioral-fixes=false. No tooltip cancellation, return override, comparison redirect,
+animation/reset no-op, listener registration, bus replacement, or listener reordering.
+
+New verified runtime boundaries:
+ItemStack.getTooltipLines(Item.TooltipContext,Player,TooltipFlag):List HEAD/RETURN
+EventHooks.onItemTooltip(ItemStack,Player,List,TooltipFlag,Item.TooltipContext):ItemTooltipEvent
+  HEAD: raw list input. It is labelled ITEMSTACK-TOOLTIP-GENERATED only inside a witnessed
+  matching ItemStack.getTooltipLines call; direct EventHooks callers are labelled separately.
+ItemTooltipEvent(ItemStack,Player,List,TooltipFlag,Item.TooltipContext) constructor RETURN
+EventHooks.onItemTooltip immediately BEFORE and AFTER its IEventBus.post(Event):Event invocation
+EventHooks.onItemTooltip RETURN: diagnostic scope cleanup
+
+Stage names: ITEMSTACK-TOOLTIP-ENTRY, ITEMSTACK-TOOLTIP-GENERATED,
+ITEMTOOLTIPEVENT-CREATED, ITEMTOOLTIPEVENT-PRE-POST, ITEMTOOLTIPEVENT-POST-POST.
+Exact event/list/call identity is used only for boundary pairing, not logical comparison.
+Scopes are per thread and reset per frame; no stale event retained after a throwing handler.
+
+Earlier handlers:
+Thirty additional annotated ItemTooltipEvent methods were verified in the installed mod
+classfiles. Optional Mixins observe each exact method at HEAD/RETURN. Resource-only bootstrap
+gating checks class presence, method descriptor, and staticness without loading the target.
+Their execution is logged only on the exact captured event inside the real post interval.
+Concrete class/method and tracedHandlerOrder are runtime evidence. They are not an exhaustive
+event-bus listener roster; dynamic/relay/uninstrumented listeners can remain unobserved.
+Source-JAR filenames in bootstrap logs identify audit provenance, not runtime ordering.
+BAT and Icon diagnostics remain; neither is assumed to be the first subscriber.
+
+First divergence attribution:
+ITEMSTACK_TOOLTIP_GENERATION means the generated list already differs before event creation.
+<concrete class.method>.AFTER identifies the first observed changed handler-output boundary.
+EVENTBUS_DISPATCH_BEFORE:<handler>.BEFORE identifies an unobserved interval inside dispatch.
+EVENTBUS_DISPATCH_UNTRACED_INTERVAL covers a change first observed when post returns.
+These labels describe measured boundaries, not an invented ultimate source mod; relay handlers
+may delegate internally. Item-generation attribution includes item code/mixins inside generation.
+
+Fingerprints:
+Complete Component JSON is encoded with the live registry context and canonical object-key
+ordering, then included in SHA-256 alongside styled glyphs. Runtime type, visible text, full
+styled/serialized fingerprints, and bounded representation excerpts are retained. Changed
+elements include exact indexes and first differing representation excerpt, including style-only
+differences with identical visible text. Unknown visuals/serialization failures remain explicitly
+partial. No stack object identity or List.hashCode-only logical comparison.
+
+Volume:
+First complete chain per hover/session, then earliest divergence plus compact component diff.
+Full chains resume if earliest owner/path changes, logical item/session changes, or at a >=5s
+heartbeat. Earlier suppressed stages are buffered within the current frame so a changed owner
+can emit a complete chain. Repeated changed=false handler outcomes are suppressed independently
+of changing incoming list hashes. A false-to-true outcome is still reported immediately.
+
+Preserved: previous 14 Mixins and all injection selectors; JEI path/runtime anchor, BAT/Icon,
+GuiGraphics, ColorTooltips, IEventBus, NonNullList, ArtifactVersion, DefaultedRegistry,
+DataComponentMap and getKey descriptors; CLASS-retention Mixins, CLIENT Dist[] metadata;
+owner and no-live-item dedupe. Total 47 Mixins includes 3 new boundaries and 30 optional handlers.
+
+Target: Minecraft 1.21.1 / NeoForge 21.1.248 / Java 21. v2.2.2 gameplay remains untested.

@@ -1,0 +1,8 @@
+PASS Real ItemStack.getTooltipLines invokes exact EventHooks.onItemTooltip once
+PASS Real ItemTooltipEvent constructor descriptor verified
+PASS Single event bus post invocation
+PASS Real interface post descriptor/opcode verified
+PASS Event constructed before dispatch in real bytecode
+PASS Packaged At target matches actual invocation
+PASS Packaged At target matches actual invocation
+PASS Packaged pre/post observers straddle the single real post call
