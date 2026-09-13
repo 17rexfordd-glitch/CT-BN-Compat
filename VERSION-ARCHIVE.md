@@ -4,6 +4,16 @@ This file tracks CT-BN-Compat builds produced during the ChatGPT-assisted Minecr
 
 ## Current baseline
 
+### v2.2.6
+
+- Built artifact: `CT-BN-Compat-1.21.1-v2.2.6.jar`
+- Source snapshot: `CT-BN-Compat-1.21.1-v2.2.6-source.zip`
+- SHA-256: `5c172f8ffbce61c0ef346c2c954bfd6341edbafe034a430f12d76e4dfa93dca0`
+- Purpose: read-only diagnostic correction for v2.2.5's ImmersiveUI helper/runtime verification and missing focused enchantment markers during real JEI hover.
+- Key verification: exact RenderUtils SHA match now records RESOURCE_VERIFIED; `ImmersiveEnchantmentStyleMixin` remains gated and packaged; target BetterNether enchantment name/helper/list markers are emitted during recent JEI hover; no tooltip behavior modification.
+- Preserved: v2.2.5 startup success, runtime anchor, ACTIVE-CONTAINER, JEI hover detection, logical ItemStack identity, exact SHA gating, descriptor fixes, absence of broad UpstreamSubscriberXXMixin tracing, and `behavioral-fixes=false`.
+- Notes: Gradle could not run in the sandbox because the wrapper distribution could not be downloaded offline; the final packaged JAR/classfiles were directly inspected.
+
 ### v2.2.5
 
 - Built artifact: `CT-BN-Compat-1.21.1-v2.2.5.jar`
