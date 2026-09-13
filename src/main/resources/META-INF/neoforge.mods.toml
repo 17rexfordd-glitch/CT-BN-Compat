@@ -1,0 +1,41 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="colortooltips_immersiverpg_compat"
+version="2.0.22"
+displayName="ColorTooltips BetterNether Multi-Mod Ownership Diagnostics"
+authors="Devun / clean compatibility diagnostic branch"
+description='''Pure client-side diagnostic baseline for ColorTooltips 1211.3.4 and BetterNether 21.0.26 on Minecraft 1.21.1. Does not alter tooltip or animation behavior.'''
+
+[[mixins]]
+config="ct_bn_v2.mixins.json"
+
+[[dependencies.colortooltips_immersiverpg_compat]]
+modId="neoforge"
+type="required"
+versionRange="[21.1.248,)"
+ordering="NONE"
+side="CLIENT"
+
+[[dependencies.colortooltips_immersiverpg_compat]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1]"
+ordering="NONE"
+side="CLIENT"
+
+[[dependencies.colortooltips_immersiverpg_compat]]
+modId="colortooltips"
+type="required"
+versionRange="[1211.3.4]"
+ordering="AFTER"
+side="CLIENT"
+
+[[dependencies.colortooltips_immersiverpg_compat]]
+modId="betternether"
+type="required"
+versionRange="[21.0.26]"
+ordering="AFTER"
+side="CLIENT"
