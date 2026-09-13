@@ -4,6 +4,15 @@ This file tracks CT-BN-Compat builds produced during the ChatGPT-assisted Minecr
 
 ## Current baseline
 
+### v2.1.2
+
+- Built artifact: `CT-BN-Compat-1.21.1-v2.1.2.jar`
+- Source snapshot: `CT-BN-Compat-1.21.1-v2.1.2-source.zip`
+- SHA-256: `d29a2f8ecd5a1f02e92fd2094d1a162ee44c04040877afa0808d17dbe671eb66`
+- Purpose: diagnostic-only Minecraft descriptor correction and tooltip-owner log dedupe.
+- Key verification: final packaged `GETFIELD AbstractContainerMenu.slots` uses descriptor `Lnet/minecraft/core/NonNullList;`; no `AbstractContainerMenu.slots:Ljava/util/List;` reference remains; `NeoForge.EVENT_BUS:IEventBus` remains intact.
+- Preserved: v2.1.1 event-bus descriptor correction, v2.1.0 audit baseline, v2.0.24 corrected NeoForge `@Mod(dist=[Dist.CLIENT])` array metadata, v2.0.23 Mixin CLASS-retention annotations, JEI ingredient-hover diagnostics, JEI RenderHelper handoff marker, external bridge architecture, and no behavioral tooltip modification.
+
 ### v2.1.1
 
 - Built artifact: `CT-BN-Compat-1.21.1-v2.1.1.jar`
