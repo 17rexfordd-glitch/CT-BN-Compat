@@ -4,6 +4,15 @@ This file tracks CT-BN-Compat builds produced during the ChatGPT-assisted Minecr
 
 ## Current baseline
 
+### v2.0.25
+
+- Built artifact: `CT-BN-Compat-1.21.1-v2.0.25.jar`
+- Source snapshot: `CT-BN-Compat-1.21.1-v2.0.25-source.zip`
+- SHA-256: `939f52c0c64b07fdb7e2c3b903bd8dd3a7fddb9aa4258fc1369864ed2e0d18f2`
+- Purpose: diagnostic-only stale marker correction; updates packaged Mixin bootstrap and ACTIVE runtime markers to 2.0.25.
+- Key verification: mod metadata, main ACTIVE marker, and Mixin bootstrap marker all report 2.0.25; no stale executable 2.0.23 or 2.0.24 marker remains in the final packaged JAR.
+- Preserved: v2.0.24 corrected NeoForge `@Mod(dist=[Dist.CLIENT])` array metadata, v2.0.23 Mixin CLASS-retention annotations, JEI ingredient-hover diagnostics, JEI RenderHelper handoff marker, external bridge architecture, NeoForge/Minecraft descriptor fixes, and no behavioral tooltip modification.
+
 ### v2.0.24
 
 - Built artifact: `CT-BN-Compat-1.21.1-v2.0.24.jar`
