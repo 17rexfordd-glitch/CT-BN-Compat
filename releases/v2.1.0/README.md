@@ -27,3 +27,4 @@ Purpose: diagnostic-only senior audit and cleanup baseline before continuing JEI
 - JAR: `CT-BN-Compat-1.21.1-v2.1.0.jar`
 - SHA-256: `27e6c3b4cbcea8c7c40fee154d2dab3da99a3647525e3c9eb6b85ba3956f477d`
 - Source snapshot: `CT-BN-Compat-1.21.1-v2.1.0-source.zip`
+- Source ZIP SHA-256: `91296c62596ec5751ba2a90a0483219fe86cdde31ee273b8f85c2fed48d4b442`
