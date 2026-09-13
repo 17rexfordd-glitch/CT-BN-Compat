@@ -4,6 +4,16 @@ This file tracks CT-BN-Compat builds produced during the ChatGPT-assisted Minecr
 
 ## Current baseline
 
+### v2.2.8
+
+- Built artifact: `CT-BN-Compat-1.21.1-v2.2.8.jar`
+- Source snapshot: `CT-BN-Compat-1.21.1-v2.2.8-source.zip`
+- SHA-256: `fb3bf5af506aff68123f7cd8a66454e22258142f6d6ce444e40587fd5bc14059`
+- Purpose: read-only diagnostic regression fix for the bad `Component.visit(BiFunction, Style)` descriptor in v2.2.7.
+- Key verification: `EnchantmentTrace.sample` now invokes `Component.visit(FormattedText$StyledContentConsumer, Style)`; the nonexistent `Component.visit(BiFunction, Style)` invocation is gone; `EnchantmentTags.CURSE:TagKey` remains fixed; focused ImmersiveUI/JEI/enchantment tracing remains packaged.
+- Preserved: `behavioral-fixes=false`, no tooltip mutation/cancellation/return-value override, RenderUtils obfuscation tracing, JEI hover diagnostics, descriptor fixes, and absence of broad UpstreamSubscriberXXMixin tracing.
+- Notes: Gradle could not run in the sandbox because the wrapper distribution could not be downloaded offline; the final packaged JAR/classfiles were directly inspected.
+
 ### v2.2.7
 
 - Built artifact: `CT-BN-Compat-1.21.1-v2.2.7.jar`
