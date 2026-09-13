@@ -4,6 +4,16 @@ This file tracks CT-BN-Compat builds produced during the ChatGPT-assisted Minecr
 
 ## Current baseline
 
+### v2.3.0
+
+- Built artifact: `CT-BN-Compat-1.21.1-v2.3.0.jar`
+- Source snapshot: `CT-BN-Compat-1.21.1-v2.3.0-source.zip`
+- SHA-256: `383db879bab1059228d18357be2075730c192074416c7fbb2faa3aca25d08129`
+- Purpose: clean compatibility release for the proven BetterNether curse-enchantment-name flicker caused by ImmersiveUI animated curse formatting interacting with ColorTooltips.
+- Key verification: `behavioral-fixes=true`; only `betternether:ruby_fire` and `betternether:obsidian_breaker` are stabilized; final mixin config contains only `EnchantmentNameMixin`; old v2.2.x JEI/RenderUtils/BAT/Icon/upstream tracing classes are absent; no tooltip-list replacement, tooltip-render cancellation, animator reset redirect, or same-item redirect is packaged.
+- Preserved: enchantment level text, enchantment descriptions, BetterNether functionality, ColorTooltips animations for unrelated items, and ImmersiveUI behavior for unrelated enchantments.
+- Notes: Gradle could not run in the sandbox because the wrapper distribution could not be downloaded offline; the final packaged JAR/classfiles were directly inspected.
+
 ### v2.2.8
 
 - Built artifact: `CT-BN-Compat-1.21.1-v2.2.8.jar`
