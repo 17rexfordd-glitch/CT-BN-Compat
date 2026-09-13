@@ -1,0 +1,26 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.devun.ctbncompat.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [],
+  "client": [
+    "ScreenRenderMixin",
+    "AbstractContainerScreenMixin",
+    "GuiGraphicsTooltipMixin",
+    "ColorTooltipsAnimationMixin",
+    "ColorTooltipsLifecycleMixin",
+    "ColorTooltipsAnimatorMixin",
+    "SimplyTooltipsRendererMixin",
+    "JeiTooltipMixin",
+    "JeiIngredientGridMixin",
+    "JeiRenderHelperMixin",
+    "BetterAdvancedTooltipsMixin",
+    "ImmersiveUiRenderMixin",
+    "IconLeadingTooltipMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "plugin": "dev.devun.ctbncompat.DiagnosticMixinPlugin"
+}
