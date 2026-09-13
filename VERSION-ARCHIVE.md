@@ -4,6 +4,16 @@ This file tracks CT-BN-Compat builds produced during the ChatGPT-assisted Minecr
 
 ## Current baseline
 
+### v2.2.5
+
+- Built artifact: `CT-BN-Compat-1.21.1-v2.2.5.jar`
+- Source snapshot: `CT-BN-Compat-1.21.1-v2.2.5-source.zip`
+- SHA-256: `515eaccb3528e9b21353650909b14217c86a95c6d340a9e7fd206f2cf44f0e5f`
+- Purpose: read-only diagnostic Mixin-target safety correction after v2.2.4.
+- Key verification: removed `ImmersiveEnchantmentMixin` direct targeting of ImmersiveUI's own Mixin implementation class; the final packaged JAR contains no `it.hurts.octostudios.immersiveui.mixin.EnchantmentMixin` class references; RenderUtils tracing remains exact-SHA gated; curse-path evidence is collected from the transformed `Enchantment.getFullname(...)` and `RenderUtils` runtime path.
+- Preserved: v2.2.4 RenderUtils tracing, JEI hover diagnostics, ItemStack/enchantment assembly diagnostics, descriptor fixes, dedupe fixes, and no behavioral tooltip modification.
+- Notes: Gradle could not run in the sandbox because the wrapper distribution could not be downloaded offline; the final packaged JAR/classfiles were directly inspected.
+
 ### v2.2.4
 
 - Built artifact: `CT-BN-Compat-1.21.1-v2.2.4.jar`
@@ -11,8 +21,7 @@ This file tracks CT-BN-Compat builds produced during the ChatGPT-assisted Minecr
 - SHA-256: `669f8003f53aa8c4398e846b3acca1c1a05ca6b2f036b3f55bbc648ce1fdccf7`
 - Purpose: read-only diagnostic runtime proof build for ImmersiveUI curse-name obfuscation ownership during the actual JEI hover reproduction.
 - Key verification: v2.2.4 metadata and `behavioral-fixes=false` are present; `NeoForge.EVENT_BUS:Lnet/neoforged/bus/api/IEventBus;` and `AbstractContainerMenu.slots:Lnet/minecraft/core/NonNullList;` remain intact; optional ImmersiveUI helper instrumentation is exact-SHA gated; broad `UpstreamSubscriber01Mixin` through `UpstreamSubscriber30Mixin` diagnostics are removed from the active mixin config and packaged JAR.
-- Preserved: JEI ingredient hover detection, active-container diagnostics, ItemStack tooltip-generation boundary, ItemEnchantments section/insertion tracing, Enchantment.getFullname tracing, RenderHelper/GiuGraphics/ColorTooltips observations, tooltip-owner dedupe, no-live-item dedupe, and no tooltip behavior modification.
-- Notes: Gradle could not run in the sandbox because the wrapper distribution could not be downloaded offline; the final packaged JAR/classfiles were directly inspected.
+- Preserved: JEI ingredient hover detection, active-container diagnostics, ItemStack tooltip-generation boundary, ItemEnchantments section/insertion tracing, Enchantment.getFullname tracing, RenderHelper/GuiGraphics/ColorTooltips observations, tooltip-owner dedupe, no-live-item dedupe, and no tooltip behavior modification.
 
 ### v2.2.3
 
