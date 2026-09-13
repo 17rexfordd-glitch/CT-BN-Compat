@@ -4,6 +4,15 @@ This file tracks CT-BN-Compat builds produced during the ChatGPT-assisted Minecr
 
 ## Current baseline
 
+### v2.1.3
+
+- Built artifact: `CT-BN-Compat-1.21.1-v2.1.3.jar`
+- Source snapshot: `CT-BN-Compat-1.21.1-v2.1.3-source.zip`
+- SHA-256: `89fe544a3487b39963c40c79524d9cd8b2c3f0dd20455140b82e11c4570d9952`
+- Purpose: diagnostic-only ColorTooltips no-live-item log dedupe.
+- Key verification: `COLORTOOLTIPS onFrameWithoutLiveItem()` now logs only on state entry, state changes, or a heartbeat no more than about once every 5 seconds; `NeoForge.EVENT_BUS:IEventBus` and `AbstractContainerMenu.slots:NonNullList` descriptors remain intact.
+- Preserved: v2.1.2 slot descriptor correction, v2.1.1 event-bus descriptor correction, v2.1.0 audit baseline, JEI ingredient-hover diagnostics, JEI RenderHelper handoff marker, external bridge architecture, and no behavioral tooltip modification.
+
 ### v2.1.2
 
 - Built artifact: `CT-BN-Compat-1.21.1-v2.1.2.jar`
