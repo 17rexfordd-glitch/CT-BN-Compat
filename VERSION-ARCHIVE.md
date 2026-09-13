@@ -4,6 +4,15 @@ This file tracks CT-BN-Compat builds produced during the ChatGPT-assisted Minecr
 
 ## Current baseline
 
+### v2.0.24
+
+- Built artifact: `CT-BN-Compat-1.21.1-v2.0.24.jar`
+- Source snapshot: `CT-BN-Compat-1.21.1-v2.0.24-source.zip`
+- SHA-256: `35380b5bababf83cebd15b620d6962104f16be83ada72b946024b098fce12638`
+- Purpose: diagnostic-only startup fix correcting malformed NeoForge annotation metadata that could trip automatic subscriber/mod annotation scanning before the runtime anchor registered.
+- Key verification: packaged `@Mod(dist=...)` now stores `dist` as a one-element `Dist[]` array value; no packaged automatic event-subscriber annotation metadata is present.
+- Preserved: v2.0.23 Mixin CLASS-retention annotations, JEI ingredient-hover diagnostics, JEI RenderHelper handoff marker, external bridge architecture, NeoForge/Minecraft descriptor fixes, and no behavioral tooltip modification.
+
 ### v2.0.23
 
 - Built artifact: `CT-BN-Compat-1.21.1-v2.0.23.jar`
