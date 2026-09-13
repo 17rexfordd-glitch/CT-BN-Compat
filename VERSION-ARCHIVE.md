@@ -4,6 +4,15 @@ This file tracks CT-BN-Compat builds produced during the ChatGPT-assisted Minecr
 
 ## Current baseline
 
+### v2.1.1
+
+- Built artifact: `CT-BN-Compat-1.21.1-v2.1.1.jar`
+- Source snapshot: `CT-BN-Compat-1.21.1-v2.1.1-source.zip`
+- SHA-256: `0924a81ba7a8ac8401ddf403dc7f05184e938f214c6b4cd674c4a475bbb51c21`
+- Purpose: diagnostic-only descriptor correction for explicit NeoForge runtime event-bus registration.
+- Key verification: final packaged `GETSTATIC NeoForge.EVENT_BUS` uses descriptor `Lnet/neoforged/bus/api/IEventBus;`; no `NeoForge$EventBus` reference remains; automatic subscriber registration is still absent.
+- Preserved: v2.1.0 audit baseline, v2.0.24 corrected NeoForge `@Mod(dist=[Dist.CLIENT])` array metadata, v2.0.23 Mixin CLASS-retention annotations, JEI ingredient-hover diagnostics, JEI RenderHelper handoff marker, external bridge architecture, and no behavioral tooltip modification.
+
 ### v2.1.0
 
 - Built artifact: `CT-BN-Compat-1.21.1-v2.1.0.jar`
