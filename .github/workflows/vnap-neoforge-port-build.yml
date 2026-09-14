@@ -6,6 +6,7 @@ on:
       - scratch/vnap-neoforge-port-build
     paths:
       - 'scratch/vnap-full.patch.gz.b64.part*'
+      - 'scratch/vnap-neoforge.patch'
       - '.github/workflows/vnap-neoforge-port-build.yml'
   workflow_dispatch:
 
@@ -25,10 +26,12 @@ jobs:
           ref: 0fe248be7656e08dc71e34f229ecd86548ae8310
           path: vnap
 
-      - name: Reconstruct and apply complete NeoForge port patch
+      - name: Reconstruct and apply complete NeoForge port
         shell: bash
         run: |
           set -euxo pipefail
+          git -C vnap apply --check "$GITHUB_WORKSPACE/harness/scratch/vnap-neoforge.patch"
+          git -C vnap apply "$GITHUB_WORKSPACE/harness/scratch/vnap-neoforge.patch"
           cat \
             harness/scratch/vnap-full.patch.gz.b64.part00 \
             harness/scratch/vnap-full.patch.gz.b64.part01 \
