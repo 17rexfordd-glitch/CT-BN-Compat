@@ -7,6 +7,7 @@ on:
     paths:
       - 'scratch/vnap-full.patch.gz.b64.part*'
       - 'scratch/vnap-fixes.gz.b64.*'
+      - 'scratch/vnap-runtime-review.gz.b64.*'
       - 'scratch/vnap-neoforge.patch'
       - '.github/workflows/vnap-neoforge-port-build.yml'
   workflow_dispatch:
@@ -56,6 +57,18 @@ jobs:
           base64 -d fixes.patch.gz.b64 | gzip -d > fixes.patch
           git -C vnap apply --check "$GITHUB_WORKSPACE/fixes.patch"
           git -C vnap apply "$GITHUB_WORKSPACE/fixes.patch"
+
+          cat harness/scratch/vnap-runtime-review.gz.b64.* > runtime-review.patch.gz.b64
+          test "$(wc -c < runtime-review.patch.gz.b64)" -eq 2280
+          base64 -d runtime-review.patch.gz.b64 | gzip -d > runtime-review.patch
+          git -C vnap apply --check "$GITHUB_WORKSPACE/runtime-review.patch"
+          git -C vnap apply "$GITHUB_WORKSPACE/runtime-review.patch"
+
+          sed -i 's/^neo_version=.*/neo_version=21.1.248/' vnap/gradle.properties
+          sed -i 's/^emf_version=.*/emf_version=szv0UmJn/' vnap/gradle.properties
+          sed -i 's/^etf_version=.*/etf_version=XEJeKpgJ/' vnap/gradle.properties
+          printf '\nesf_version=eafVUs7O\n' >> vnap/gradle.properties
+          sed -i '/compileOnly "maven.modrinth:BVzZfTc1:${etf_version}"/a\\    compileOnly "maven.modrinth:IMuO8COj:${esf_version}"' vnap/build.gradle
           chmod +x vnap/gradlew
 
       - name: Set up Java 21
@@ -66,12 +79,36 @@ jobs:
           cache: gradle
           cache-dependency-path: vnap/gradle/wrapper/gradle-wrapper.properties
 
-      - name: Compile Java
+      - name: Compile Java against exact runtime dependency versions
         shell: bash
         working-directory: vnap
         run: |
           set -o pipefail
           ./gradlew compileJava --stacktrace --no-daemon 2>&1 | tee ../compile.log
+
+      - name: Verify exact EMF ETF ESF runtime artifacts and EMF signatures
+        shell: bash
+        run: |
+          set -euxo pipefail
+          EMF_JAR=$(find "$HOME/.gradle/caches/modules-2/files-2.1/maven.modrinth/4I1XuqiY/szv0UmJn" -type f -name '*.jar' -print -quit)
+          ETF_JAR=$(find "$HOME/.gradle/caches/modules-2/files-2.1/maven.modrinth/BVzZfTc1/XEJeKpgJ" -type f -name '*.jar' -print -quit)
+          ESF_JAR=$(find "$HOME/.gradle/caches/modules-2/files-2.1/maven.modrinth/IMuO8COj/eafVUs7O" -type f -name '*.jar' -print -quit)
+          test -n "$EMF_JAR"
+          test -n "$ETF_JAR"
+          test -n "$ESF_JAR"
+          echo "EMF_JAR=$EMF_JAR" | tee emf-signatures.log
+          echo "ETF_JAR=$ETF_JAR" | tee -a emf-signatures.log
+          echo "ESF_JAR=$ESF_JAR" | tee -a emf-signatures.log
+          echo 'e78060b9a01bf41b5628bd45ce5ac741f68f092c  '"$EMF_JAR" | sha1sum -c - | tee -a emf-signatures.log
+          echo '908d09263709193b918fdc9ca0d79c9d90c4a531  '"$ETF_JAR" | sha1sum -c - | tee -a emf-signatures.log
+          echo '74932e01844b2524d5d7ad958d4bc638ac5743c1  '"$ESF_JAR" | sha1sum -c - | tee -a emf-signatures.log
+          javap -classpath "$EMF_JAR" -p -s traben.entity_model_features.models.parts.EMFModelPart | tee -a emf-signatures.log
+          javap -classpath "$EMF_JAR" -p -s traben.entity_model_features.models.parts.EMFModelPartCustom | tee -a emf-signatures.log
+          javap -classpath "$EMF_JAR" -p -c traben.entity_model_features.models.parts.EMFModelPart | tee -a emf-bytecode.log
+          grep -F 'public net.minecraft.resources.ResourceLocation textureOverride;' emf-signatures.log
+          grep -F 'descriptor: (Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;III)V' emf-signatures.log
+          grep -F 'descriptor: (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lcom/mojang/blaze3d/vertex/VertexConsumer;III)V' emf-signatures.log
+          grep -F 'public final java.lang.String id;' emf-signatures.log
 
       - name: Build JAR
         if: success()
@@ -90,11 +127,13 @@ jobs:
           path: |
             compile.log
             build.log
+            emf-signatures.log
+            emf-bytecode.log
 
       - name: Upload built mod
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: villager-news-addon-port-neoforge-1.21.1
+          name: villager-news-addon-port-neoforge-1.21.1-runtime-reviewed
           if-no-files-found: error
           path: vnap/build/libs/*.jar
