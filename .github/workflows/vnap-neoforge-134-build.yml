@@ -1,0 +1,141 @@
+name: VNAP 1.3.4 NeoForge 1.21.1 build
+
+on:
+  push:
+    branches:
+      - scratch/vnap-neoforge-port-build
+    paths:
+      - 'scratch/vnap-134-update.gz.b64.*'
+      - '.github/workflows/vnap-neoforge-134-build.yml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout build harness
+        uses: actions/checkout@v4
+        with:
+          path: harness
+
+      - name: Checkout Villager News 1.3.3 base
+        uses: actions/checkout@v4
+        with:
+          repository: MarcYohannTheScripter/villager-news-addon-port
+          ref: 0fe248be7656e08dc71e34f229ecd86548ae8310
+          path: vnap
+
+      - name: Reconstruct verified 1.3.3 port and apply 1.3.4 update
+        shell: bash
+        run: |
+          set -euxo pipefail
+          git -C vnap apply "$GITHUB_WORKSPACE/harness/scratch/vnap-neoforge.patch"
+          cat \
+            harness/scratch/vnap-full.patch.gz.b64.part00 \
+            harness/scratch/vnap-full.patch.gz.b64.part01 \
+            harness/scratch/vnap-full.patch.gz.b64.part02a \
+            harness/scratch/vnap-full.patch.gz.b64.part02b1 \
+            harness/scratch/vnap-full.patch.gz.b64.part02b2_0 \
+            harness/scratch/vnap-full.patch.gz.b64.part02b2_1 \
+            harness/scratch/vnap-full.patch.gz.b64.part02b2_2 \
+            harness/scratch/vnap-full.patch.gz.b64.part02b2_3 \
+            harness/scratch/vnap-full.patch.gz.b64.part02b2_4 \
+            harness/scratch/vnap-full.patch.gz.b64.part03 \
+            harness/scratch/vnap-full.patch.gz.b64.part04 \
+            harness/scratch/vnap-full.patch.gz.b64.part05 > full.patch.gz.b64
+          test "$(wc -c < full.patch.gz.b64)" -eq 26676
+          base64 -d full.patch.gz.b64 | gzip -d > full.patch
+          git -C vnap apply "$GITHUB_WORKSPACE/full.patch"
+
+          cat harness/scratch/vnap-fixes.gz.b64.* > fixes.patch.gz.b64
+          test "$(wc -c < fixes.patch.gz.b64)" -eq 8120
+          base64 -d fixes.patch.gz.b64 | gzip -d > fixes.patch
+          git -C vnap apply "$GITHUB_WORKSPACE/fixes.patch"
+
+          cat harness/scratch/vnap-runtime-review.gz.b64.* > runtime-review.patch.gz.b64
+          test "$(wc -c < runtime-review.patch.gz.b64)" -eq 2280
+          base64 -d runtime-review.patch.gz.b64 | gzip -d > runtime-review.patch
+          git -C vnap apply "$GITHUB_WORKSPACE/runtime-review.patch"
+
+          cat harness/scratch/vnap-134-update.gz.b64.* > update134.patch.gz.b64
+          test "$(wc -c < update134.patch.gz.b64)" -eq 8800
+          base64 -d update134.patch.gz.b64 | gzip -d > update134.patch
+          git -C vnap apply --check "$GITHUB_WORKSPACE/update134.patch"
+          git -C vnap apply "$GITHUB_WORKSPACE/update134.patch"
+
+          sed -i 's/^mod_version=.*/mod_version=1.3.4-neoforge-1.21.1/' vnap/gradle.properties
+          sed -i 's/^neo_version=.*/neo_version=21.1.248/' vnap/gradle.properties
+          sed -i 's/^emf_version=.*/emf_version=szv0UmJn/' vnap/gradle.properties
+          sed -i 's/^etf_version=.*/etf_version=XEJeKpgJ/' vnap/gradle.properties
+          printf '\nesf_version=eafVUs7O\n' >> vnap/gradle.properties
+          sed -i '/compileOnly "maven.modrinth:BVzZfTc1:${etf_version}"/a\    compileOnly "maven.modrinth:IMuO8COj:${esf_version}"' vnap/build.gradle
+          grep -F 'SHARED_RECENT_VARIANTS' vnap/src/main/java/com/vnap/dialogue/ContextualDialogueController.java
+          grep -F 'ACTIVE_PLAYER_ENCOUNTERS' vnap/src/main/java/com/vnap/dialogue/ContextualDialogueController.java
+          grep -F 'setProfession(VillagerProfession.NONE).setLevel(1)' vnap/src/main/java/com/vnap/mixin/VillagerDataMixin.java
+          grep -F 'models.6=1' vnap/src/main/resources/assets/minecraft/optifine/cem/villager.properties
+          python -m json.tool vnap/src/main/resources/data/villager-news-addon-port/recipe/handbook.json >/dev/null
+          chmod +x vnap/gradlew
+
+      - name: Set up Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: gradle
+          cache-dependency-path: vnap/gradle/wrapper/gradle-wrapper.properties
+
+      - name: Compile Java on NeoForge 21.1.248
+        shell: bash
+        working-directory: vnap
+        run: |
+          set -o pipefail
+          ./gradlew compileJava --stacktrace --no-daemon 2>&1 | tee ../compile134.log
+
+      - name: Verify exact EMF ETF ESF artifacts
+        shell: bash
+        run: |
+          set -euxo pipefail
+          EMF_JAR=$(find "$HOME/.gradle/caches/modules-2/files-2.1/maven.modrinth/4I1XuqiY/szv0UmJn" -type f -name '*.jar' -print -quit)
+          ETF_JAR=$(find "$HOME/.gradle/caches/modules-2/files-2.1/maven.modrinth/BVzZfTc1/XEJeKpgJ" -type f -name '*.jar' -print -quit)
+          ESF_JAR=$(find "$HOME/.gradle/caches/modules-2/files-2.1/maven.modrinth/IMuO8COj/eafVUs7O" -type f -name '*.jar' -print -quit)
+          echo 'e78060b9a01bf41b5628bd45ce5ac741f68f092c  '"$EMF_JAR" | sha1sum -c -
+          echo '908d09263709193b918fdc9ca0d79c9d90c4a531  '"$ETF_JAR" | sha1sum -c -
+          echo '74932e01844b2524d5d7ad958d4bc638ac5743c1  '"$ESF_JAR" | sha1sum -c -
+
+      - name: Build 1.3.4 JAR
+        shell: bash
+        working-directory: vnap
+        run: |
+          set -o pipefail
+          ./gradlew build --stacktrace --no-daemon 2>&1 | tee ../build134.log
+
+      - name: Verify built JAR contents
+        shell: bash
+        run: |
+          set -euxo pipefail
+          JAR=$(find vnap/build/libs -maxdepth 1 -type f -name '*.jar' ! -name '*sources*' -print -quit)
+          test -n "$JAR"
+          unzip -t "$JAR" >/dev/null
+          unzip -p "$JAR" META-INF/neoforge.mods.toml | grep -F 'villager_news_addon_port'
+          unzip -p "$JAR" assets/minecraft/optifine/cem/villager.properties | grep -F 'models.6=1'
+          unzip -p "$JAR" data/villager-news-addon-port/recipe/handbook.json | python -m json.tool >/dev/null
+          javap -classpath "$JAR" -p com.vnap.client.DialogueAnimationState | grep -F 'trackBodyRotation'
+          javap -classpath "$JAR" -p com.vnap.mixin.VillagerDataMixin | grep -F 'vnap$preventSpecialProfession'
+
+      - name: Upload diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vnap-1.3.4-build-diagnostics
+          if-no-files-found: warn
+          path: |
+            compile134.log
+            build134.log
+
+      - name: Upload 1.3.4 mod
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: villager-news-addon-port-1.3.4-neoforge-1.21.1
+          if-no-files-found: error
+          path: vnap/build/libs/*.jar
