@@ -5,7 +5,7 @@ on:
     branches:
       - scratch/vnap-neoforge-port-build
     paths:
-      - 'scratch/vnap-neoforge.patch'
+      - 'scratch/vnap-full.patch.gz.b64.part*'
       - '.github/workflows/vnap-neoforge-port-build.yml'
   workflow_dispatch:
 
@@ -25,12 +25,13 @@ jobs:
           ref: 0fe248be7656e08dc71e34f229ecd86548ae8310
           path: vnap
 
-      - name: Apply NeoForge port patch
+      - name: Reconstruct and apply complete NeoForge port patch
         shell: bash
         run: |
           set -euxo pipefail
-          git -C vnap apply --check "$GITHUB_WORKSPACE/harness/scratch/vnap-neoforge.patch"
-          git -C vnap apply "$GITHUB_WORKSPACE/harness/scratch/vnap-neoforge.patch"
+          cat harness/scratch/vnap-full.patch.gz.b64.part* | base64 -d | gzip -d > full.patch
+          git -C vnap apply --check "$GITHUB_WORKSPACE/full.patch"
+          git -C vnap apply "$GITHUB_WORKSPACE/full.patch"
           chmod +x vnap/gradlew
 
       - name: Set up Java 21
