@@ -6,6 +6,7 @@ on:
       - scratch/vnap-neoforge-port-build
     paths:
       - 'scratch/vnap-full.patch.gz.b64.part*'
+      - 'scratch/vnap-fixes.gz.b64.*'
       - 'scratch/vnap-neoforge.patch'
       - '.github/workflows/vnap-neoforge-port-build.yml'
   workflow_dispatch:
@@ -49,6 +50,12 @@ jobs:
           base64 -d full.patch.gz.b64 | gzip -d > full.patch
           git -C vnap apply --check "$GITHUB_WORKSPACE/full.patch"
           git -C vnap apply "$GITHUB_WORKSPACE/full.patch"
+
+          cat harness/scratch/vnap-fixes.gz.b64.* > fixes.patch.gz.b64
+          test "$(wc -c < fixes.patch.gz.b64)" -eq 8120
+          base64 -d fixes.patch.gz.b64 | gzip -d > fixes.patch
+          git -C vnap apply --check "$GITHUB_WORKSPACE/fixes.patch"
+          git -C vnap apply "$GITHUB_WORKSPACE/fixes.patch"
           chmod +x vnap/gradlew
 
       - name: Set up Java 21
