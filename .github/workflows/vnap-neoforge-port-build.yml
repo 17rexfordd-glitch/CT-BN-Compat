@@ -33,7 +33,12 @@ jobs:
             harness/scratch/vnap-full.patch.gz.b64.part00 \
             harness/scratch/vnap-full.patch.gz.b64.part01 \
             harness/scratch/vnap-full.patch.gz.b64.part02a \
-            harness/scratch/vnap-full.patch.gz.b64.part02b \
+            harness/scratch/vnap-full.patch.gz.b64.part02b1 \
+            harness/scratch/vnap-full.patch.gz.b64.part02b2_0 \
+            harness/scratch/vnap-full.patch.gz.b64.part02b2_1 \
+            harness/scratch/vnap-full.patch.gz.b64.part02b2_2 \
+            harness/scratch/vnap-full.patch.gz.b64.part02b2_3 \
+            harness/scratch/vnap-full.patch.gz.b64.part02b2_4 \
             harness/scratch/vnap-full.patch.gz.b64.part03 \
             harness/scratch/vnap-full.patch.gz.b64.part04 \
             harness/scratch/vnap-full.patch.gz.b64.part05 > full.patch.gz.b64
