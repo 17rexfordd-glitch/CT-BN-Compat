@@ -1,39 +1,33 @@
 # CT-BN-Compat v2.3.2
 
-Purpose: compatibility release with minimal proof detector restored from the v2.2.x diagnostic phase. The v2.3.1 compatibility fix itself is unchanged.
+Purpose: fix only the compatibility stabilizer `IncompatibleClassChangeError` from the restored-v2.2.8-based v2.3.1 build. The working v2.2.8 detector/tracer/observer system remains intact.
 
-## Change
+## Cause
 
-- Preserved the v2.3.1 BetterNether compatibility hook and stabilizer behavior unchanged.
-- Restored only the minimum known-good detector from the v2.2.x `EnchantmentTrace` sampler/journal:
-  - styled component traversal using `FormattedText.StyledContentConsumer`
-  - `dark_red` detection
-  - `obfuscated=true` detection
-  - before/after stabilization component state capture
-  - post-fix component SHA-256 hash comparison across frames
-  - strong deduplication with an approximately five-second heartbeat
-- Added a small `ItemStackDetectorMixin` only to bind the current tooltip item while `ItemStack.getTooltipLines(...)` runs.
-- Detector scope is limited to `betternether:flaming_ruby_*` and `betternether:cincinnasite_pickaxe_diamond`.
-- Enchantment scope is limited to `betternether:ruby_fire` and `betternether:obsidian_breaker`.
-- Did not restore JEI chain dumps, RenderUtils helper tracing, BAT/Icon tracing, upstream owner tracing, or large component JSON dumps.
-- Did not change tooltip contents beyond the existing v2.3.1 stabilization hook.
+`BetterNetherCurseNameStabilizer.class` was compiled against a bad compatibility stub where `net.minecraft.network.chat.MutableComponent` was treated as an interface. Actual Minecraft/ImmersiveUI 1.21.1 bytecode treats `MutableComponent` as a class for these method calls, so the stabilizer emitted `InterfaceMethodref` / `invokeinterface` entries for `getStyle`, `setStyle`, and `getSiblings`. At runtime that class/interface mismatch caused `java.lang.IncompatibleClassChangeError`, so the stabilizer fell back to the original tooltip.
+
+## Correction
+
+- Kept every restored v2.2.8 detector, tracer, observer, diagnostic hook, and logging path.
+- Kept the v2.3.1 compatibility path and target enchantment scope.
+- Corrected final packaged `BetterNetherCurseNameStabilizer.class` so `MutableComponent.getStyle`, `MutableComponent.setStyle`, and `MutableComponent.getSiblings` are class Methodrefs with `invokevirtual`, not InterfaceMethodrefs/`invokeinterface`.
+- Stabilization remains enchantment-based for only:
+  - `betternether:ruby_fire`
+  - `betternether:obsidian_breaker`
+- Tooltip descriptions, levels, JEI behavior, BetterNether functionality, unrelated ImmersiveUI behavior, and unrelated ColorTooltips behavior are preserved.
 
 ## Verification
 
 - Version markers: `2.3.2`.
 - `behavioral-fixes=true` remains present.
-- `BetterNetherCurseNameStabilizer` compatibility logic is preserved.
-- `ct_bn_v2.mixins.json` contains only `EnchantmentNameMixin` and `ItemStackDetectorMixin`.
-- `EnchantmentNameMixin.@Inject` is runtime-visible.
-- `ItemStackDetectorMixin.@Inject` is runtime-visible.
-- `ColorTooltipsBetterNetherCompat.@Mod` is runtime-visible.
-- `@Mixin` remains runtime-invisible on both mixin classes.
-- Detector uses `Component.visit(FormattedText$StyledContentConsumer, Style)`; no `Component.visit(BiFunction, Style)` call remains.
-- Item ID lookup uses `BuiltInRegistries.ITEM:Lnet/minecraft/core/DefaultedRegistry;` and `DefaultedRegistry.getKey(Object)`.
-- No `EnchantmentTags.CURSE:Object` regression.
-- No `EnchantmentTrace`, `TooltipTrace`, `UpstreamTrace`, `ImmersiveEnchantmentStyleMixin`, BAT/Icon/JEI diagnostic mixins, or broad `UpstreamSubscriberXXMixin` classes are packaged.
+- No detector was removed, disabled, simplified, or replaced.
+- v2.2.8 detector classes and mixins remain packaged, including `EnchantmentTrace`, `TooltipTrace`, JEI hooks, ItemStack hooks, Enchantment section/name hooks, and `ImmersiveEnchantmentStyleMixin`.
+- `BetterNetherCurseNameStabilizer` remains packaged.
+- `BetterNetherCurseNameStabilizer.class` has no `invokeinterface` calls targeting `net.minecraft.network.chat.MutableComponent`.
+- `BetterNetherCurseNameStabilizer.class` has `invokevirtual` calls for `MutableComponent.getStyle`, `MutableComponent.setStyle`, and `MutableComponent.getSiblings`.
+- No stale broken diagnostic API calls remain: no `Component.visit(BiFunction, Style)`, no `EnchantmentTags.CURSE:Object`.
 - No tooltip rendering cancellation, tooltip-list replacement, animator reset redirect, or same-item redirect is packaged.
-- No bundled Minecraft, NeoForge, Sponge, JEI, ImmersiveUI, Gson, or local stub classes are packaged.
+- No bundled Minecraft, NeoForge, Sponge, JEI, ImmersiveUI, Gson, MixinExtras, or local stub classes are packaged.
 - No duplicate ZIP entries.
 - All packaged classes are Java 21 / classfile major 65.
 
@@ -42,5 +36,5 @@ Gradle wrapper could not run in this sandbox because `services.gradle.org` is un
 ## Artifact
 
 - JAR: `CT-BN-Compat-1.21.1-v2.3.2.jar`
-- SHA-256: `f241bc7711b2fdf2338568a2bf9878732743b360eddbe1fc5730afc4f21505b8`
+- SHA-256: `31f0e09f8f708f07b7b7112d28cd0a309e9825e5b95ee3d02508922824eed199`
 - Source snapshot: `CT-BN-Compat-1.21.1-v2.3.2-source.zip`
