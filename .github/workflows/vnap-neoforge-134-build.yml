@@ -1,4 +1,4 @@
-name: VNAP 1.3.4 NeoForge 1.21.1 build
+name: VNAP 1.3.4 randomized voice NeoForge 1.21.1 build
 
 on:
   push:
@@ -6,6 +6,7 @@ on:
       - scratch/vnap-neoforge-port-build
     paths:
       - 'scratch/vnap-134-update.gz.b64.*'
+      - 'scratch/vnap-voice-randomization.gz.b64.*'
       - '.github/workflows/vnap-neoforge-134-build.yml'
   workflow_dispatch:
 
@@ -25,7 +26,7 @@ jobs:
           ref: 0fe248be7656e08dc71e34f229ecd86548ae8310
           path: vnap
 
-      - name: Reconstruct verified 1.3.3 port and apply 1.3.4 update
+      - name: Reconstruct verified 1.3.4 port and apply voice randomization
         shell: bash
         run: |
           set -euxo pipefail
@@ -63,16 +64,21 @@ jobs:
           git -C vnap apply --check "$GITHUB_WORKSPACE/update134.patch"
           git -C vnap apply "$GITHUB_WORKSPACE/update134.patch"
 
-          sed -i 's/^mod_version=.*/mod_version=1.3.4-neoforge-1.21.1/' vnap/gradle.properties
+          cat harness/scratch/vnap-voice-randomization.gz.b64.* > voice-random.patch.gz.b64
+          test "$(wc -c < voice-random.patch.gz.b64)" -eq 2576
+          base64 -d voice-random.patch.gz.b64 | gzip -d > voice-random.patch
+          git -C vnap apply --check "$GITHUB_WORKSPACE/voice-random.patch"
+          git -C vnap apply "$GITHUB_WORKSPACE/voice-random.patch"
+
+          sed -i 's/^mod_version=.*/mod_version=1.3.4-neoforge-1.21.1-randomized/' vnap/gradle.properties
           sed -i 's/^neo_version=.*/neo_version=21.1.248/' vnap/gradle.properties
           sed -i 's/^emf_version=.*/emf_version=szv0UmJn/' vnap/gradle.properties
           sed -i 's/^etf_version=.*/etf_version=XEJeKpgJ/' vnap/gradle.properties
           printf '\nesf_version=eafVUs7O\n' >> vnap/gradle.properties
           sed -i '/compileOnly "maven.modrinth:BVzZfTc1:${etf_version}"/a\    compileOnly "maven.modrinth:IMuO8COj:${esf_version}"' vnap/build.gradle
-          grep -F 'SHARED_RECENT_VARIANTS' vnap/src/main/java/com/vnap/dialogue/ContextualDialogueController.java
-          grep -F 'ACTIVE_PLAYER_ENCOUNTERS' vnap/src/main/java/com/vnap/dialogue/ContextualDialogueController.java
-          grep -F 'setProfession(VillagerProfession.NONE).setLevel(1)' vnap/src/main/java/com/vnap/mixin/VillagerDataMixin.java
-          grep -F 'models.6=1' vnap/src/main/resources/assets/minecraft/optifine/cem/villager.properties
+          grep -F 'VARIANT_SHUFFLE_BAGS' vnap/src/main/java/com/vnap/dialogue/ContextualDialogueController.java
+          grep -F 'Math.min(5, group.variants().size() - 1)' vnap/src/main/java/com/vnap/dialogue/ContextualDialogueController.java
+          grep -F 'ThreadLocalRandom.current().nextInt(choices.size())' vnap/src/main/java/com/vnap/dialogue/ContextualDialogueController.java
           python -m json.tool vnap/src/main/resources/data/villager-news-addon-port/recipe/handbook.json >/dev/null
           chmod +x vnap/gradlew
 
@@ -89,7 +95,7 @@ jobs:
         working-directory: vnap
         run: |
           set -o pipefail
-          ./gradlew compileJava --stacktrace --no-daemon 2>&1 | tee ../compile134.log
+          ./gradlew compileJava --stacktrace --no-daemon 2>&1 | tee ../compile-randomized.log
 
       - name: Verify exact EMF ETF ESF artifacts
         shell: bash
@@ -102,12 +108,12 @@ jobs:
           echo '908d09263709193b918fdc9ca0d79c9d90c4a531  '"$ETF_JAR" | sha1sum -c -
           echo '74932e01844b2524d5d7ad958d4bc638ac5743c1  '"$ESF_JAR" | sha1sum -c -
 
-      - name: Build 1.3.4 JAR
+      - name: Build randomized 1.3.4 JAR
         shell: bash
         working-directory: vnap
         run: |
           set -o pipefail
-          ./gradlew build --stacktrace --no-daemon 2>&1 | tee ../build134.log
+          ./gradlew build --stacktrace --no-daemon 2>&1 | tee ../build-randomized.log
 
       - name: Verify built JAR contents
         shell: bash
@@ -117,25 +123,24 @@ jobs:
           test -n "$JAR"
           unzip -t "$JAR" >/dev/null
           unzip -p "$JAR" META-INF/neoforge.mods.toml | grep -F 'villager_news_addon_port'
-          unzip -p "$JAR" assets/minecraft/optifine/cem/villager.properties | grep -F 'models.6=1'
           unzip -p "$JAR" data/villager-news-addon-port/recipe/handbook.json | python -m json.tool >/dev/null
-          javap -classpath "$JAR" -p com.vnap.client.DialogueAnimationState | grep -F 'trackBodyRotation'
-          javap -classpath "$JAR" -p com.vnap.mixin.VillagerDataMixin | grep -F 'vnap$preventSpecialProfession'
+          javap -classpath "$JAR" -p 'com.vnap.dialogue.ContextualDialogueController$VariantShuffleBag' | grep -F 'next('
+          javap -classpath "$JAR" -p com.vnap.dialogue.ContextualDialogueController | grep -F 'VARIANT_SHUFFLE_BAGS'
 
       - name: Upload diagnostics
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: vnap-1.3.4-build-diagnostics
+          name: vnap-1.3.4-randomized-build-diagnostics
           if-no-files-found: warn
           path: |
-            compile134.log
-            build134.log
+            compile-randomized.log
+            build-randomized.log
 
-      - name: Upload 1.3.4 mod
+      - name: Upload randomized mod
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: villager-news-addon-port-1.3.4-neoforge-1.21.1
+          name: villager-news-addon-port-1.3.4-randomized-neoforge-1.21.1
           if-no-files-found: error
           path: vnap/build/libs/*.jar
