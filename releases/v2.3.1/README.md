@@ -1,30 +1,32 @@
 # CT-BN-Compat v2.3.1
 
-Purpose: packaging/annotation-retention correction for the v2.3.0 compatibility release. The BetterNether compatibility behavior is unchanged.
+Purpose: bootstrap crash fix for the restored-v2.2.8-based v2.3.0 compatibility build. The working v2.2.8 detector and the new BetterNether compatibility behavior are preserved.
 
 ## Change
 
-- Kept the v2.3.0 compatibility logic unchanged.
-- Corrected packaged annotation retention:
-  - `EnchantmentNameMixin.@Inject` is now under `RuntimeVisibleAnnotations`.
-  - `ColorTooltipsBetterNetherCompat.@Mod` is now under `RuntimeVisibleAnnotations`.
-  - `EnchantmentNameMixin.@Mixin` remains under `RuntimeInvisibleAnnotations`.
-- Updated version markers to `2.3.1`.
-- Did not change the BetterNether enchantment-name stabilization behavior.
+- Fixed `EnchantmentNameMixin.ctbn$copied(...)` so the injector signature matches what Mixin accepts for the `Enchantment.getFullname(...)` / `ComponentUtils.mergeStyles(...)` injection point.
+- Removed the invalid extra `MutableComponent` local parameter from `ctbn$copied(...)`.
+- Removed the `@Local(index=2)` dependency from that injector.
+- Added a no-local copied-boundary marker through `EnchantmentTrace.copiedBoundary(holder, level)` so the detector still records the mergeStyles boundary without unsafe local capture.
+- Left the RETURN compatibility hook intact: it reads the returned component through `CallbackInfoReturnable#getReturnValue()`, calls `EnchantmentTrace.compatibilityReturn(...)`, conditionally sets the stabilized return value, then continues `EnchantmentTrace.nameReturn(...)`.
+- Did not strip the v2.2.8 detector.
+- Did not globally disable ImmersiveUI or ColorTooltips.
+- Did not cancel tooltip rendering or replace tooltip lists.
 
 ## Verification
 
 - Version markers: `2.3.1`.
 - `behavioral-fixes=true` remains present.
-- `EnchantmentNameMixin.class` has `@Inject` under `RuntimeVisibleAnnotations`.
-- `ColorTooltipsBetterNetherCompat.class` has `@Mod` under `RuntimeVisibleAnnotations`.
-- `EnchantmentNameMixin.class` keeps `@Mixin` under `RuntimeInvisibleAnnotations`.
-- The bytecode for the compatibility hook/stabilizer is unchanged from v2.3.0 apart from version text and annotation attributes.
-- Final mixin config still contains only `EnchantmentNameMixin`.
-- No v2.2.x diagnostic flood classes are packaged.
-- No stale broken diagnostic calls remain: no `Component.visit(BiFunction, Style)`, no `EnchantmentTags.CURSE:Object`.
-- No tooltip rendering cancellation, tooltip-list replacement, animator reset redirect, or same-item redirect is packaged.
-- No bundled Minecraft, NeoForge, Sponge, JEI, ImmersiveUI, Gson, or local stub classes are packaged.
+- `EnchantmentNameMixin.ctbn$copied` descriptor is now `(Holder, int, CallbackInfoReturnable) -> void`.
+- No `ctbn$copied(..., MutableComponent)` injector descriptor remains.
+- `EnchantmentNameMixin.ctbn$nameReturn` obtains the returned component from `CallbackInfoReturnable#getReturnValue()`.
+- `EnchantmentNameMixin.ctbn$nameReturn` still calls `EnchantmentTrace.compatibilityReturn(...)` and `CallbackInfoReturnable#setReturnValue(...)` when stabilization returns a copied component.
+- v2.2.8 detector classes remain packaged: `EnchantmentTrace`, `TooltipTrace`, JEI hooks, ItemStack hooks, Enchantment section/name hooks, and `ImmersiveEnchantmentStyleMixin`.
+- `BetterNetherCurseNameStabilizer` remains packaged.
+- No stale broken diagnostic API calls remain: no `Component.visit(BiFunction, Style)`, no `EnchantmentTags.CURSE:Object`.
+- `@Inject` annotations are runtime-visible and `@Mixin` remains runtime-invisible.
+- NeoForge `@Mod` is runtime-visible.
+- No bundled Minecraft, NeoForge, Sponge, JEI, ImmersiveUI, Gson, MixinExtras, or local stub classes are packaged.
 - No duplicate ZIP entries.
 - All packaged classes are Java 21 / classfile major 65.
 
@@ -33,5 +35,5 @@ Gradle wrapper could not run in this sandbox because `services.gradle.org` is un
 ## Artifact
 
 - JAR: `CT-BN-Compat-1.21.1-v2.3.1.jar`
-- SHA-256: `4a087d485a4f5290422683b4c0afadf1df25b6a3c2cd09c04fd3754d2867ba4f`
+- SHA-256: `de7065dae7a20ac5746fcda048c3b329e703f14998547578a3b2a6c9e04d551f`
 - Source snapshot: `CT-BN-Compat-1.21.1-v2.3.1-source.zip`
