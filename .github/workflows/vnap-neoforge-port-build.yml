@@ -29,7 +29,16 @@ jobs:
         shell: bash
         run: |
           set -euxo pipefail
-          cat harness/scratch/vnap-full.patch.gz.b64.part* | base64 -d | gzip -d > full.patch
+          cat \
+            harness/scratch/vnap-full.patch.gz.b64.part00 \
+            harness/scratch/vnap-full.patch.gz.b64.part01 \
+            harness/scratch/vnap-full.patch.gz.b64.part02a \
+            harness/scratch/vnap-full.patch.gz.b64.part02b \
+            harness/scratch/vnap-full.patch.gz.b64.part03 \
+            harness/scratch/vnap-full.patch.gz.b64.part04 \
+            harness/scratch/vnap-full.patch.gz.b64.part05 > full.patch.gz.b64
+          test "$(wc -c < full.patch.gz.b64)" -eq 26676
+          base64 -d full.patch.gz.b64 | gzip -d > full.patch
           git -C vnap apply --check "$GITHUB_WORKSPACE/full.patch"
           git -C vnap apply "$GITHUB_WORKSPACE/full.patch"
           chmod +x vnap/gradlew
